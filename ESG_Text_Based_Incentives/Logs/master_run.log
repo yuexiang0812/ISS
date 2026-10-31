@@ -193,3 +193,70 @@ unknown                7884      0     0
 === 06_dataset_A_text_dictionary.py done in 2s
 === 07_dataset_B_kpi.py
 2026-10-31 13:28:39,692 INFO [dta] ESG_Goal_Record_Classification.dta: 814,091 obs x 29 vars; key=['goal_record_id']; renamed(overlong)={}
+2026-10-31 13:30:57,853 INFO [key check] KPI master: 654,123 rows; key ['kpi_id'] duplicates = 0
+2026-10-31 13:30:57,919 INFO [key check] KPI master (components): 654,123 rows; key ['grantid', 'goal_source', 'text_id'] duplicates = 0
+2026-10-31 13:30:57,921 INFO reconciliation: sum(kpi_source_count) = 814,091 = goal records 814,091
+2026-10-31 13:30:57,924 INFO KPIs: 654,123; duplicate-objective KPIs: 4,849; multi-period KPIs: 84,463; incomplete keys: 9
+2026-10-31 13:30:58,096 INFO kpi strict by year:
+kpi_esg_strict  -1.0    0.0   1.0
+fiscalyear                       
+1998.0          2199   7570   124
+1999.0          2346   7837    92
+2000.0          2454   8089   122
+2001.0          2327   7818   149
+2002.0          2639   8317   167
+2003.0          2864   9039   163
+2004.0          2971  10797   290
+2005.0          2997  11337   365
+2006.0          4537  20812   664
+2007.0          4717  23476   776
+2008.0          4748  23107   878
+2009.0          4989  23482  1021
+2010.0          5028  25134  1248
+2011.0          5286  26180  1328
+2012.0          5580  27930  1411
+2013.0          5637  28963  1411
+2014.0          6522  31293  1528
+2015.0          6736  31448  1686
+2016.0          6359  31045  1646
+2017.0          5734  32235  1618
+2018.0          5342  31148  1641
+2019.0          5049  31969  1804
+2020.0          5497  32152  2305
+2021.0          5215  29340  3395
+2026-10-31 13:31:30,084 INFO [dta] ESG_KPI_Master.dta: 654,123 obs x 36 vars; key=['kpi_id']; renamed(overlong)={}
+=== 07_dataset_B_kpi.py done in 197s
+=== 08_dataset_C_grant.py
+2026-10-31 13:31:34,574 INFO raw grants rows 469,573; distinct grantID 469,429
+2026-10-31 13:31:34,869 INFO impossible values set to missing: negative grantDateFV=1, negative vestHighGrant=18
+2026-10-31 13:31:34,895 INFO grant dates outside [FY-3, FY+2]: 256 (flagged grant_date_suspect)
+2026-10-31 13:31:35,547 INFO KPIs whose grant is absent from grants table: 3 grants (9 KPIs) -> excluded, listed in audit
+2026-10-31 13:31:35,690 INFO grant goal status:
+grant_goal_status
+perf_with_goals                      233384
+time_no_perf_condition               231168
+time_with_accel_goals                  4496
+time_accel_declared_goals_missing       171
+perf_goals_missing                      159
+type_missing                             51
+2026-10-31 13:31:35,972 INFO [key check] grant master: 469,429 rows; key ['grantid'] duplicates = 0
+2026-10-31 13:31:35,977 INFO [share check] grant.grant_esg_kpi_share_strict: n=160,556 out-of-[0,1]=0
+2026-10-31 13:31:35,982 INFO [share check] grant.grant_esg_kpi_share_extended: n=159,611 out-of-[0,1]=0
+2026-10-31 13:31:35,986 INFO [share check] grant.grant_e_kpi_share: n=160,556 out-of-[0,1]=0
+2026-10-31 13:31:35,990 INFO [share check] grant.grant_s_kpi_share: n=160,556 out-of-[0,1]=0
+2026-10-31 13:31:35,994 INFO [share check] grant.grant_g_kpi_share: n=160,556 out-of-[0,1]=0
+2026-10-31 13:31:35,998 INFO [share check] grant.grant_classification_coverage: n=469,049 out-of-[0,1]=0
+2026-10-31 13:31:36,002 INFO [share check] grant.grant_esg_share_lb: n=237,881 out-of-[0,1]=0
+2026-10-31 13:31:36,006 INFO [share check] grant.grant_esg_share_ub: n=237,881 out-of-[0,1]=0
+2026-10-31 13:31:36,011 INFO [share check] grant.grant_esg_share_ext_lb: n=237,881 out-of-[0,1]=0
+2026-10-31 13:31:36,015 INFO [share check] grant.grant_esg_share_ext_ub: n=237,881 out-of-[0,1]=0
+2026-10-31 13:31:36,063 INFO identity checks passed: esg+non+unknown = n_kpis; KPI totals reconcile to KPI master
+2026-10-31 13:31:36,111 INFO grant_esg_strict by status:
+grant_esg_strict                    -1.0     0.0    1.0
+grant_goal_status                                      
+perf_goals_missing                   159       0      0
+perf_with_goals                    66979  151344  15061
+time_accel_declared_goals_missing    171       0      0
+time_no_perf_condition                 0  231168      0
+time_with_accel_goals                523    3973      0
+type_missing                          51       0      0
