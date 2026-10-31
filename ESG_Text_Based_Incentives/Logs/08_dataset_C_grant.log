@@ -31,3 +31,4 @@ time_accel_declared_goals_missing    171       0      0
 time_no_perf_condition                 0  231168      0
 time_with_accel_goals                523    3973      0
 type_missing                          51       0      0
+2026-10-31 13:31:47,969 INFO [dta] ESG_Grant_Master.dta: 469,429 obs x 69 vars; key=['grantid']; renamed(overlong)={}
