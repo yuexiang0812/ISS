@@ -1,0 +1,6 @@
+{
+  "status": "pending_human_labels",
+  "n_sample": 601,
+  "message": "NO HUMAN LABELS AVAILABLE: classification performance is NOT validated. All labels are provisional. Code the blind sheets (601 units), place them in Validation/human_labels/ as coder1_labels.csv / coder2_labels.csv, adjudicate disagreements into adjudicated_labels.csv, then re-run this step.",
+  "rules_md5": "9cf1cf0d751f3822425d87253f33addb"
+}

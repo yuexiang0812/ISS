@@ -1,5 +1,8 @@
 reports/
 # ISS-licensed data and ISS-text-derived outputs: keep local, never push
-ESG_Text_Based_Incentives/data/
-ESG_Text_Based_Incentives/dictionaries/diagnostics_paper_keywords.csv
+ESG_Text_Based_Incentives/Data/
+ESG_Text_Based_Incentives/Dictionaries/diagnostics_paper_keywords.csv
 __pycache__/
+ESG_Text_Based_Incentives/Dictionaries/local/
+ESG_Text_Based_Incentives/Validation/*_local.csv
+ESG_Text_Based_Incentives/Validation/human_labels/

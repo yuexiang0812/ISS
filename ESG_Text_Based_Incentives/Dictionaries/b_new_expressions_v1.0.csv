@@ -1,0 +1,39 @@
+expression,rule_id,topic,pillar,n_units,n_goal_rows
+days away,R027_S_ohs,S_ohs,S,7,78
+eh&s,R027_S_ohs,S_ohs,S,10,64
+gas leak,R017_S_public_safety,S_public_safety,S,7,49
+scrubber,R019_E_ghg_air,E_ghg_air,E,2,46
+ethical,R032_G_ethics,G_ethics,G,1,36
+associate satisfaction,R028_S_human_capital,S_human_capital,S,3,34
+leak,R017_S_public_safety,S_public_safety,S,5,32
+well-being,R028_S_human_capital,S_human_capital,S,5,26
+near miss,R027_S_ohs,S_ohs,S,2,22
+d&i,R026_S_dei,S_dei,S,5,22
+reclamation,R025_E_env_general,E_env_general,E,3,22
+staff development,R028_S_human_capital,S_human_capital,S,2,20
+associate development,R028_S_human_capital,S_human_capital,S,5,12
+flare,R019_E_ghg_air,E_ghg_air,E,2,11
+de&i,R026_S_dei,S_dei,S,2,10
+associate experience,R028_S_human_capital,S_human_capital,S,1,9
+voluntary attrition,R028_S_human_capital,S_human_capital,S,2,8
+life changing events,R027_S_ohs,S_ohs,S,1,7
+significant releases,R024_E_releases,E_releases,E,1,7
+environmental,R025_E_env_general,E_env_general,E,1,6
+store hourly and store management turnover,R028_S_human_capital,S_human_capital,S,1,6
+federal reportable releases,R024_E_releases,E_releases,E,1,6
+regrettable turnover,R028_S_human_capital,S_human_capital,S,1,5
+teller turnover,R028_S_human_capital,S_human_capital,S,1,5
+flared,R019_E_ghg_air,E_ghg_air,E,1,5
+off-property releases,R024_E_releases,E_releases,E,3,5
+hs&e,R027_S_ohs,S_ohs,S,1,5
+labor turnover,R028_S_human_capital,S_human_capital,S,1,5
+board evaluation,R033_G_governance,G_governance,G,1,4
+reportable releases,R024_E_releases,E_releases,E,3,4
+significant release,R024_E_releases,E_releases,E,1,3
+associate survey,R028_S_human_capital,S_human_capital,S,1,1
+code of conduct,R032_G_ethics,G_ethics,G,1,1
+diversity,R026_S_dei,S_dei,S,1,1
+mainline releases,R024_E_releases,E_releases,E,1,1
+on-property releases,R024_E_releases,E_releases,E,1,1
+scrubbers,R019_E_ghg_air,E_ghg_air,E,1,1
+sustainabilty,R034_GEN_sustainability,GEN_sustainability,GEN,1,1

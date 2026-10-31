@@ -1,0 +1,17 @@
+version,change_type,rule_or_scope,description,evidence_or_file
+v0,baseline,,"AGHJ (2025) Appendix A.3, 953 keywords, literal case-insensitive whole-token match on metricOther",Dictionaries/a_paper_dictionary_AGHJ2025_953.csv
+v1.0,design,all,Three-state labels (1/0/Unknown); 0 requires positive non-ESG evidence; Unknown for placeholders and unmatched text,task brief s.5
+v1.0,design,all,metric and metricOther read jointly; only time-consistent metric labels used; 2018-taxonomy ESG labels and ISS metricType ESG categories never used as evidence,Logs/03_goal_extraction.log (label first-year table)
+v1.0,design,C01,Blank metric+metricOther: time-consistent financial metricType (Accounting / Stock Price = Market-related ...) admitted as structured context -> 0; text-only label kept Unknown,ISS User Guide p.12
+v1.0,design,R*,Rules consume matched spans in priority order (masks -> routed phrases -> strict -> extended -> ambiguous -> adjacent -> placeholders -> non-ESG),Code/classify.py
+v1.0,exclusion,fp_*,"Masks for false positives found in data: safety and soundness, clinical safety data, accident-year, cost/debt reduction (no longer a keyword), capital recycling, minority investment, business 'environment', financial 'sustainable', company/segment names (Peoples Gas, Hess, Clean Energy Businesses, Sam's Club, Workday, NOV), real-estate 'communities', AML leukaemia, PV, 'inclusive of', audience/viewers, 'partly offset'",b_paper_keyword_review (excluded_* rows); local FP examples
+v1.0,reassign,X_*,"Customer satisfaction/experience/retention, product/patient/food safety, healthcare quality, privacy/fair lending, utility service reliability (SAIDI/SAIFI), community engagement -> Extended-only (task brief 4.4)",b_revised_rules
+v1.0,exclusion,J_compliance_risk,"Generic compliance, regulatory exams, risk management, internal controls, SOX, audit, cybersecurity, AML/BSA -> 0/0 flagged ESG-adjacent (task brief 4.3)",
+v1.0,exclusion,J_workforce_generic,"Talent management, succession planning, leadership development, culture, HR, hiring, teamwork -> 0/0 flagged (task brief 4.2); specific engagement/retention/turnover/training/wellbeing stay Strict S",
+v1.0,exclusion,J_renewable_business,"Wind/solar project execution, renewable portfolio growth/availability -> 0/0 flagged (business-line economic meaning); renewable energy adoption/share/carbon-free capacity stays Strict E",
+v1.0,ambiguity,A_*,"Energy efficiency / DSM (cost vs environment), bare water/waste/green/clean/renewables, notices of violation without environmental context, bare integrity/social/turnover -> Strict Unknown",task brief 4.1
+v1.0,addition,S_ohs,"Added safety expressions absent from AGHJ: EH&S, HS&E, H&S, near miss (no hyphen), days away restricted (variants), life-changing events, medical aid, serious incidents",b_new_expressions
+v1.0,addition,E_*,"Added: flaring/flare volumes, reportable/significant/off-property releases, scrubbers, reclamation, leak detection, particulate",b_new_expressions
+v1.0,addition,S_dei/S_human_capital/G_ethics,"Added: D&I, DE&I, ethical conduct, associate satisfaction/experience/development, corporate well-being, retain talent, staff/teller/labor turnover, board evaluation",b_new_expressions
+v1.0,pillar,GEN_*,ESG/CSR/citizenship/sustainability not forced into E/S/G: pillar flags Unknown unless a specific pillar term co-occurs ('sustainability' then treated as qualifier),
+v1.0,freeze,all,Rules frozen before drawing the independent validation sample (Validation/validation_sample_v1.0.csv),

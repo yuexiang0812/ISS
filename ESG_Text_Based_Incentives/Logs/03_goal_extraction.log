@@ -1,0 +1,122 @@
+2026-10-31 13:27:07,279 INFO ABS: 716,130 rows | goal ids unique alone: False | dup(goal_id, period) = 54,978 | grants = 211,577
+2026-10-31 13:27:07,352 INFO [key check] ABS goal records: 716,130 rows; key ['grantId', 'goal_id', 'periodId'] duplicates = 0
+2026-10-31 13:27:08,124 INFO REL: 89,985 rows | goal ids unique alone: False | dup(goal_id, period) = 342 | grants = 58,166
+2026-10-31 13:27:08,134 INFO [key check] REL goal records: 89,985 rows; key ['grantId', 'goal_id', 'periodId'] duplicates = 0
+2026-10-31 13:27:08,175 INFO ACC: 7,976 rows | goal ids unique alone: False | dup(goal_id, period) = 0 | grants = 4,951
+2026-10-31 13:27:08,177 INFO [key check] ACC goal records: 7,976 rows; key ['grantId', 'goal_id', 'periodId'] duplicates = 0
+2026-10-31 13:27:09,201 INFO [key check] stacked goal records: 814,091 rows; key ['goal_record_id'] duplicates = 0
+2026-10-31 13:27:21,086 INFO grants table: 469,573 rows; duplicated grantID rows 285; conflicting attributes within dup ids: 0
+2026-10-31 13:27:21,379 INFO goal records matched to a grant: 99.9988% (unmatched 10)
+2026-10-31 13:27:21,392 INFO goal fiscalYear == grant FiscalYear (matched): 100.0000%
+2026-10-31 13:27:22,448 INFO `metric` label first/last fiscal year:
+                                             min     max    size
+metric                                                          
+                                          1998.0  2019.0   62720
+Book Value                                1998.0  2008.0      51
+Business Unit                             1998.0  2021.0    2610
+Cashflow                                  1998.0  2021.0   36513
+EBIT                                      1998.0  2021.0    9501
+EBITDA                                    1998.0  2021.0   39146
+Debt Related                              1998.0  2021.0    2348
+Customer Satisfaction                     1998.0  2021.0    7005
+EBT                                       1998.0  2021.0   13378
+IPO of Subsidiary                         1998.0  2015.0      62
+Operating Income                          1998.0  2021.0   49722
+Individual                                1998.0  2021.0   53804
+FFO                                       1998.0  2021.0    7366
+Earnings                                  1998.0  2021.0   32482
+EVA                                       1998.0  2021.0    7214
+EPS                                       1998.0  2021.0   67573
+Sales                                     1998.0  2021.0   67191
+ROIC                                      1998.0  2021.0   27561
+ROI                                       1998.0  2021.0    2866
+ROE                                       1998.0  2021.0   19149
+ROA                                       1998.0  2021.0    8397
+Profit Margin                             1998.0  2021.0   12547
+Other                                     1998.0  2021.0  191199
+Vague                                     1998.0  2021.0    5847
+Operational                               1998.0  2021.0   11914
+Non-Financial                             2001.0  2021.0   20543
+Same store sales                          2001.0  2016.0     965
+FDA Approval                              2006.0  2015.0      88
+Working Capital                           2006.0  2008.0      10
+Fda Approval                              2007.0  2021.0     435
+Cost Reduction                            2008.0  2009.0      21
+Balance Sheet Related                     2008.0  2008.0       5
+Sales Contracts                           2008.0  2010.0      10
+Same Store Sales                          2014.0  2021.0     557
+Discretionary                             2016.0  2021.0     247
+Gross Revenues                            2016.0  2021.0   13932
+Environmental Protection                  2016.0  2021.0     711
+Tsr                                       2016.0  2021.0   21148
+Staff Health And Safety                   2016.0  2021.0    4854
+Net Income                                2017.0  2021.0    3228
+Stock Price                               2017.0  2021.0    2136
+Society And Human Rights                  2018.0  2021.0      73
+Gross Profit                              2018.0  2021.0     780
+Noi                                       2018.0  2021.0     837
+Csr                                       2018.0  2021.0     990
+Climate Change And Energy Use             2018.0  2021.0     755
+Customer And Product Responsibility       2018.0  2021.0     651
+Diversity                                 2018.0  2021.0    1455
+Staff Relations, Engagement And           2018.0  2020.0      15
+Roc                                       2018.0  2021.0     357
+Ros                                       2018.0  2021.0      23
+Resource Use                              2018.0  2021.0      82
+Staff Relations, Engagement And Training  2018.0  2021.0    1011
+Labor Conditions In Supply Chain          2019.0  2020.0       6
+2026-10-31 13:27:22,476 INFO 2018-taxonomy ESG `metric` labels before 2018: 58 of 10,603
+2026-10-31 13:27:22,521 INFO metricOther blank share by year:
+fiscalYear
+1998.0    0.681
+1999.0    0.676
+2000.0    0.671
+2001.0    0.641
+2002.0    0.630
+2003.0    0.622
+2004.0    0.598
+2005.0    0.603
+2006.0    0.573
+2007.0    0.543
+2008.0    0.546
+2009.0    0.519
+2010.0    0.499
+2011.0    0.448
+2012.0    0.453
+2013.0    0.491
+2014.0    0.498
+2015.0    0.444
+2016.0    0.301
+2017.0    0.337
+2018.0    0.032
+2019.0    0.002
+2020.0    0.000
+2021.0    0.000
+2026-10-31 13:27:22,581 INFO metricType by year:
+metricType      Accounting  Activity-related  Balance Sheet-related  CSR  Cash Flow  Earnings/Profit-related  Economic Value  Environment  Financial/Investment return rati  Financial/Investment return ratios  Liquidity/Solvency-related  Market-related  NA  Non-Financial  Other  Revenue-related  Social  Stock Price
+fiscalYear                                                                                                                                                                                                                                                                                                                 
+1998.0       0        6759                 0                      0    0          0                        0               0            0                                 0                                   0                           0               0   1              0   3073                0       0         1935
+1999.0       0        7328                 0                      0    0          0                        0               0            0                                 0                                   0                           0               0   0              0   3106                0       0         1731
+2000.0       0        7593                 0                      0    0          0                        0               0            0                                 0                                   0                           0               0   0              0   3297                0       0         1730
+2001.0       0        7384                 0                      0    0          0                       19               0            0                                 0                                   0                           0               0   0              1   3263                0       0         1568
+2002.0       4        7967                 0                      0    0          0                        0               0            0                                 0                                   0                           0               0   1              0   3694                0       0         1411
+2003.0       4        8376                 0                      0    0          0                        0               0            0                                 0                                   0                           0               0   0              0   3980                0       0         1708
+2004.0       0       10202                 0                      0    0          0                        0               0            0                                 0                                   0                           0               0   0              0   4678                0       0         1879
+2005.0       0       10963                 0                      0    0          0                        0               0            0                                 0                                   0                           0               0   0              0   4711                0       0         1883
+2006.0       0       22331                 0                      0    0          0                        0               0            0                                 0                                   0                           0               0  12              0   8027                0       0         2279
+2007.0       2       25944                 0                      0    0          0                        0               0            0                                 0                                   0                           0               0   1              0   9534                0       0         2591
+2008.0       5       25453                 0                      0    0          0                        0               0            0                                 0                                   0                           0               0   2              0   9452                0       0         2581
+2009.0       5       25640                 0                      0    0          0                        0               0            0                                 0                                   0                           0               0   0              0  10628                0       0         2721
+2010.0      14       26089                 0                      0    0          0                        0               0            0                                 0                                   0                           0               0   3              0  11377                0       0         3079
+2011.0       0       26927                 0                      0    0          0                        0               0            0                                 0                                   0                           0               0  19              0  11693                0       0         3413
+2012.0       8       29265                 0                      0    0          0                        0               0            0                                 0                                   0                           0               0   2              0  12599                0       0         4177
+2013.0       1       30391                 0                      0    0          0                        0               0            0                                 0                                   0                           0               0  20              0  11943                0       0         4574
+2014.0      23       30802                 0                      0    0          0                        4               0            0                                 0                                   0                           0               0   3              4  13411                4       0         5211
+2015.0      17       30426                 0                      0    0          0                       26               0            0                                 0                                   0                           0               0  29              0  14445                5       0         5450
+2016.0      47       28921                 5                      0    0          1                       73              20            5                                 5                                  49                           5              29   3             30  12974               15      30         5577
+2017.0       5       28988                 5                      0    0         24                      297              12            0                                 5                                  86                           0              84   0             43  12634              147      28         5947
+2018.0       1        2309               437                    337  142       2524                    11253             300          278                               520                                2614                         864            5266   0           6060   6850             4626    1545          499
+2019.0       0         255               569                    399  173       2773                    12181             190          348                               541                                2673                        1078            5859   0           6382   6373             5173    1809           71
+2020.0       0           0               479                    386  208       2943                    11234             156          448                               574                                2558                        1400            6489   0           7544   5926             5208    2061            0
+2021.0       0           0               383                    364  467       2792                    10055             121          675                               601                                2295                        1322            5845   0           6798   5220             4560    2702            0
+2026-10-31 13:27:23,227 INFO saved 814,091 goal records

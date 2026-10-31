@@ -1,0 +1,9 @@
+2026-10-31 13:24:01,747 INFO validation sample drawn: 601 units in 32 strata; rules md5 9cf1cf0d751f3822425d87253f33addb
+2026-10-31 13:24:01,752 INFO sample by stratum:
+pred           ext_only  non_esg  strict  unknown
+period                                           
+both                 15       50      32       30
+post2018_only        42       75      75       45
+pre2018_only         42       75      75       45
+2026-10-31 13:24:01,769 INFO human review queue: 1039 units (of 1039 flagged)
+2026-10-31 13:24:01,770 INFO NO HUMAN LABELS AVAILABLE: classification performance is NOT validated. All labels are provisional. Code the blind sheets (601 units), place them in Validation/human_labels/ as coder1_labels.csv / coder2_labels.csv, adjudicate disagreements into adjudicated_labels.csv, then re-run this step.

@@ -1,0 +1,195 @@
+=== 01_data_inventory.py
+2026-10-31 13:26:29,159 INFO 01. Beneficial Ownership Data.dta: {'file': '01. Beneficial Ownership Data.dta', 'rows': 435563, 'cols': 8, 'size_mb': 29.6, 'fy_min': np.float64(1998.0), 'fy_max': np.float64(2021.0)}
+2026-10-31 13:26:37,535 INFO 02. Absolute Performance Goals Data.dta: {'file': '02. Absolute Performance Goals Data.dta', 'rows': 716130, 'cols': 33, 'size_mb': 555.7, 'dup_absId': 191919, 'dup_absId+periodID': 54978, 'dup_grantId+absId+periodID': 0, 'fy_min': np.float64(1998.0), 'fy_max': np.float64(2021.0)}
+2026-10-31 13:26:37,634 INFO 03. Accelerated Performance Goals Data.dta: {'file': '03. Accelerated Performance Goals Data.dta', 'rows': 7976, 'cols': 42, 'size_mb': 13.6, 'dup_accId': 2188, 'dup_grantId+accId+periodId': 0, 'fy_min': np.float64(1998.0), 'fy_max': np.float64(2020.0)}
+2026-10-31 13:26:37,764 INFO 04. BlockHolder Ownership Data.dta: {'file': '04. BlockHolder Ownership Data.dta', 'rows': 95562, 'cols': 6, 'size_mb': 23.3, 'fy_min': np.float64(1998.0), 'fy_max': np.float64(2021.0)}
+2026-10-31 13:26:37,987 INFO 05. Company Data by Fiscal Year.dta: {'file': '05. Company Data by Fiscal Year.dta', 'rows': 33328, 'cols': 19, 'size_mb': 11.9, 'dup_CIK+fiscalYear': 0, 'dup_CIK+fiscalYear+fiscalMonth': 0, 'fy_min': np.float64(1998.0), 'fy_max': np.float64(2021.0)}
+2026-10-31 13:26:38,085 INFO 06. Compensation Consultant Data.dta: {'file': '06. Compensation Consultant Data.dta', 'rows': 44302, 'cols': 11, 'size_mb': 7.9, 'fy_min': np.float64(1998.0), 'fy_max': np.float64(2021.0)}
+2026-10-31 13:26:38,199 INFO 07. Director Annual Compensation Table.dta: {'file': '07. Director Annual Compensation Table.dta', 'rows': 184115, 'cols': 11, 'size_mb': 16.9, 'fy_min': np.float64(2000.0), 'fy_max': np.float64(2021.0)}
+2026-10-31 13:26:55,300 INFO 08. Grants of Plan-Based Awards Table.dta: {'file': '08. Grants of Plan-Based Awards Table.dta', 'rows': 469573, 'cols': 33, 'size_mb': 1428.0, 'dup_grantID': 144, 'dup_grantID+participantid': 144, 'fy_min': np.float64(1998.0), 'fy_max': np.float64(2021.0)}
+2026-10-31 13:26:55,609 INFO 09. Holding Requirements : Stock Ownership Guidelines Data.dta: {'file': '09. Holding Requirements : Stock Ownership Guidelines Data.dta', 'rows': 91138, 'cols': 19, 'size_mb': 52.7, 'fy_min': np.float64(1998.0), 'fy_max': np.float64(2021.0)}
+2026-10-31 13:26:55,686 INFO 10. Option Exercises and Stock Vested Table.dta: {'file': '10. Option Exercises and Stock Vested Table.dta', 'rows': 130454, 'cols': 8, 'size_mb': 8.9, 'fy_min': np.float64(1998.0), 'fy_max': np.float64(2021.0)}
+2026-10-31 13:26:56,119 INFO 11. Outstanding Equity at Fiscal Year-End Table.dta: {'file': '11. Outstanding Equity at Fiscal Year-End Table.dta', 'rows': 534480, 'cols': 10, 'size_mb': 42.8, 'fy_min': np.float64(1998.0), 'fy_max': np.float64(2021.0)}
+2026-10-31 13:26:59,462 INFO 12. Participant Data by Fiscal Year.dta: {'file': '12. Participant Data by Fiscal Year.dta', 'rows': 474170, 'cols': 20, 'size_mb': 234.3, 'dup_CIK+FiscalYear+participantid': 1007, 'dup_CIK+FiscalYear+FiscalMonth+participantid': 0, 'fy_min': np.float64(1998.0), 'fy_max': np.float64(2021.0)}
+2026-10-31 13:26:59,472 INFO 13. Peer Data for Accelerated Performance Goals.dta: {'file': '13. Peer Data for Accelerated Performance Goals.dta', 'rows': 3307, 'cols': 6, 'size_mb': 0.5, 'fy_min': np.float64(1998.0), 'fy_max': np.float64(2013.0)}
+2026-10-31 13:27:00,138 INFO 14. Peer Data for Benchmark Compensation Comparisons.dta: {'file': '14. Peer Data for Benchmark Compensation Comparisons.dta', 'rows': 347463, 'cols': 6, 'size_mb': 59.1, 'fy_min': np.float64(1998.0), 'fy_max': np.float64(2021.0)}
+2026-10-31 13:27:01,008 INFO 15. Peer Data for Relative Performance Goals.dta: {'file': '15. Peer Data for Relative Performance Goals.dta', 'rows': 406837, 'cols': 6, 'size_mb': 81.4, 'fy_min': np.float64(1998.0), 'fy_max': np.float64(2021.0)}
+2026-10-31 13:27:03,298 INFO 16. Relative Performance Goals Data.dta: {'file': '16. Relative Performance Goals Data.dta', 'rows': 89985, 'cols': 30, 'size_mb': 311.2, 'dup_relId': 14293, 'dup_relId+periodId': 342, 'dup_grantId+relId+periodId': 0, 'fy_min': np.float64(1998.0), 'fy_max': np.float64(2021.0)}
+2026-10-31 13:27:03,535 INFO 17. Stock - Outstanding Equity at Fiscal Year-End Table.dta: {'file': '17. Stock - Outstanding Equity at Fiscal Year-End Table.dta', 'rows': 278073, 'cols': 9, 'size_mb': 21.1, 'fy_min': np.float64(1998.0), 'fy_max': np.float64(2021.0)}
+2026-10-31 13:27:03,817 INFO 18. Summary Compensation Table.dta: {'file': '18. Summary Compensation Table.dta', 'rows': 178139, 'cols': 15, 'size_mb': 22.1, 'dup_CIK+FiscalYear+FiscalMonth': 145023, 'fy_min': np.float64(1998.0), 'fy_max': np.float64(2021.0)}
+2026-10-31 13:27:03,826 INFO non-.dta files: ISS_Incentive_Lab_Data_User_Guide_20210708.pdf, .DS_Store
+=== 01_data_inventory.py done in 36s
+=== 02_extract_paper_dictionary.py
+extracted 953 unique keywords from pages 59-63; pdf md5=e50f74f68d94ee35b39cbd78847a470d
+source_page
+59     36
+60    228
+61    247
+62    230
+63    212
+=== 02_extract_paper_dictionary.py done in 1s
+=== 03_goal_extraction.py
+2026-10-31 13:27:07,279 INFO ABS: 716,130 rows | goal ids unique alone: False | dup(goal_id, period) = 54,978 | grants = 211,577
+2026-10-31 13:27:07,352 INFO [key check] ABS goal records: 716,130 rows; key ['grantId', 'goal_id', 'periodId'] duplicates = 0
+2026-10-31 13:27:08,124 INFO REL: 89,985 rows | goal ids unique alone: False | dup(goal_id, period) = 342 | grants = 58,166
+2026-10-31 13:27:08,134 INFO [key check] REL goal records: 89,985 rows; key ['grantId', 'goal_id', 'periodId'] duplicates = 0
+2026-10-31 13:27:08,175 INFO ACC: 7,976 rows | goal ids unique alone: False | dup(goal_id, period) = 0 | grants = 4,951
+2026-10-31 13:27:08,177 INFO [key check] ACC goal records: 7,976 rows; key ['grantId', 'goal_id', 'periodId'] duplicates = 0
+2026-10-31 13:27:09,201 INFO [key check] stacked goal records: 814,091 rows; key ['goal_record_id'] duplicates = 0
+2026-10-31 13:27:21,086 INFO grants table: 469,573 rows; duplicated grantID rows 285; conflicting attributes within dup ids: 0
+2026-10-31 13:27:21,379 INFO goal records matched to a grant: 99.9988% (unmatched 10)
+2026-10-31 13:27:21,392 INFO goal fiscalYear == grant FiscalYear (matched): 100.0000%
+2026-10-31 13:27:22,448 INFO `metric` label first/last fiscal year:
+                                             min     max    size
+metric                                                          
+                                          1998.0  2019.0   62720
+Book Value                                1998.0  2008.0      51
+Business Unit                             1998.0  2021.0    2610
+Cashflow                                  1998.0  2021.0   36513
+EBIT                                      1998.0  2021.0    9501
+EBITDA                                    1998.0  2021.0   39146
+Debt Related                              1998.0  2021.0    2348
+Customer Satisfaction                     1998.0  2021.0    7005
+EBT                                       1998.0  2021.0   13378
+IPO of Subsidiary                         1998.0  2015.0      62
+Operating Income                          1998.0  2021.0   49722
+Individual                                1998.0  2021.0   53804
+FFO                                       1998.0  2021.0    7366
+Earnings                                  1998.0  2021.0   32482
+EVA                                       1998.0  2021.0    7214
+EPS                                       1998.0  2021.0   67573
+Sales                                     1998.0  2021.0   67191
+ROIC                                      1998.0  2021.0   27561
+ROI                                       1998.0  2021.0    2866
+ROE                                       1998.0  2021.0   19149
+ROA                                       1998.0  2021.0    8397
+Profit Margin                             1998.0  2021.0   12547
+Other                                     1998.0  2021.0  191199
+Vague                                     1998.0  2021.0    5847
+Operational                               1998.0  2021.0   11914
+Non-Financial                             2001.0  2021.0   20543
+Same store sales                          2001.0  2016.0     965
+FDA Approval                              2006.0  2015.0      88
+Working Capital                           2006.0  2008.0      10
+Fda Approval                              2007.0  2021.0     435
+Cost Reduction                            2008.0  2009.0      21
+Balance Sheet Related                     2008.0  2008.0       5
+Sales Contracts                           2008.0  2010.0      10
+Same Store Sales                          2014.0  2021.0     557
+Discretionary                             2016.0  2021.0     247
+Gross Revenues                            2016.0  2021.0   13932
+Environmental Protection                  2016.0  2021.0     711
+Tsr                                       2016.0  2021.0   21148
+Staff Health And Safety                   2016.0  2021.0    4854
+Net Income                                2017.0  2021.0    3228
+Stock Price                               2017.0  2021.0    2136
+Society And Human Rights                  2018.0  2021.0      73
+Gross Profit                              2018.0  2021.0     780
+Noi                                       2018.0  2021.0     837
+Csr                                       2018.0  2021.0     990
+Climate Change And Energy Use             2018.0  2021.0     755
+Customer And Product Responsibility       2018.0  2021.0     651
+Diversity                                 2018.0  2021.0    1455
+Staff Relations, Engagement And           2018.0  2020.0      15
+Roc                                       2018.0  2021.0     357
+Ros                                       2018.0  2021.0      23
+Resource Use                              2018.0  2021.0      82
+Staff Relations, Engagement And Training  2018.0  2021.0    1011
+Labor Conditions In Supply Chain          2019.0  2020.0       6
+2026-10-31 13:27:22,476 INFO 2018-taxonomy ESG `metric` labels before 2018: 58 of 10,603
+2026-10-31 13:27:22,521 INFO metricOther blank share by year:
+fiscalYear
+1998.0    0.681
+1999.0    0.676
+2000.0    0.671
+2001.0    0.641
+2002.0    0.630
+2003.0    0.622
+2004.0    0.598
+2005.0    0.603
+2006.0    0.573
+2007.0    0.543
+2008.0    0.546
+2009.0    0.519
+2010.0    0.499
+2011.0    0.448
+2012.0    0.453
+2013.0    0.491
+2014.0    0.498
+2015.0    0.444
+2016.0    0.301
+2017.0    0.337
+2018.0    0.032
+2019.0    0.002
+2020.0    0.000
+2021.0    0.000
+2026-10-31 13:27:22,581 INFO metricType by year:
+metricType      Accounting  Activity-related  Balance Sheet-related  CSR  Cash Flow  Earnings/Profit-related  Economic Value  Environment  Financial/Investment return rati  Financial/Investment return ratios  Liquidity/Solvency-related  Market-related  NA  Non-Financial  Other  Revenue-related  Social  Stock Price
+fiscalYear                                                                                                                                                                                                                                                                                                                 
+1998.0       0        6759                 0                      0    0          0                        0               0            0                                 0                                   0                           0               0   1              0   3073                0       0         1935
+1999.0       0        7328                 0                      0    0          0                        0               0            0                                 0                                   0                           0               0   0              0   3106                0       0         1731
+2000.0       0        7593                 0                      0    0          0                        0               0            0                                 0                                   0                           0               0   0              0   3297                0       0         1730
+2001.0       0        7384                 0                      0    0          0                       19               0            0                                 0                                   0                           0               0   0              1   3263                0       0         1568
+2002.0       4        7967                 0                      0    0          0                        0               0            0                                 0                                   0                           0               0   1              0   3694                0       0         1411
+2003.0       4        8376                 0                      0    0          0                        0               0            0                                 0                                   0                           0               0   0              0   3980                0       0         1708
+2004.0       0       10202                 0                      0    0          0                        0               0            0                                 0                                   0                           0               0   0              0   4678                0       0         1879
+2005.0       0       10963                 0                      0    0          0                        0               0            0                                 0                                   0                           0               0   0              0   4711                0       0         1883
+2006.0       0       22331                 0                      0    0          0                        0               0            0                                 0                                   0                           0               0  12              0   8027                0       0         2279
+2007.0       2       25944                 0                      0    0          0                        0               0            0                                 0                                   0                           0               0   1              0   9534                0       0         2591
+2008.0       5       25453                 0                      0    0          0                        0               0            0                                 0                                   0                           0               0   2              0   9452                0       0         2581
+2009.0       5       25640                 0                      0    0          0                        0               0            0                                 0                                   0                           0               0   0              0  10628                0       0         2721
+2010.0      14       26089                 0                      0    0          0                        0               0            0                                 0                                   0                           0               0   3              0  11377                0       0         3079
+2011.0       0       26927                 0                      0    0          0                        0               0            0                                 0                                   0                           0               0  19              0  11693                0       0         3413
+2012.0       8       29265                 0                      0    0          0                        0               0            0                                 0                                   0                           0               0   2              0  12599                0       0         4177
+2013.0       1       30391                 0                      0    0          0                        0               0            0                                 0                                   0                           0               0  20              0  11943                0       0         4574
+2014.0      23       30802                 0                      0    0          0                        4               0            0                                 0                                   0                           0               0   3              4  13411                4       0         5211
+2015.0      17       30426                 0                      0    0          0                       26               0            0                                 0                                   0                           0               0  29              0  14445                5       0         5450
+2016.0      47       28921                 5                      0    0          1                       73              20            5                                 5                                  49                           5              29   3             30  12974               15      30         5577
+2017.0       5       28988                 5                      0    0         24                      297              12            0                                 5                                  86                           0              84   0             43  12634              147      28         5947
+2018.0       1        2309               437                    337  142       2524                    11253             300          278                               520                                2614                         864            5266   0           6060   6850             4626    1545          499
+2019.0       0         255               569                    399  173       2773                    12181             190          348                               541                                2673                        1078            5859   0           6382   6373             5173    1809           71
+2020.0       0           0               479                    386  208       2943                    11234             156          448                               574                                2558                        1400            6489   0           7544   5926             5208    2061            0
+2021.0       0           0               383                    364  467       2792                    10055             121          675                               601                                2295                        1322            5845   0           6798   5220             4560    2702            0
+2026-10-31 13:27:23,227 INFO saved 814,091 goal records
+=== 03_goal_extraction.py done in 19s
+=== 04_text_classification.py
+2026-10-31 13:27:31,434 INFO classification units: 38,590 (blank-text context units: 10)
+2026-10-31 13:28:07,153 INFO esg_strict (units): {'0': 27666, 'Unknown': 7884, '1': 3040} | goal-row weighted: {'0': 665174, '1': 29906, 'Unknown': 119011}
+2026-10-31 13:28:07,162 INFO esg_extended (units): {'0': 25951, 'Unknown': 8261, '1': 4378} | goal-row weighted: {'0': 645980, '1': 45079, 'Unknown': 123032}
+2026-10-31 13:28:07,175 INFO method x strict (rows):
+esg_strict                  0      1  Unknown
+classification_method                        
+deterministic_rule     604188  29906        0
+structured_context      60986      0        0
+unresolved                  0      0   119011
+2026-10-31 13:28:07,175 INFO rules: 50; version v1.0
+=== 04_text_classification.py done in 44s
+=== 05_dictionary_deliverables.py
+2026-10-31 13:28:07,761 INFO (b1) 50 rules written
+2026-10-31 13:28:10,967 INFO (b2) decisions:
+decision_v1
+no_occurrence_1998_2021; not_carried_forward_or_untested                  439
+retained_strict                                                           128
+no_occurrence_1998_2021; covered_by_v1_rule                               112
+context_required_keyword_alone_insufficient; mostly_non_esg_in_context     84
+context_required_keyword_alone_insufficient; mostly_strict_in_context      74
+context_required_keyword_alone_insufficient; mixed_in_context              73
+excluded_esg_adjacent_by_definition                                        18
+reassigned_extended_only                                                   11
+retained_strict_with_context_exclusions                                    10
+excluded_generic_or_false_positive                                          4
+2026-10-31 13:28:11,000 INFO (b3) 38 new expressions; 88 units / 575 goal rows ESG under v1 but unmatched by AGHJ
+2026-10-31 13:28:11,002 INFO (c) change log written
+=== 05_dictionary_deliverables.py done in 4s
+=== 06_dataset_A_text_dictionary.py
+2026-10-31 13:28:11,494 INFO no adjudicated human labels found -> all labels are model/rule-based (provisional)
+2026-10-31 13:28:11,495 INFO invariant check strict=1 => extended=1 violations: 0
+2026-10-31 13:28:12,907 INFO [dta] ESG_Text_Dictionary.dta: 38,590 obs x 43 vars; key=['text_id']; renamed(overlong)={}
+2026-10-31 13:28:12,932 INFO status x strict:
+esg_strict             -1.0    0.0   1.0
+classification_status                   
+provisional               0  27666  3040
+unknown                7884      0     0
+=== 06_dataset_A_text_dictionary.py done in 2s
+=== 07_dataset_B_kpi.py
+2026-10-31 13:28:39,692 INFO [dta] ESG_Goal_Record_Classification.dta: 814,091 obs x 29 vars; key=['goal_record_id']; renamed(overlong)={}
