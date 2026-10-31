@@ -1,94 +1,31 @@
-2026-10-31 16:28:36,179 INFO [PASS] A: primary key text_id unique & non-missing = 38590 
-2026-10-31 16:28:36,187 INFO [PASS] A: text_key unique (one label per text unit) = 38590 
-2026-10-31 16:28:36,190 INFO [PASS] A: esg_strict in {0,1,.} = {0.0: 28022, nan: 7525, 1.0: 3043} 
-2026-10-31 16:28:36,192 INFO [PASS] A: esg_extended in {0,1,.} = {0.0: 26314, nan: 7901, 1.0: 4375} 
-2026-10-31 16:28:36,194 INFO [PASS] A: esg_extended_only in {0,1,.} = {0.0: 29357, nan: 7925, 1.0: 1308} 
-2026-10-31 16:28:36,197 INFO [PASS] A: esg_e in {0,1,.} = {0.0: 30342, nan: 7652, 1.0: 596} 
-2026-10-31 16:28:36,199 INFO [PASS] A: esg_s in {0,1,.} = {0.0: 28514, nan: 7652, 1.0: 2424} 
-2026-10-31 16:28:36,201 INFO [PASS] A: esg_g in {0,1,.} = {0.0: 30833, nan: 7658, 1.0: 99} 
-2026-10-31 16:28:36,202 INFO [PASS] A: Strict=1 implies Extended=1 =  
-2026-10-31 16:28:36,202 INFO [PASS] A: E/S/G=1 implies Strict=1 =  
-2026-10-31 16:28:36,203 INFO [PASS] A: status consistent (unknown <=> strict missing; confirmed <=> human_reviewed) =  
-2026-10-31 16:28:36,204 INFO [PASS] A: every label has a method and a reason =  
-2026-10-31 16:28:36,230 INFO [PASS] A: text_id = 'T' + SHA-1(text_key)[:10] (stable across versions) =  
-2026-10-31 16:28:36,245 INFO [PASS] A: esg_extended_only follows three-state rule (Unknown when Strict Unknown & Extended 1) =  
-2026-10-31 16:28:36,250 INFO [PASS] A: pillars 0 when Strict = 0 and Unknown when Strict Unknown =  
-2026-10-31 16:28:36,250 INFO [PASS] A: classifier_version recorded = v1.1 
-2026-10-31 16:28:36,251 INFO [PASS] A: year range within 1998-2021 = 1998.0-2021.0 
-2026-10-31 16:28:36,252 INFO [INFO] A: share of units Unknown (Strict) = 0.195 
-2026-10-31 16:28:36,253 INFO [INFO] A: units using structured context (blank text) = 4 
-2026-10-31 16:28:36,253 INFO [WARN] A: human-reviewed units = 0 
-2026-10-31 16:28:40,987 INFO [PASS] B-alt: goal_record_id unique = 814091 
-2026-10-31 16:28:41,089 INFO [PASS] B-alt: goal-record labels equal dictionary labels (same text -> same label in every year) =  
-2026-10-31 16:28:41,136 INFO [PASS] B-alt: no text unit has >1 Strict label across years = 0 
-2026-10-31 16:28:41,137 INFO [INFO] B-alt: goal records not matched to a grant = 10 
-2026-10-31 16:28:45,868 INFO [PASS] B: primary key kpi_id unique = 654123 
-2026-10-31 16:28:45,946 INFO [PASS] B: (grantid, goal_source, text_id) unique =  
-2026-10-31 16:28:45,949 INFO [PASS] B: sum kpi_source_count = goal records = 814,091 vs 814,091 
-2026-10-31 16:28:46,089 INFO [PASS] B: KPI labels equal dictionary labels =  
-2026-10-31 16:28:46,095 INFO [INFO] B: missing identifiers (cik/fiscalyear/participantid) = 18 
-2026-10-31 16:28:46,096 INFO [INFO] B: KPIs with incomplete keys = 9 
-2026-10-31 16:28:46,099 INFO [PASS] B: fiscalyear within 1998-2021 =  
-2026-10-31 16:28:50,420 INFO [PASS] C: primary key grantid unique & non-missing = 469429 
-2026-10-31 16:28:50,424 INFO [PASS] C: no missing cik / fiscalyear / participantid =  
-2026-10-31 16:28:50,445 INFO [PASS] C: grant_esg_strict in {0,1,.} =  
-2026-10-31 16:28:50,460 INFO [PASS] C: grant_esg_extended in {0,1,.} =  
-2026-10-31 16:28:50,474 INFO [PASS] C: grant_esg_e in {0,1,.} =  
-2026-10-31 16:28:50,489 INFO [PASS] C: grant_esg_s in {0,1,.} =  
-2026-10-31 16:28:50,503 INFO [PASS] C: grant_esg_g in {0,1,.} =  
-2026-10-31 16:28:50,504 INFO [PASS] C: no negative grant_value = 0 
-2026-10-31 16:28:50,515 INFO [PASS] C: grant_date not before 1990 or after 2023 = 1995-07-26 00:00:00 - 2022-03-24 00:00:00 
-2026-10-31 16:28:50,520 INFO [INFO] C: expiration_date >= grant_date (where both present) = 49 
-2026-10-31 16:28:50,521 INFO [INFO] C: grant dates flagged suspect = 256 
-2026-10-31 16:29:10,681 INFO [PASS] C: grant_esg_strict re-derived from KPI master matches =  
-2026-10-31 16:29:10,682 INFO [PASS] C: grant_n_kpis matches KPI master =  
-2026-10-31 16:29:10,685 INFO [PASS] C: esg + non-esg + unknown KPIs = n_kpis =  
-2026-10-31 16:29:10,691 INFO [PASS] C: time grants without perf condition have no KPIs =  
-2026-10-31 16:29:10,691 INFO [INFO] C: duplicated grantIDs: resolved type consistent with goal files = 141 
-2026-10-31 16:29:10,693 INFO [PASS] C: grants with incomplete goal data are never classified 0 = 335 
-2026-10-31 16:29:10,706 INFO [PASS] C: grant_value_combined = fair value, else non-equity target; source flag consistent =  
-2026-10-31 16:29:10,715 INFO [INFO] C: value source distribution = {'grant_date_fair_value': 278382, 'nonequity_target_payout': 106524, 'missing': 84523} 
-2026-10-31 16:29:10,720 INFO [PASS] C: perf grants with missing goal data (Unknown, not 0) = 159 
-2026-10-31 16:29:10,737 INFO [PASS] C: all 10 share/coverage variables within [0,1] = 0 
-2026-10-31 16:29:10,740 INFO [PASS] C: lower bound <= upper bound (2 pairs) = 0 
-2026-10-31 16:29:12,103 INFO [PASS] D: primary key (cik, fiscalyear, participantid) unique = 164832 
-2026-10-31 16:29:12,104 INFO [PASS] D: sum exec_n_grants = grants = 469,429 
-2026-10-31 16:29:19,998 INFO [PASS] D: exec grant / ESG-grant counts re-derived from grant master =  
-2026-10-31 16:29:19,999 INFO [PASS] D: adoption=1 iff >=1 ESG grant =  
-2026-10-31 16:29:20,024 INFO [PASS] D: all 47 share/coverage variables within [0,1] = 0 
-2026-10-31 16:29:20,033 INFO [PASS] D: lower bound <= upper bound (14 pairs) = 0 
-2026-10-31 16:29:20,036 INFO [INFO] D: identity match status = {'matched_exact': 164808, 'unmatched': 24} 
-2026-10-31 16:29:20,183 INFO [PASS] E: primary key unique = 33278 
-2026-10-31 16:29:20,245 INFO [PASS] E: strict CEO sample: exactly one CEO per firm-year = 32231 
-2026-10-31 16:29:20,285 INFO [PASS] E: every CEO row exists as an executive-year or has no grants =  
-2026-10-31 16:29:20,287 INFO [INFO] E: CEO identification status = {'unique_current_ceo_flag': 32231, 'multiple_current_ceo_flags': 1033, 'rolecode_fallback_unique': 14} 
-2026-10-31 16:29:20,289 INFO [PASS] E: CEOs without grants have count variables = 0 =  
-2026-10-31 16:29:20,298 INFO [PASS] E: all 47 share/coverage variables within [0,1] = 0 
-2026-10-31 16:29:20,301 INFO [PASS] E: lower bound <= upper bound (14 pairs) = 0 
-2026-10-31 16:29:20,454 INFO [PASS] F: primary key (cik, fiscalyear) unique = 33328 
-2026-10-31 16:29:20,455 INFO [PASS] F: sum firm_n_grants = grants =  
-2026-10-31 16:29:20,496 INFO [PASS] F: firm counts = sum over executive-years (grants, perf, ESG, unknown) =  
-2026-10-31 16:29:22,448 INFO [PASS] F: firm adoption = aggregation of executive adoption =  
-2026-10-31 16:29:22,449 INFO [PASS] F: firm-years without grants have missing (not 0) ESG measures = 776 
-2026-10-31 16:29:22,451 INFO [PASS] F: firm-years without grants have count variables = 0 (not missing) =  
-2026-10-31 16:29:22,452 INFO [PASS] F: pillar E adoption = 1 implies Strict perf adoption = 1 =  
-2026-10-31 16:29:22,452 INFO [PASS] F: pillar S adoption = 1 implies Strict perf adoption = 1 =  
-2026-10-31 16:29:22,452 INFO [PASS] F: pillar G adoption = 1 implies Strict perf adoption = 1 =  
-2026-10-31 16:29:22,867 INFO [PASS] F: firm E adoption re-derived from grants (pillar-specific zero rule) =  
-2026-10-31 16:29:22,870 INFO [PASS] F: firm E perf-grant share lower bound re-derived from grants =  
-2026-10-31 16:29:23,011 INFO [PASS] F: firm S adoption re-derived from grants (pillar-specific zero rule) =  
-2026-10-31 16:29:23,013 INFO [PASS] F: firm S perf-grant share lower bound re-derived from grants =  
-2026-10-31 16:29:23,121 INFO [PASS] F: firm G adoption re-derived from grants (pillar-specific zero rule) =  
-2026-10-31 16:29:23,125 INFO [PASS] F: firm G perf-grant share lower bound re-derived from grants =  
-2026-10-31 16:29:23,127 INFO [PASS] F: S adoption is not identical to Strict adoption (guards against a pillar/strict name collision) =  
-2026-10-31 16:29:23,145 INFO [PASS] F: all 47 share/coverage variables within [0,1] = 0 
-2026-10-31 16:29:23,150 INFO [PASS] F: lower bound <= upper bound (14 pairs) = 0 
-2026-10-31 16:29:23,217 INFO [PASS] G: primary key (cik, fiscalyear) unique = 31944 
-2026-10-31 16:29:23,227 INFO [PASS] G: non-CEO grants <= firm grants =  
-2026-10-31 16:29:23,236 INFO [PASS] G: all 47 share/coverage variables within [0,1] = 0 
-2026-10-31 16:29:23,239 INFO [PASS] G: lower bound <= upper bound (14 pairs) = 0 
-2026-10-31 16:29:23,240 INFO [INFO] audit: audit_goal_grants_missing_in_grant_table.csv = 3 
-2026-10-31 16:29:23,240 INFO [INFO] audit: audit_grants_unmatched_participant.csv = 117 
-2026-10-31 16:29:23,240 INFO [INFO] audit: audit_ceo_exceptions.csv = 1960 
-2026-10-31 16:29:23,240 INFO [WARN] validation: independent human validation = pending_human_labels labels are PROVISIONAL until human labels exist
-2026-10-31 16:29:23,245 INFO audit summary: {'PASS': 77, 'INFO': 14, 'WARN': 2}
+2026-10-31 20:53:27,367 INFO [PASS] A: primary key text_id unique & non-missing = 38590 
+2026-10-31 20:53:27,375 INFO [PASS] A: text_key unique (one label per text unit) = 38590 
+2026-10-31 20:53:27,379 INFO [PASS] A: esg_strict in {0,1,.} = {0.0: 28022, nan: 7525, 1.0: 3043} 
+2026-10-31 20:53:27,382 INFO [PASS] A: esg_extended in {0,1,.} = {0.0: 26314, nan: 7901, 1.0: 4375} 
+2026-10-31 20:53:27,385 INFO [PASS] A: esg_extended_only in {0,1,.} = {0.0: 29357, nan: 7925, 1.0: 1308} 
+2026-10-31 20:53:27,387 INFO [PASS] A: esg_e in {0,1,.} = {0.0: 30342, nan: 7652, 1.0: 596} 
+2026-10-31 20:53:27,390 INFO [PASS] A: esg_s in {0,1,.} = {0.0: 28514, nan: 7652, 1.0: 2424} 
+2026-10-31 20:53:27,393 INFO [PASS] A: esg_g in {0,1,.} = {0.0: 30833, nan: 7658, 1.0: 99} 
+2026-10-31 20:53:27,393 INFO [PASS] A: Strict=1 implies Extended=1 =  
+2026-10-31 20:53:27,394 INFO [PASS] A: E/S/G=1 implies Strict=1 =  
+2026-10-31 20:53:27,396 INFO [PASS] A: status consistent (unknown/confirmed_unknown <=> strict missing; confirmed* <=> human_reviewed) =  
+2026-10-31 20:53:27,397 INFO [PASS] A: every label has a method and a reason =  
+2026-10-31 20:53:27,430 INFO [PASS] A: text_id = 'T' + SHA-1(text_key)[:10] (stable across versions) =  
+2026-10-31 20:53:27,451 INFO [PASS] A: esg_extended_only follows three-state rule (Unknown when Strict Unknown & Extended 1) =  
+2026-10-31 20:53:27,456 INFO [PASS] A: pillars 0 when Strict = 0 and Unknown when Strict Unknown =  
+2026-10-31 20:53:27,458 INFO [PASS] A: classifier_version recorded = v1.1 
+2026-10-31 20:53:27,458 INFO [PASS] A: year range within 1998-2021 = 1998.0-2021.0 
+2026-10-31 20:53:27,459 INFO [INFO] A: share of units Unknown (Strict) = 0.195 
+2026-10-31 20:53:27,461 INFO [INFO] A: units using structured context (blank text) = 4 
+2026-10-31 20:53:27,461 INFO [WARN] A: human-reviewed units = 0 
+2026-10-31 20:53:31,725 INFO [PASS] B-alt: goal_record_id unique = 814091 
+2026-10-31 20:53:31,837 INFO [PASS] B-alt: goal-record labels equal dictionary labels (same text -> same label in every year) =  
+2026-10-31 20:53:31,886 INFO [PASS] B-alt: no text unit has >1 Strict label across years = 0 
+2026-10-31 20:53:31,887 INFO [INFO] B-alt: goal records not matched to a grant = 10 
+2026-10-31 20:53:38,782 INFO [PASS] B: primary key kpi_id unique = 654123 
+2026-10-31 20:53:38,846 INFO [PASS] B: (grantid, goal_source, text_id) unique =  
+2026-10-31 20:53:38,847 INFO [PASS] B: sum kpi_source_count = goal records = 814,091 vs 814,091 
+2026-10-31 20:53:39,005 INFO [PASS] B: KPI labels equal dictionary labels =  
+2026-10-31 20:53:39,012 INFO [INFO] B: missing identifiers (cik/fiscalyear/participantid) = 18 
+2026-10-31 20:53:39,013 INFO [INFO] B: KPIs with incomplete keys = 9 
+2026-10-31 20:53:39,015 INFO [PASS] B: fiscalyear within 1998-2021 =  

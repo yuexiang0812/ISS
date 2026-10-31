@@ -383,3 +383,47 @@ fiscalyear
      2021.0      44200                    0.000          0.121         0.083               0.087
 === 14_annual_trends.py done in 2s
 === 15_variable_dictionary.py
+2026-10-31 20:53:26,555 INFO dataset summary:
+                           dataset  observations  variables                  primary_key  key_unique  key_missing  year_min  year_max
+           ESG_Text_Dictionary.dta         38590         43                      text_id        True            0    1998.0    2021.0
+                ESG_KPI_Master.dta        654123         38                       kpi_id        True            0    1998.0    2021.0
+              ESG_Grant_Master.dta        469429         82                      grantid        True            0    1998.0    2021.0
+       ESG_Executive_Firm_Year.dta        164832         96 cik+fiscalyear+participantid        True            0    1998.0    2021.0
+             ESG_CEO_Firm_Year.dta         33278         99 cik+fiscalyear+participantid        True            0    1998.0    2021.0
+          ESG_Firm_Year_Master.dta         33328         94               cik+fiscalyear        True            0    1998.0    2021.0
+          ESG_NonCEO_Firm_Year.dta         31944         86               cik+fiscalyear        True            0    1998.0    2021.0
+ESG_Goal_Record_Classification.dta        814091         29               goal_record_id        True            0    1998.0    2021.0
+2026-10-31 20:53:26,556 INFO variable dictionary: 567 variables
+=== 15_variable_dictionary.py done in 25s
+=== 16_quality_audit.py
+2026-10-31 20:53:27,367 INFO [PASS] A: primary key text_id unique & non-missing = 38590 
+2026-10-31 20:53:27,375 INFO [PASS] A: text_key unique (one label per text unit) = 38590 
+2026-10-31 20:53:27,379 INFO [PASS] A: esg_strict in {0,1,.} = {0.0: 28022, nan: 7525, 1.0: 3043} 
+2026-10-31 20:53:27,382 INFO [PASS] A: esg_extended in {0,1,.} = {0.0: 26314, nan: 7901, 1.0: 4375} 
+2026-10-31 20:53:27,385 INFO [PASS] A: esg_extended_only in {0,1,.} = {0.0: 29357, nan: 7925, 1.0: 1308} 
+2026-10-31 20:53:27,387 INFO [PASS] A: esg_e in {0,1,.} = {0.0: 30342, nan: 7652, 1.0: 596} 
+2026-10-31 20:53:27,390 INFO [PASS] A: esg_s in {0,1,.} = {0.0: 28514, nan: 7652, 1.0: 2424} 
+2026-10-31 20:53:27,393 INFO [PASS] A: esg_g in {0,1,.} = {0.0: 30833, nan: 7658, 1.0: 99} 
+2026-10-31 20:53:27,393 INFO [PASS] A: Strict=1 implies Extended=1 =  
+2026-10-31 20:53:27,394 INFO [PASS] A: E/S/G=1 implies Strict=1 =  
+2026-10-31 20:53:27,396 INFO [PASS] A: status consistent (unknown/confirmed_unknown <=> strict missing; confirmed* <=> human_reviewed) =  
+2026-10-31 20:53:27,397 INFO [PASS] A: every label has a method and a reason =  
+2026-10-31 20:53:27,430 INFO [PASS] A: text_id = 'T' + SHA-1(text_key)[:10] (stable across versions) =  
+2026-10-31 20:53:27,451 INFO [PASS] A: esg_extended_only follows three-state rule (Unknown when Strict Unknown & Extended 1) =  
+2026-10-31 20:53:27,456 INFO [PASS] A: pillars 0 when Strict = 0 and Unknown when Strict Unknown =  
+2026-10-31 20:53:27,458 INFO [PASS] A: classifier_version recorded = v1.1 
+2026-10-31 20:53:27,458 INFO [PASS] A: year range within 1998-2021 = 1998.0-2021.0 
+2026-10-31 20:53:27,459 INFO [INFO] A: share of units Unknown (Strict) = 0.195 
+2026-10-31 20:53:27,461 INFO [INFO] A: units using structured context (blank text) = 4 
+2026-10-31 20:53:27,461 INFO [WARN] A: human-reviewed units = 0 
+2026-10-31 20:53:31,725 INFO [PASS] B-alt: goal_record_id unique = 814091 
+2026-10-31 20:53:31,837 INFO [PASS] B-alt: goal-record labels equal dictionary labels (same text -> same label in every year) =  
+2026-10-31 20:53:31,886 INFO [PASS] B-alt: no text unit has >1 Strict label across years = 0 
+2026-10-31 20:53:31,887 INFO [INFO] B-alt: goal records not matched to a grant = 10 
+2026-10-31 20:53:38,782 INFO [PASS] B: primary key kpi_id unique = 654123 
+2026-10-31 20:53:38,846 INFO [PASS] B: (grantid, goal_source, text_id) unique =  
+2026-10-31 20:53:38,847 INFO [PASS] B: sum kpi_source_count = goal records = 814,091 vs 814,091 
+2026-10-31 20:53:39,005 INFO [PASS] B: KPI labels equal dictionary labels =  
+2026-10-31 20:53:39,012 INFO [INFO] B: missing identifiers (cik/fiscalyear/participantid) = 18 
+2026-10-31 20:53:39,013 INFO [INFO] B: KPIs with incomplete keys = 9 
+2026-10-31 20:53:39,015 INFO [PASS] B: fiscalyear within 1998-2021 =  
