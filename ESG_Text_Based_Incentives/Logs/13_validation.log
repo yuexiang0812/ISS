@@ -1,9 +1,9 @@
-2026-10-31 20:46:09,391 INFO frozen v1.0 sample rebuilt from id list: 601 units
-2026-10-31 20:46:09,403 INFO sample by period x v1.0 predicted class:
+2026-10-31 20:52:59,796 INFO frozen v1.0 sample re-used: 601 units (never redrawn)
+2026-10-31 20:52:59,806 INFO sample by period x v1.0 predicted class:
 pred           ext_only  non_esg  strict  unknown
 period                                           
 both                 15       50      32       30
 post2018_only        42       75      75       45
 pre2018_only         42       75      75       45
-2026-10-31 20:46:09,420 INFO human review queue: 1001 units (of 1001 flagged)
-2026-10-31 20:46:09,878 INFO inter-coder agreement: {'intercoder_esg_strict': {'agreement': np.float64(0.4309), 'cohen_kappa': np.float64(0.0272), 'n': 601}, 'intercoder_esg_extended': {'agreement': np.float64(0.411), 'cohen_kappa': np.float64(0.0252), 'n': 601}, 'intercoder_esg_e': {'agreement': np.float64(0.4309), 'cohen_kappa': np.float64(0.0272), 'n': 601}, 'intercoder_esg_s': {'agreement': np.float64(0.5324), 'cohen_kappa': np.float64(0.0573), 'n': 601}, 'intercoder_esg_g': {'agreement': np.float64(0.5324), 'cohen_kappa': np.float64(0.0573), 'n': 601}}
+2026-10-31 20:52:59,821 INFO human review queue: 1001 units (of 1001 flagged)
+2026-10-31 20:52:59,822 INFO NO ADJUDICATED HUMAN LABELS: classification performance is NOT validated; all labels are provisional. Two coders code the blind sheets (601 units, Validation/validation_coding_sheet_v1.0_coder*_local.csv), save them as Validation/human_labels/coder1_labels.csv and coder2_labels.csv, adjudicate disagreements into Validation/human_labels/adjudicated_labels.csv (values 1/0/U), then run: python master_run.py 06

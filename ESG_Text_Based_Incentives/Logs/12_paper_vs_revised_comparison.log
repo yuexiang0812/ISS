@@ -1,4 +1,4 @@
-2026-10-31 16:28:04,399 INFO overlap (units) paper vs revised STRICT:
+2026-10-31 20:52:50,607 INFO overlap (units) paper vs revised STRICT:
 rev_strict  rev_strict=0  rev_strict=1  rev_strict=Unknown    All
 paper                                                            
 paper=0            25245           100                6361  31706
@@ -10,7 +10,7 @@ paper
 paper=0      23945       1050             6711  31706
 paper=1       2369       3325             1190   6884
 All          26314       4375             7901  38590
-2026-10-31 16:28:04,455 INFO overlap (goal_rows) paper vs revised STRICT:
+2026-10-31 20:52:50,657 INFO overlap (goal_rows) paper vs revised STRICT:
 rev_strict  rev_strict=0  rev_strict=1  rev_strict=Unknown     All
 paper                                                             
 paper=0           651211           677              109080  760968
@@ -22,7 +22,7 @@ paper
 paper=0     635286      12757           112925  760968
 paper=1      13489      32554             7080   53123
 All         648775      45311           120005  814091
-2026-10-31 16:28:05,244 INFO annual comparison (2014-2021):
+2026-10-31 20:52:51,476 INFO annual comparison (2014-2021):
             paper_esg_row_share  rev_strict_row_share_lb  rev_unknown_row_share  exec_perf_paper_adopt  exec_perf_rev_strict_adopt_lb  exec_perf_rev_strict_adopt_ub  exec_perf_iss_adopt_diag  firm_perf_paper_adopt  firm_perf_rev_strict_adopt_lb  firm_perf_iss_adopt_diag
 fiscalyear                                                                                                                                                                                                                                                                    
 2014.0                    0.063                    0.038                  0.140                  0.214                          0.129                          0.634                     0.000                  0.245                          0.139                     0.000
@@ -33,7 +33,7 @@ fiscalyear
 2019.0                    0.079                    0.044                  0.113                  0.242                          0.156                          0.593                     0.160                  0.274                          0.168                     0.168
 2020.0                    0.094                    0.056                  0.120                  0.284                          0.187                          0.629                     0.189                  0.306                          0.194                     0.193
 2021.0                    0.121                    0.083                  0.121                  0.379                          0.294                          0.698                     0.293                  0.404                          0.304                     0.301
-2026-10-31 16:28:05,280 INFO disagreement categories:
+2026-10-31 20:52:51,512 INFO disagreement categories:
                                  units  goal_rows
 cat                                              
 agree_esg                         2943      29442
@@ -43,7 +43,7 @@ paper_esg_rev_extended_only        382       3112
 paper_esg_rev_non_esg             1512       8558
 paper_esg_rev_unknown             1117       6705
 paper_non_esg_rev_strict           100        677
-2026-10-31 16:28:11,468 INFO approximate replication of AGHJ (2025) Table 1 (% obs whose executive has an ESG metric):
+2026-10-31 20:52:59,306 INFO approximate replication of AGHJ (2025) Table 1 (% obs whose executive has an ESG metric):
             n_obs  our_paper_dictionary_pct  our_v_strict_lb_pct  aghj_2025_table1_pct
 fiscalyear                                                                            
 2008.0       5450                      20.5                 11.7                  22.9

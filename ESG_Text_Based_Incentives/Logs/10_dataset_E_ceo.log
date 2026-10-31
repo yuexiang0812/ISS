@@ -1,11 +1,11 @@
-2026-10-31 16:27:52,383 INFO firm-year CEO identification status:
+2026-10-31 20:52:37,819 INFO firm-year CEO identification status:
 ceo_identification_status
 unique_current_ceo_flag       32231
 no_ceo_identified               515
 multiple_current_ceo_flags      505
 rolecode_fallback_unique         14
 rolecode_ambiguous                1
-2026-10-31 16:27:52,462 INFO exception table rows: 1,960 (firm-years: 1,035)
-2026-10-31 16:27:52,552 INFO [key check] CEO-Firm-Year: 33,278 rows; key ['cik', 'fiscalyear', 'participantid'] duplicates = 0
-2026-10-31 16:27:52,573 INFO CEO-firm-years: 33,278; strict sample 32,231; with grants 30,819
-2026-10-31 16:27:53,242 INFO [dta] ESG_CEO_Firm_Year.dta: 33,278 obs x 99 vars; key=['cik', 'fiscalyear', 'participantid']; renamed(overlong)={'ceo_esg_perf_cash_grant_share_strict': 'ceo_esg_perf_cash_gshr_str', 'ceo_esg_perf_equity_grant_share_strict': 'ceo_esg_perf_equity_gshr_str', 'ceo_esg_perf_grant_share_extended': 'ceo_esg_perf_grant_share_ext', 'ceo_perf_esg_compensation_value_share': 'ceo_perf_esg_comp_value_share'}
+2026-10-31 20:52:37,885 INFO exception table rows: 1,960 (firm-years: 1,035)
+2026-10-31 20:52:37,987 INFO [key check] CEO-Firm-Year: 33,278 rows; key ['cik', 'fiscalyear', 'participantid'] duplicates = 0
+2026-10-31 20:52:38,005 INFO CEO-firm-years: 33,278; strict sample 32,231; with grants 30,819
+2026-10-31 20:52:38,519 INFO [dta] ESG_CEO_Firm_Year.dta: 33,278 obs x 99 vars; key=['cik', 'fiscalyear', 'participantid']; renamed(overlong)={'ceo_esg_perf_cash_grant_share_strict': 'ceo_esg_perf_cash_gshr_str', 'ceo_esg_perf_equity_grant_share_strict': 'ceo_esg_perf_equity_gshr_str', 'ceo_esg_perf_grant_share_extended': 'ceo_esg_perf_grant_share_ext', 'ceo_perf_esg_compensation_value_share': 'ceo_perf_esg_comp_value_share'}
