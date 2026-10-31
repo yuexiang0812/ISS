@@ -14,4 +14,17 @@ v1.0,addition,S_ohs,"Added safety expressions absent from AGHJ: EH&S, HS&E, H&S,
 v1.0,addition,E_*,"Added: flaring/flare volumes, reportable/significant/off-property releases, scrubbers, reclamation, leak detection, particulate",b_new_expressions
 v1.0,addition,S_dei/S_human_capital/G_ethics,"Added: D&I, DE&I, ethical conduct, associate satisfaction/experience/development, corporate well-being, retain talent, staff/teller/labor turnover, board evaluation",b_new_expressions
 v1.0,pillar,GEN_*,ESG/CSR/citizenship/sustainability not forced into E/S/G: pillar flags Unknown unless a specific pillar term co-occurs ('sustainability' then treated as qualifier),
-v1.0,freeze,all,Rules frozen before drawing the independent validation sample (Validation/validation_sample_v1.0.csv),
+v1.0,freeze,all,Rules frozen before drawing the independent validation sample (Validation/validation_sample_v1.0_KEY_local.csv),
+v1.1,review,all,Full re-review of v1.0 on the data: every suspicious pattern tested on real texts; findings in Documentation/review_findings_v1.1.csv,Documentation/review_findings_v1.1.csv
+v1.1,definition,G_governance / A_governance_bare,"Bare 'governance' no longer Strict G (task brief 4.3 requires specific governance content); now Strict Unknown. Strict G = corporate governance, board, shareholder rights, say-on-pay, governance ratings",b_revised_rules_v1.1.csv
+v1.1,exclusion,J_esg_business_line,ESG products / segment sales / ESG AUM are business lines -> 0/0 flagged (were Strict GEN),
+v1.1,exclusion,J_public_affairs,Government relations / lobbying / legislative advocacy -> 0/0 flagged (government relations was Extended),
+v1.1,reassign,X_customer route,Customer/patient/member engagement routed to Extended before the employee-engagement rule ('Customer Engagement Index' was Strict S),
+v1.1,fix,S_human_capital,'partner' removed as an employee noun; retention recognised at a distance ('retention and development of high-potential employees'); word boundary on 'mental health',
+v1.1,addition,S_ohs,"Worker radiation exposure (collective dose, RFO dose), loss of containment / process fluid containment, LCE acronym; protected 'safe/healthy work environment'",
+v1.1,addition,S_access_inclusion / S_dei / S_human_rights / E_waste / X_quality_care,"Community Reinvestment Act, health equity, animal welfare / cage-free, coal ash, Medicare STARS",
+v1.1,fix,masks,"+ 'satisfaction of' (fulfilment), insurance 'individual' product lines, discretionary cash flow/spend, social media, community count (now non-ESG evidence), segment names (corrugated and recycling, user-experience segment, environmental-services segment), 'diverse' word boundary (Diversey)",
+v1.1,fix,N_financial / N_operating,"Non-ESG vocabulary extended (balance sheet, CASM/RASM, dayrates, LIFO, rating agencies, diversification, mining volumes, active users, clinical-dose milestones ...) -> fewer spurious Unknowns",
+v1.1,fix,pillars,"A pillar-specific ambiguous hit leaves that pillar Unknown when the text is Strict ESG via another pillar (e.g. 'Safety and Governance' -> G Unknown, not 0)",Code/classify.py
+v1.1,fix,esg_extended_only,Extended-only is Unknown (not 1) when Strict is Unknown and Extended is 1,Code/classify.py
+v1.1,id,text_id,text_id = 'T' + first 10 hex of SHA-1(text_key): stable across versions; human labels join on text_key / sample_id,Code/04_text_classification.py

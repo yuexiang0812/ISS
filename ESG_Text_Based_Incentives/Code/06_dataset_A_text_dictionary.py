@@ -1,14 +1,17 @@
 """Step 06 — Dataset A: ESG_Text_Dictionary.dta (one row per classification unit).
 
-Human review integration: if Validation/human_labels/adjudicated_labels.csv exists (columns text_id,
-human_esg_strict, human_esg_extended, human_esg_e, human_esg_s, human_esg_g, reviewer, review_date),
-adjudicated human labels override the model labels (classification_method='human_review',
-classification_status='confirmed', human_reviewed=1). The model (v1.0 rule) labels are always kept
+中文说明：生成文本分类字典（数据集 A）。若存在裁定后的人工标注（Validation/human_labels/adjudicated_labels.csv），
+人工标签覆盖模型标签（状态 confirmed、方法 human_review、human_reviewed=1）；模型原始标签始终保留在 *_model 列，
+用于验证时与人工参考标签对比。人工标注可用 sample_id、text_key 或 text_id 定位，取值 1 / 0 / U（见 humanlabels.py）。
+
+Human review integration: adjudicated human labels override the model labels; the rule-based labels are always kept
 in *_model columns so validation can compare them against the human reference.
 """
 import numpy as np, pandas as pd
 from config import INTER, VALID, CLASSIFIER_VERSION, get_logger
 from dtautil import write_dta
+from classify import extended_only
+from humanlabels import load_adjudicated
 
 log = get_logger("06_dataset_A_text_dictionary")
 u = pd.read_parquet(INTER / "text_units_classified.parquet")
@@ -18,23 +21,24 @@ for c in ["esg_strict", "esg_extended", "esg_e", "esg_s", "esg_g", "classificati
     u[c + "_model"] = u[c]
 u["human_reviewed"] = 0
 
-hl = VALID / "human_labels" / "adjudicated_labels.csv"
-if hl.exists():
-    h = pd.read_csv(hl)
-    h = h[h.text_id.isin(u.text_id)].drop_duplicates("text_id", keep="last").set_index("text_id")
-    m = u.text_id.isin(h.index)
+h = load_adjudicated(u)
+if h is not None:
+    h = h[h.text_key.isin(u.text_key)].set_index("text_key")
+    m = u.text_key.isin(h.index)
     for c in ["esg_strict", "esg_extended", "esg_e", "esg_s", "esg_g"]:
-        u.loc[m, c] = u.loc[m, "text_id"].map(h["human_" + c]).astype(float)
+        u.loc[m, c] = u.loc[m, "text_key"].map(h["human_" + c]).astype(float)
     u.loc[m, "classification_method"] = "human_review"; u.loc[m, "classification_confidence"] = "human"
     u.loc[m, "human_reviewed"] = 1
-    log.info(f"human adjudicated labels applied to {int(m.sum())} units")
+    log.info(f"human adjudicated labels applied to {int(m.sum())} units; Strict=1=>Extended=1 auto-fixed in "
+             f"{int(h.human_invariant_fixed.sum())} human rows")
 else:
     log.info("no adjudicated human labels found -> all labels are model/rule-based (provisional)")
 
 # Extended must contain all Strict positives (invariant)
 bad = (u.esg_strict == 1) & (u.esg_extended != 1)
 log.info(f"invariant check strict=1 => extended=1 violations: {int(bad.sum())}"); assert not bad.any()
-u["esg_extended_only"] = np.where(u.esg_extended.isna(), np.nan, ((u.esg_extended == 1) & (u.esg_strict != 1)).astype(float))
+u["esg_extended_only"] = [extended_only(None if pd.isna(a) else a, None if pd.isna(b) else b) for a, b in zip(u.esg_strict, u.esg_extended)]
+u["esg_extended_only"] = pd.to_numeric(u.esg_extended_only, errors="coerce")
 u["classification_status"] = np.where(u.human_reviewed == 1, "confirmed", np.where(u.esg_strict.isna(), "unknown", "provisional"))
 u["text_normalized"] = u.metricOther_norm.str.lower()
 u["review_priority"] = np.select(

@@ -1,11 +1,16 @@
 """Step 16 — Independent quality audit of the FINAL .dta outputs (re-read from disk).
 
+中文说明：独立质量审计——重新读取最终 .dta，从下层数据重新推导关键逻辑后与成品比对（而不是复用构建结果）；
+任何 FAIL 都会让流水线停止。v1.1 新增：text_id 稳定性、extended_only 三态逻辑、维度一致性、重复 grant 的类型裁定、
+目标不完整 grant 不得为 0、合并价值来源、各层维度采用与 Strict 采用的一致性。
+
 Every check is recorded as PASS / FAIL / WARN / INFO in Documentation/quality_audit_results.csv.
 Key logic is RE-DERIVED here from lower-level datasets (not copied from the build steps), so the audit can catch
 build errors: grant ESG from KPIs, firm counts from grants, executive/firm adoption identities, label consistency.
 The step fails (non-zero exit) if any FAIL is recorded.
 """
 import json, sys, hashlib, datetime as dt
+from classify import extended_only
 import numpy as np, pandas as pd
 from config import FINAL, INTER, DOCS, VALID, CLASSIFIER_VERSION, get_logger
 
@@ -27,10 +32,15 @@ for c in ["esg_strict", "esg_extended", "esg_extended_only", "esg_e", "esg_s", "
     rec("A", f"{c} in {{0,1,.}}", TRI(A[c]), A[c].value_counts(dropna=False).to_dict())
 rec("A", "Strict=1 implies Extended=1", not ((A.esg_strict == 1) & (A.esg_extended != 1)).any())
 rec("A", "E/S/G=1 implies Strict=1", not (((A.esg_e == 1) | (A.esg_s == 1) | (A.esg_g == 1)) & (A.esg_strict != 1)).any())
-rec("A", "extended_only = Extended & not Strict", ((A.esg_extended_only == 1) == ((A.esg_extended == 1) & (A.esg_strict != 1))).all())
 rec("A", "status consistent (unknown <=> strict missing; confirmed <=> human_reviewed)",
     ((A.classification_status == "unknown") == A.esg_strict.isna()).all() and ((A.classification_status == "confirmed") == (A.human_reviewed == 1)).all())
 rec("A", "every label has a method and a reason", A.classification_method.ne("").all() and A.classification_reason.ne("").all())
+rec("A", "text_id = 'T' + SHA-1(text_key)[:10] (stable across versions)",
+    (A.text_id == A.text_key.map(lambda k: "T" + hashlib.sha1(k.encode("utf-8")).hexdigest()[:10].upper())).all())
+xo = pd.Series([extended_only(None if pd.isna(a) else a, None if pd.isna(b) else b) for a, b in zip(A.esg_strict, A.esg_extended)], dtype="float")
+rec("A", "esg_extended_only follows three-state rule (Unknown when Strict Unknown & Extended 1)", np.allclose(A.esg_extended_only.fillna(-1), xo.fillna(-1)))
+rec("A", "pillars 0 when Strict = 0 and Unknown when Strict Unknown",
+    ((A.loc[A.esg_strict == 0, ["esg_e", "esg_s", "esg_g"]] == 0).all().all()) and A.loc[A.esg_strict.isna(), ["esg_e", "esg_s", "esg_g"]].isna().all().all())
 rec("A", "classifier_version recorded", (A.classifier_version == CLASSIFIER_VERSION).all(), CLASSIFIER_VERSION)
 rec("A", "year range within 1998-2021", A.first_year.min() >= 1998 and A.last_year.max() <= 2021, f"{A.first_year.min()}-{A.last_year.max()}")
 rec("A", "share of units Unknown (Strict)", True, round(A.esg_strict.isna().mean(), 4), level="INFO")
@@ -74,11 +84,19 @@ rec("C", "grant dates flagged suspect", True, int(C.grant_date_suspect.sum()), l
 kk = K.groupby("grantid").agg(n=("kpi_id", "size"), p=("kpi_esg_strict", lambda s: (s == 1).sum()), u=("kpi_esg_strict", lambda s: s.isna().sum()))
 m = C.set_index("grantid").join(kk, how="left").fillna({"n": 0, "p": 0, "u": 0})
 red = np.where(m.p > 0, 1.0, np.where((m.n > 0) & (m.u == 0), 0.0, np.nan))
+red = np.where((m.grant_goal_data_incomplete == 1) & (m.p == 0), np.nan, red)      # v1.1 rule
 red = np.where(m.grant_goal_status == "time_no_perf_condition", 0.0, red)
 rec("C", "grant_esg_strict re-derived from KPI master matches", np.allclose(m.grant_esg_strict.fillna(-1), pd.Series(red).fillna(-1)))
 rec("C", "grant_n_kpis matches KPI master", (m.grant_n_kpis == m.n).all())
 rec("C", "esg + non-esg + unknown KPIs = n_kpis", (C.grant_n_esg_kpis_strict + C.grant_n_non_esg_kpis + C.grant_n_unknown_kpis == C.grant_n_kpis).all())
 rec("C", "time grants without perf condition have no KPIs", (C.loc[C.grant_goal_status == "time_no_perf_condition", "grant_n_kpis"] == 0).all())
+rec("C", "duplicated grantIDs: resolved type consistent with goal files", True, int(C.grant_dup_resolved.sum()), level="INFO")
+rec("C", "grants with incomplete goal data are never classified 0", not ((C.grant_goal_data_incomplete == 1) & (C.grant_esg_strict == 0)).any(),
+    int(C.grant_goal_data_incomplete.sum()))
+vs_ok = ((C.grant_value_source == "grant_date_fair_value") == C.grant_value.notna()).all() and \
+        np.allclose(C.grant_value_combined.fillna(-1), C.grant_value.where(C.grant_value.notna(), C.nonequity_target).fillna(-1))
+rec("C", "grant_value_combined = fair value, else non-equity target; source flag consistent", vs_ok)
+rec("C", "value source distribution", True, C.grant_value_source.value_counts().to_dict(), level="INFO")
 rec("C", "perf grants with missing goal data (Unknown, not 0)", C.loc[C.grant_goal_status == "perf_goals_missing", "grant_esg_strict"].isna().all(),
     int((C.grant_goal_status == "perf_goals_missing").sum()))
 
@@ -110,6 +128,7 @@ rec("E", "strict CEO sample: exactly one CEO per firm-year", (E[E.ceo_strict_sam
 rec("E", "every CEO row exists as an executive-year or has no grants", (E.ceo_has_grants == 0).sum() + E.merge(D[["cik", "fiscalyear", "participantid"]],
     on=["cik", "fiscalyear", "participantid"]).shape[0] == len(E))
 rec("E", "CEO identification status", True, E.ceo_identification_status.value_counts().to_dict(), level="INFO")
+rec("E", "CEOs without grants have count variables = 0", (E.loc[E.ceo_has_grants == 0, [c for c in E.columns if c.startswith("ceo_n_")]].fillna(-1) == 0).all().all())
 shares_ok(E, "E")
 
 # ---------------- F firm & G non-CEO
@@ -126,6 +145,19 @@ fa = F.set_index(["cik", "fiscalyear"]).firm_esg_adopt_strict.reindex(ea.index)
 rec("F", "firm adoption = aggregation of executive adoption", np.allclose(fa.fillna(-1), ea.fillna(-1)))
 rec("F", "firm-years without grants have missing (not 0) ESG measures", F.loc[F.firm_has_grants == 0, "firm_esg_adopt_strict"].isna().all(),
     int((F.firm_has_grants == 0).sum()))
+rec("F", "firm-years without grants have count variables = 0 (not missing)", (F.loc[F.firm_has_grants == 0, [c for c in F.columns if c.startswith("firm_n_")]].fillna(-1) == 0).all().all())
+for q in "esg":
+    rec("F", f"pillar {q.upper()} adoption = 1 implies Strict perf adoption = 1", not ((F[f"firm_esg_{q}_adopt"] == 1) & (F.firm_perf_esg_adopt_strict != 1)).any())
+Fi = F.set_index(["cik", "fiscalyear"])
+for q in "esg":
+    pil = C[C.grant_is_perf == 1].assign(z=lambda d: d[f"grant_esg_{q}"].eq(0), o=lambda d: d[f"grant_esg_{q}"].eq(1)).groupby(["cik", "fiscalyear"]).agg(
+        n=("grantid", "size"), z=("z", "sum"), o=("o", "sum"))
+    red = pd.Series(np.where(pil.o > 0, 1.0, np.where(pil.z == pil.n, 0.0, np.nan)), index=pil.index)
+    rec("F", f"firm {q.upper()} adoption re-derived from grants (pillar-specific zero rule)", np.allclose(Fi[f"firm_esg_{q}_adopt"].reindex(red.index).fillna(-1), red.fillna(-1)))
+    shr = pil.o / pil.n
+    rec("F", f"firm {q.upper()} perf-grant share lower bound re-derived from grants", np.allclose(Fi[f"firm_{q}_grant_share_lb"].reindex(shr.index).fillna(-1), shr.fillna(-1)))
+rec("F", "S adoption is not identical to Strict adoption (guards against a pillar/strict name collision)",
+    not np.allclose(Fi.firm_esg_s_adopt.fillna(-1), Fi.firm_perf_esg_adopt_strict.fillna(-1)))
 shares_ok(F, "F")
 Gn = rd("ESG_NonCEO_Firm_Year.dta")
 rec("G", "primary key (cik, fiscalyear) unique", not Gn.duplicated(["cik", "fiscalyear"]).any(), len(Gn))

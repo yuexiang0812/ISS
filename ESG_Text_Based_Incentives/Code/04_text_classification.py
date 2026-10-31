@@ -1,12 +1,17 @@
 """Step 04 — Text classification.
 
+中文说明：把全部目标记录归并为“分类单元”（metric + 标准化 metricOther [+ 空白文本时的结构化上下文]），
+对每个单元同时运行修订后的分类器与论文 953 词基准，并把单元编号写回每条目标记录。
+text_id 由 text_key 的 SHA-1 哈希生成（v1.1 起），因此与版本、数据排序无关，人工标注可跨版本对接。
+
 1. Build classification units (Dataset A unit): (metric, metricOther_norm, ctx_key)
    ctx_key is non-empty only when metricOther is blank and metric is a placeholder label; it then holds
    the time-consistent metricType group (FIN / NONFIN / ISSESG) admitted as structured context.
-2. Apply the revised classifier (v1.0) and the AGHJ (2025) 953-keyword baseline to every unit.
+2. Apply the revised classifier (current CLASSIFIER_VERSION) and the AGHJ (2025) 953-keyword baseline to every unit.
 3. Write: unit-level classification (intermediate), per-goal-record classification (deliverable d),
    paper keyword diagnostics + keyword-level decision table (deliverables b/c inputs).
 """
+import hashlib
 import numpy as np, pandas as pd
 from config import INTER, DICT, FIN_METRICTYPES, ISS_2018_ESG_METRIC_LABELS, CLASSIFIER_VERSION, get_logger
 from classify import classify_unit, PLACEHOLDER_LABELS
@@ -36,7 +41,9 @@ u["text_original"] = u.text_key.map(rep)
 # lower-cased normalized text for case-variant units must classify identically -> classify on lowercase+metric
 assert u.text_key.is_unique
 u = u.sort_values(["first_year", "text_key"]).reset_index(drop=True)
-u.insert(0, "text_id", [f"T{i:06d}" for i in range(1, len(u) + 1)])
+# v1.1: stable identifier = hash of the standardized key (independent of version / ordering / data additions)
+u.insert(0, "text_id", ["T" + hashlib.sha1(k.encode("utf-8")).hexdigest()[:10].upper() for k in u.text_key])
+assert u.text_id.is_unique, "text_id hash collision"
 log.info(f"classification units: {len(u):,} (blank-text context units: {(u.ctx_key != '').sum()})")
 
 ctx_type = {"FIN_METRICTYPE": "Accounting", "NONFIN_METRICTYPE": "Other", "ISS_ESG_LABEL_ONLY": "Social", "": ""}

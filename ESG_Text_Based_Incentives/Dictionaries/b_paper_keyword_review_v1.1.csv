@@ -1,0 +1,954 @@
+kw_id,keyword,source_page,n_texts,n_goal_rows,n_rows_1998_2017,n_rows_2018_2021,iss_esg_share_2018_2021_diagnostic,share_rows_strict1,share_rows_strict0,share_rows_unknown,keyword_alone_strict,keyword_alone_extended,keyword_alone_rules,decision,classifier_version
+P0001,AAIR,59,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0002,abatement,59,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0003,abating,59,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0004,Aboriginal,59,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0005,ACCC,59,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0006,accessible,59,0,0,0,0,,,,,0.0,1.0,R042_X_product_resp,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0007,accident,59,28,134,61,73,0.616,0.679,0.321,0.0,1.0,1.0,R031_S_ohs,retained_strict_with_context_exclusions,v1.1
+P0008,accidents,59,24,185,168,17,1.0,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0009,adopt,59,1,4,4,0,,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0010,adverse,59,2,7,0,7,0.0,0.0,0.0,1.0,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0011,affordability,59,3,38,0,38,0.0,0.0,0.816,0.184,0.0,1.0,R042_X_product_resp,reassigned_extended_only,v1.1
+P0012,affordable,59,9,50,30,20,0.0,0.84,0.16,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0013,AFR,59,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0014,African,59,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0015,aid,59,2,16,16,0,,0.062,0.938,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0016,AIFR,59,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0017,air,59,15,53,42,11,0.0,0.717,0.245,0.038,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0018,AIRR,59,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0019,alarms,59,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0020,all-electric,59,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0021,all-employee,59,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0022,all-injury,59,0,0,0,0,,,,,1.0,1.0,R031_S_ohs,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0023,AML,59,3,20,20,0,,0.0,0.75,0.25,0.0,0.0,R051_J_compliance_risk,excluded_esg_adjacent_by_definition,v1.1
+P0024,animal,59,1,1,1,0,,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0025,anti-money,59,0,0,0,0,,,,,0.0,0.0,R051_J_compliance_risk,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0026,antibias,59,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0027,antibribery,59,0,0,0,0,,,,,1.0,1.0,R036_G_ethics,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0028,anticorruption,59,3,20,5,15,0.0,1.0,0.0,0.0,1.0,1.0,R036_G_ethics,retained_strict,v1.1
+P0029,antidumping,59,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0030,antimicrobial,59,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0031,antiracist,59,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0032,antislavery,59,0,0,0,0,,,,,1.0,1.0,R035_S_human_rights,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0033,antitrust,59,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0034,arsenic,59,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0035,ASAOC,59,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0036,assault,59,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0037,assistance,60,1,1,1,0,,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0038,assisting,60,4,5,3,2,0.0,0.0,0.8,0.2,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0039,atmosphere,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0040,attitude,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0041,attitudes,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0042,audit,60,68,197,165,32,0.0,0.371,0.589,0.041,0.0,0.0,R051_J_compliance_risk,excluded_esg_adjacent_by_definition,v1.1
+P0043,auditing,60,1,5,0,5,0.0,0.0,1.0,0.0,0.0,0.0,R051_J_compliance_risk,excluded_esg_adjacent_by_definition,v1.1
+P0044,auditors,60,2,2,1,1,0.0,0.0,1.0,0.0,0.0,0.0,R051_J_compliance_risk,excluded_esg_adjacent_by_definition,v1.1
+P0045,authority’s,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0046,avoidable,60,4,11,11,0,,1.0,0.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0047,avoidance,60,2,16,0,16,0.0,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0048,awareness,60,12,59,44,15,0.333,0.186,0.186,0.627,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0049,AWRCR,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0050,B-BBEE,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0051,BaCE,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0052,BAIR,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0053,BAME,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0054,BEE,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0055,behaving,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0056,behavior,60,5,20,20,0,,0.3,0.0,0.7,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0057,behavior-based,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0058,behavioral,60,4,31,10,21,0.0,0.871,0.0,0.129,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0059,beneficial,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0060,BIFR,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0061,bio,60,9,16,10,6,0.0,0.0,0.375,0.625,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0062,biodiversity,60,0,0,0,0,,,,,1.0,1.0,R029_E_env_general,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0063,biofuel,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0064,biomass,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0065,biosecurity,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0066,BIPOC,60,2,13,0,13,1.0,1.0,0.0,0.0,1.0,1.0,R030_S_dei,retained_strict,v1.1
+P0067,black,60,3,15,5,10,1.0,0.667,0.333,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0068,breach,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0069,breaches,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0070,BREEAM,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0071,bribery,60,0,0,0,0,,,,,1.0,1.0,R036_G_ethics,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0072,BSEE,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0073,bullying,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0074,bushfire,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0075,CAHPS,60,1,5,0,5,0.0,0.0,1.0,0.0,0.0,1.0,R039_X_customer,reassigned_extended_only,v1.1
+P0076,carbon,60,25,226,81,145,0.883,1.0,0.0,0.0,1.0,1.0,R023_E_ghg_air,retained_strict,v1.1
+P0077,carcinogens,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0078,caseload,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0079,catastrophic,60,2,6,5,1,1.0,0.0,0.167,0.833,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0080,catchment,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0081,CCUS,60,1,5,0,5,1.0,1.0,0.0,0.0,1.0,1.0,R023_E_ghg_air,retained_strict,v1.1
+P0082,CCV,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0083,CDC,60,1,5,0,5,0.0,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0084,CDIs,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0085,CDP,60,0,0,0,0,,,,,1.0,1.0,R022_GEN_esg,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0086,CE marking,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0087,Celsius,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0088,censure,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0089,certificates,60,1,7,7,0,,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0090,certification,60,10,36,16,20,0.15,0.528,0.25,0.222,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0091,certifications,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0092,certified,60,1,5,0,5,0.0,1.0,0.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0093,CFC,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0094,CG,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0095,CGA,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0096,chargeable,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0097,charitable,60,4,19,7,12,1.0,1.0,0.0,0.0,1.0,1.0,R033_S_community,retained_strict,v1.1
+P0098,charities,60,0,0,0,0,,,,,1.0,1.0,R033_S_community,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0099,charity,60,1,12,12,0,,1.0,0.0,0.0,1.0,1.0,R033_S_community,retained_strict,v1.1
+P0100,CHESM,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0101,child,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0102,CIFR,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0103,CIGS,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0104,circular,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0105,circularity,60,0,0,0,0,,,,,1.0,1.0,R027_E_waste,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0106,citizenship,60,4,45,45,0,,1.0,0.0,0.0,1.0,1.0,R022_GEN_esg,retained_strict,v1.1
+P0107,clean,60,23,162,67,95,0.779,0.265,0.216,0.519,,,R048_A_environment_bare,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0108,cleaner,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0109,cleantech,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0110,climate,60,13,43,26,17,0.824,0.977,0.023,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0111,climate-positive,60,0,0,0,0,,,,,1.0,1.0,R024_E_climate,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0112,climate-related,60,0,0,0,0,,,,,1.0,1.0,R024_E_climate,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0113,climates,60,1,5,0,5,1.0,1.0,0.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0114,climatic,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0115,CMVI,60,1,5,0,5,1.0,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0116,CNMC,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0117,CO,60,19,121,41,80,0.55,0.364,0.463,0.174,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0118,CO2,60,10,89,79,10,1.0,1.0,0.0,0.0,1.0,1.0,R023_E_ghg_air,retained_strict,v1.1
+P0119,CO2 emission,60,1,5,0,5,1.0,1.0,0.0,0.0,1.0,1.0,R023_E_ghg_air,retained_strict,v1.1
+P0120,CO2 reduction,60,1,5,0,5,1.0,1.0,0.0,0.0,1.0,1.0,R023_E_ghg_air,retained_strict,v1.1
+P0121,CO2-equivalent,60,0,0,0,0,,,,,1.0,1.0,R023_E_ghg_air,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0122,CO2-reduced,60,0,0,0,0,,,,,1.0,1.0,R023_E_ghg_air,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0123,CO2e,60,1,6,6,0,,1.0,0.0,0.0,1.0,1.0,R023_E_ghg_air,retained_strict,v1.1
+P0124,CO2eq,60,0,0,0,0,,,,,1.0,1.0,R023_E_ghg_air,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0125,coal-based,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0126,coal-exit,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0127,collaborate,60,2,12,12,0,,0.0,1.0,0.0,0.0,0.0,R052_J_workforce_generic,excluded_esg_adjacent_by_definition,v1.1
+P0128,collaborative,60,4,25,25,0,,0.0,1.0,0.0,0.0,0.0,R052_J_workforce_generic,excluded_esg_adjacent_by_definition,v1.1
+P0129,collaboratively,60,0,0,0,0,,,,,0.0,0.0,R052_J_workforce_generic,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0130,collaborators,60,0,0,0,0,,,,,0.0,0.0,R052_J_workforce_generic,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0131,colleague,60,7,30,9,21,0.0,0.233,0.033,0.733,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0132,colleagues,60,2,8,3,5,1.0,0.625,0.0,0.375,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0133,collision,60,2,11,11,0,,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0134,collisions,60,2,24,8,16,1.0,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0135,color,60,6,55,35,20,0.75,0.909,0.0,0.091,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0136,colored,60,7,7,7,0,,0.857,0.0,0.143,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0137,commit,60,1,1,1,0,,1.0,0.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0138,committed,60,13,115,85,30,0.0,0.0,0.783,0.217,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0139,committing,60,1,4,4,0,,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0140,communities,60,25,112,81,31,0.323,0.0,0.884,0.116,0.0,1.0,R044_X_community_engagement,reassigned_extended_only,v1.1
+P0141,community,60,65,499,284,215,0.33,0.409,0.589,0.002,0.0,1.0,R044_X_community_engagement,reassigned_extended_only,v1.1
+P0142,community-backed,60,0,0,0,0,,,,,0.0,1.0,R044_X_community_engagement,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0143,commuting,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0144,complex-recycling,60,0,0,0,0,,,,,1.0,1.0,R027_E_waste,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0145,compliance,60,350,2479,1869,610,0.341,0.317,0.664,0.019,0.0,0.0,R051_J_compliance_risk,excluded_esg_adjacent_by_definition,v1.1
+P0146,compliances,60,2,21,21,0,,1.0,0.0,0.0,0.0,0.0,R051_J_compliance_risk,excluded_esg_adjacent_by_definition,v1.1
+P0147,compliantly,60,0,0,0,0,,,,,0.0,0.0,R051_J_compliance_risk,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0148,complying,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0149,compostable,60,0,0,0,0,,,,,1.0,1.0,R027_E_waste,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0150,concerns,60,5,36,18,18,0.0,0.028,0.972,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0151,conflict,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0152,conflicts,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0153,conservancy,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0154,conservation,60,4,96,93,3,0.0,0.031,0.104,0.865,,,R047_A_energy_efficiency,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0155,consumed,60,1,2,2,0,,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0156,consumption,60,8,33,26,7,0.0,0.152,0.485,0.364,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0157,contaminated,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0158,contamination,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0159,cooperation,60,29,70,66,4,0.0,0.0,0.957,0.043,0.0,0.0,R052_J_workforce_generic,excluded_esg_adjacent_by_definition,v1.1
+P0160,COP21,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0161,CORESafety,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0162,corporate social responsibility,60,3,13,9,4,1.0,1.0,0.0,0.0,1.0,1.0,R022_GEN_esg,retained_strict,v1.1
+P0163,corrupt,60,0,0,0,0,,,,,1.0,1.0,R036_G_ethics,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0164,corruption,60,2,21,16,5,0.0,1.0,0.0,0.0,1.0,1.0,R036_G_ethics,retained_strict,v1.1
+P0165,coworker,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0166,CPMM,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0167,CRD,60,1,1,1,0,,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0168,Cree,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0169,CRI,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0170,criticality,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0171,CSA,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0172,CSAP,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0173,CSR,60,1,5,5,0,,1.0,0.0,0.0,1.0,1.0,R022_GEN_esg,retained_strict,v1.1
+P0174,CTF,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0175,cultivate,60,4,16,5,11,0.545,0.0,0.688,0.312,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0176,culture,60,186,1172,679,493,0.525,0.241,0.749,0.009,0.0,0.0,R052_J_workforce_generic,excluded_esg_adjacent_by_definition,v1.1
+P0177,CVIR,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0178,CWI,60,1,5,0,5,0.0,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0179,DI,60,1,3,3,0,,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0180,damage,60,22,112,65,47,0.383,0.821,0.054,0.125,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0181,damages,60,6,25,25,0,,0.92,0.0,0.08,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0182,danger,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0183,dangerous,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0184,DART,60,62,498,220,278,0.964,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0185,Days Away Restricted Time,60,3,31,10,21,1.0,0.677,0.0,0.323,1.0,1.0,R031_S_ohs,retained_strict_with_context_exclusions,v1.1
+P0186,deadly,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0187,deaths,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0188,decarbonization,60,1,5,0,5,0.0,1.0,0.0,0.0,1.0,1.0,R023_E_ghg_air,retained_strict,v1.1
+P0189,decarbonized,60,0,0,0,0,,,,,1.0,1.0,R023_E_ghg_air,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0190,DEI,60,12,58,0,58,0.914,1.0,0.0,0.0,1.0,1.0,R030_S_dei,retained_strict,v1.1
+P0191,demographic,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0192,demographics,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0193,derailments,60,1,15,10,5,0.0,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0194,dielectric,60,3,13,5,8,1.0,0.923,0.077,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0195,diesel,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0196,DIFR,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0197,dioxide,60,13,169,133,36,1.0,0.911,0.089,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0198,DIR,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0199,disability,60,2,20,20,0,,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0200,disaster,60,2,2,2,0,,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0201,discrimination,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0202,disposals,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0203,disturbance,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0204,diverse,60,39,248,127,121,0.579,0.96,0.04,0.0,1.0,1.0,R030_S_dei,retained_strict,v1.1
+P0205,diversity,60,226,2601,1515,1086,0.947,1.0,0.0,0.0,1.0,1.0,R030_S_dei,retained_strict,v1.1
+P0206,DJSI,60,1,10,10,0,,1.0,0.0,0.0,1.0,1.0,R022_GEN_esg,retained_strict,v1.1
+P0207,DJSIW,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0208,DOJ,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0209,donations,60,0,0,0,0,,,,,1.0,1.0,R033_S_community,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0210,DOT,60,5,71,26,45,0.644,0.634,0.366,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0211,drops,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0212,e-buses,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0213,e-trucks,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0214,e-waste,60,0,0,0,0,,,,,1.0,1.0,R027_E_waste,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0215,EACC,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0216,eco,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0217,eco-design,60,0,0,0,0,,,,,1.0,1.0,R029_E_env_general,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0218,eco-efficient,60,0,0,0,0,,,,,1.0,1.0,R029_E_env_general,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0219,eco-labeled,60,0,0,0,0,,,,,1.0,1.0,R029_E_env_general,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0220,ecological,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0221,ecologically,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0222,ECOLOGO,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0223,EcoVadis,60,0,0,0,0,,,,,1.0,1.0,R022_GEN_esg,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0224,educate,60,1,5,5,0,,0.0,0.0,1.0,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0225,educating,60,3,26,26,0,,0.0,0.0,1.0,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0226,education,60,42,283,152,131,0.168,0.085,0.756,0.159,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0227,educational,60,4,20,1,19,0.368,0.35,0.65,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0228,EEAFR,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0229,EHS,60,14,158,153,5,0.0,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0230,EHS-related,60,0,0,0,0,,,,,1.0,1.0,R031_S_ohs,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0231,EHSS,60,0,0,0,0,,,,,1.0,1.0,R031_S_ohs,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0232,EI,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0233,EIA,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0234,EIR,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0235,elearning,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0236,electricity,60,3,18,18,0,,0.556,0.278,0.167,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0237,electrification,60,3,42,0,42,0.786,1.0,0.0,0.0,1.0,1.0,R025_E_energy_transition,retained_strict,v1.1
+P0238,ELMUS,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0239,ELWG,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0240,EMAS,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0241,emergencies,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0242,emergency,60,30,288,157,131,0.443,0.896,0.045,0.059,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0243,emission,60,17,217,185,32,1.0,1.0,0.0,0.0,1.0,1.0,R023_E_ghg_air,retained_strict,v1.1
+P0244,emissions,60,57,433,209,224,1.0,1.0,0.0,0.0,1.0,1.0,R023_E_ghg_air,retained_strict,v1.1
+P0245,emitted,60,2,11,11,0,,1.0,0.0,0.0,1.0,1.0,R023_E_ghg_air,retained_strict,v1.1
+P0246,empathetic,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0247,employability,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0248,employee,60,364,3638,2689,949,0.774,0.835,0.077,0.087,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0249,employee-based,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0250,employee-evaluation,60,0,0,0,0,,,,,0.0,0.0,R055_N_financial,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0251,employee-initiated,60,2,10,10,0,,1.0,0.0,0.0,1.0,1.0,R032_S_human_capital,retained_strict,v1.1
+P0252,employee-led,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0253,employees,60,108,673,480,193,0.808,0.623,0.217,0.16,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0254,employer,60,25,115,98,17,1.0,0.661,0.296,0.043,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0255,employers,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0256,employment,60,5,38,33,5,1.0,0.132,0.0,0.868,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0257,energies,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0258,energy,60,267,1526,1158,368,0.543,0.277,0.492,0.231,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0259,engage,60,13,72,30,42,0.524,0.222,0.486,0.292,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0260,engaged,60,4,17,6,11,0.545,0.588,0.353,0.059,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0261,engagement,60,226,2038,1453,585,0.757,0.799,0.114,0.087,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0262,engages,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0263,engaging,60,2,11,0,11,0.545,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0264,engender,60,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0265,enjoyable,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0266,ENSR,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0267,environment,61,106,809,661,148,0.872,0.693,0.307,0.0,1.0,1.0,R029_E_env_general,retained_strict_with_context_exclusions,v1.1
+P0268,environment-linked,61,0,0,0,0,,,,,1.0,1.0,R029_E_env_general,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0269,environmental,61,343,3919,2789,1130,0.922,0.993,0.007,0.0,1.0,1.0,R029_E_env_general,retained_strict,v1.1
+P0270,environmental-related,61,1,5,0,5,1.0,1.0,0.0,0.0,1.0,1.0,R029_E_env_general,retained_strict,v1.1
+P0271,environmentally,61,2,2,1,1,1.0,1.0,0.0,0.0,1.0,1.0,R029_E_env_general,retained_strict,v1.1
+P0272,environmentally-friendly,61,0,0,0,0,,,,,1.0,1.0,R029_E_env_general,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0273,environments,61,0,0,0,0,,,,,1.0,1.0,R029_E_env_general,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0274,EOS,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0275,EPC,61,2,2,1,1,0.0,0.5,0.5,0.0,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0276,equality,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0277,equitable,61,1,5,0,5,0.0,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0278,ergonomic,61,0,0,0,0,,,,,1.0,1.0,R031_S_ohs,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0279,ERIF,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0280,ESCG,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0281,ESCMP,61,2,10,0,10,1.0,0.5,0.0,0.5,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0282,ESE,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0283,ESG,61,76,447,12,435,0.807,0.969,0.031,0.0,1.0,1.0,R022_GEN_esg,retained_strict,v1.1
+P0284,ESG reporting,61,0,0,0,0,,,,,1.0,1.0,R022_GEN_esg,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0285,ESG targets,61,0,0,0,0,,,,,1.0,1.0,R022_GEN_esg,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0286,ESG-criteria,61,0,0,0,0,,,,,1.0,1.0,R022_GEN_esg,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0287,ESG-dedicated,61,1,5,0,5,1.0,0.0,1.0,0.0,1.0,1.0,R022_GEN_esg,retained_strict_with_context_exclusions,v1.1
+P0288,ESG-integrated,61,0,0,0,0,,,,,1.0,1.0,R022_GEN_esg,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0289,ESG-oriented,61,0,0,0,0,,,,,1.0,1.0,R022_GEN_esg,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0290,ESG-related,61,1,12,0,12,0.0,1.0,0.0,0.0,1.0,1.0,R022_GEN_esg,retained_strict,v1.1
+P0291,ESPC,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0292,Ethibel,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0293,ethic,61,0,0,0,0,,,,,1.0,1.0,R036_G_ethics,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0294,ethically,61,0,0,0,0,,,,,1.0,1.0,R036_G_ethics,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0295,ethics,61,37,287,238,49,0.0,1.0,0.0,0.0,1.0,1.0,R036_G_ethics,retained_strict,v1.1
+P0296,EthiFinance,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0297,ethnic,61,4,18,0,18,0.667,1.0,0.0,0.0,1.0,1.0,R030_S_dei,retained_strict,v1.1
+P0298,ethnically,61,2,9,9,0,,1.0,0.0,0.0,1.0,1.0,R030_S_dei,retained_strict,v1.1
+P0299,ethnicity,61,0,0,0,0,,,,,1.0,1.0,R030_S_dei,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0300,EV charging,61,0,0,0,0,,,,,1.0,1.0,R025_E_energy_transition,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0301,EXI,61,1,10,0,10,0.0,1.0,0.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0302,fair,61,2,9,4,5,0.0,0.0,0.556,0.444,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0303,fairly,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0304,fatal,61,9,41,25,16,1.0,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0305,fatalities,61,13,122,47,75,1.0,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0306,fatality,61,22,174,58,116,1.0,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0307,fatigue,61,2,10,0,10,1.0,1.0,0.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0308,fatigue-violation,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0309,FCA,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0310,FCPA,61,0,0,0,0,,,,,1.0,1.0,R036_G_ethics,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0311,female,61,10,62,33,29,1.0,1.0,0.0,0.0,1.0,1.0,R030_S_dei,retained_strict,v1.1
+P0312,female-owned,61,1,11,11,0,,1.0,0.0,0.0,1.0,1.0,R030_S_dei,retained_strict,v1.1
+P0313,females,61,2,9,9,0,,1.0,0.0,0.0,1.0,1.0,R030_S_dei,retained_strict,v1.1
+P0314,feminization,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0315,feminizing,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0316,fiduciary,61,1,5,5,0,,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0317,FIR,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0318,fire,61,7,20,4,16,0.562,0.75,0.25,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0319,fire-related,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0320,fires,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0321,Fitwel,61,1,5,0,5,0.0,1.0,0.0,0.0,1.0,1.0,R029_E_env_general,retained_strict,v1.1
+P0322,flooding,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0323,FOFA,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0324,food,61,26,173,65,108,0.333,0.0,0.792,0.208,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0325,footprint,61,20,89,77,12,0.417,0.315,0.685,0.0,0.0,0.0,R056_N_operating,excluded_generic_or_false_positive,v1.1
+P0326,footprinting,61,0,0,0,0,,,,,0.0,0.0,R056_N_operating,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0327,forest,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0328,forestry,61,7,44,26,18,0.944,0.386,0.614,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0329,FOS,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0330,foster,61,10,44,21,23,0.0,0.318,0.386,0.295,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0331,fostering,61,7,61,47,14,0.0,0.0,0.918,0.082,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0332,fosters,61,1,1,0,1,0.0,1.0,0.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0333,freedom,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0334,frequency,61,97,1153,958,195,0.426,0.269,0.688,0.043,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0335,freshwater,61,0,0,0,0,,,,,1.0,1.0,R026_E_water,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0336,FSI,61,2,11,6,5,1.0,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0337,FTSE4Good,61,0,0,0,0,,,,,1.0,1.0,R022_GEN_esg,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0338,FVR,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0339,GAIA,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0340,Gallup,61,17,93,71,22,1.0,0.624,0.161,0.215,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0341,Gallup’s,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0342,gaps,61,4,15,15,0,,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0343,gas outages,61,0,0,0,0,,,,,0.0,0.0,R056_N_operating,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0344,GCA,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0345,gCO2,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0346,gCO2e,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0347,GDPR,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0348,GED,61,2,10,0,10,1.0,1.0,0.0,0.0,1.0,1.0,R034_S_access_inclusion,retained_strict,v1.1
+P0349,gender,61,3,15,0,15,1.0,1.0,0.0,0.0,1.0,1.0,R030_S_dei,retained_strict,v1.1
+P0350,Gender-Equality Index,61,0,0,0,0,,,,,1.0,1.0,R030_S_dei|R042_X_product_resp,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0351,GHG,61,16,78,5,73,0.932,1.0,0.0,0.0,1.0,1.0,R023_E_ghg_air,retained_strict,v1.1
+P0352,GHG-related,61,0,0,0,0,,,,,1.0,1.0,R023_E_ghg_air,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0353,GHGE,61,0,0,0,0,,,,,1.0,1.0,R023_E_ghg_air,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0354,GMDSS,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0355,GMP,61,4,22,12,10,0.0,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0356,GMP-compliant,61,0,0,0,0,,,,,0.0,0.0,R051_J_compliance_risk,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0357,GMP-ready,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0358,GMR,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0359,governance,61,80,386,181,205,0.629,0.632,0.013,0.355,,,R050_A_governance_bare,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0360,GPG,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0361,green,61,16,51,17,34,0.0,0.353,0.059,0.588,,,R048_A_environment_bare,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0362,greener,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0363,greenhouse,61,11,104,17,87,1.0,1.0,0.0,0.0,1.0,1.0,R023_E_ghg_air,retained_strict,v1.1
+P0364,greening,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0365,GRESB,61,2,10,0,10,1.0,1.0,0.0,0.0,1.0,1.0,R022_GEN_esg,retained_strict,v1.1
+P0366,GRI,61,1,5,5,0,,1.0,0.0,0.0,1.0,1.0,R022_GEN_esg,retained_strict,v1.1
+P0367,GSCOP,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0368,GWh,61,7,66,66,0,,0.061,0.712,0.227,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0369,GxP,61,1,6,0,6,0.0,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0370,HACT,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0371,happier,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0372,happiness,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0373,harassment,61,0,0,0,0,,,,,1.0,1.0,R032_S_human_capital,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0374,harm,61,5,29,5,24,1.0,1.0,0.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0375,harmful,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0376,harms,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0377,hazard,61,8,55,20,35,0.686,1.0,0.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0378,hazardous,61,1,6,6,0,,1.0,0.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0379,hazards,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0380,HCAHPS,61,7,46,25,21,0.0,0.0,1.0,0.0,0.0,1.0,R039_X_customer,reassigned_extended_only,v1.1
+P0381,HDSA,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0382,HDSAs,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0383,health,61,263,2271,1667,604,0.73,0.797,0.159,0.044,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0384,Health-e Workforce Solutions,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0385,healthcare-associated,61,6,60,0,60,0.0,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0386,healthier,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0387,healthy,61,3,15,5,10,1.0,0.667,0.333,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0388,heat,61,3,33,33,0,,0.0,0.758,0.242,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0389,help,61,5,21,6,15,0.0,0.238,0.286,0.476,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0390,helped,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0391,helping,61,4,32,32,0,,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0392,HES,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0393,HESS,61,3,14,9,5,0.0,0.0,0.714,0.286,,,R015_fp_misc2,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0394,high-hazard,61,2,24,8,16,1.0,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0395,high-severity,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0396,HIPAA,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0397,HIRR,61,1,5,0,5,1.0,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0398,HIV,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0399,HMDA,61,1,5,5,0,,0.0,1.0,0.0,0.0,1.0,R042_X_product_resp,reassigned_extended_only,v1.1
+P0400,hospice,61,2,10,0,10,0.0,0.0,0.5,0.5,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0401,hospitality,61,4,17,12,5,0.0,0.0,0.706,0.294,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0402,hospitalization,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0403,house,61,6,11,9,2,0.0,0.455,0.273,0.273,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0404,housing,61,22,134,77,57,0.0,0.261,0.254,0.485,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0405,HPI,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0406,HPIFR,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0407,HPIs,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0408,HPN,61,1,5,5,0,,0.0,0.0,1.0,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0409,HQE,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0410,HRA,61,1,10,10,0,,1.0,0.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0411,HRI,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0412,HSE,61,23,196,176,20,1.0,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0413,HSEC,61,0,0,0,0,,,,,1.0,1.0,R031_S_ohs,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0414,HSEIP,61,0,0,0,0,,,,,1.0,1.0,R031_S_ohs,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0415,HSEMS,61,0,0,0,0,,,,,1.0,1.0,R031_S_ohs,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0416,HSEQ,61,0,0,0,0,,,,,1.0,1.0,R031_S_ohs,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0417,HSER,61,0,0,0,0,,,,,1.0,1.0,R031_S_ohs,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0418,HSES,61,5,26,6,20,0.5,0.808,0.0,0.192,1.0,1.0,R031_S_ohs,retained_strict_with_context_exclusions,v1.1
+P0419,HSMSO,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0420,HSS,61,0,0,0,0,,,,,1.0,1.0,R031_S_ohs,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0421,HSSD,61,0,0,0,0,,,,,1.0,1.0,R031_S_ohs,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0422,HSSE,61,2,49,49,0,,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0423,HSSEC,61,0,0,0,0,,,,,1.0,1.0,R031_S_ohs,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0424,HSSEQ,61,0,0,0,0,,,,,1.0,1.0,R031_S_ohs,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0425,HTA,61,1,5,0,5,0.0,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0426,human,61,92,508,318,190,0.311,0.506,0.407,0.087,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0427,human-resource,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0428,human-resources,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0429,humanitarian,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0430,humanity,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0431,hygiene,61,1,5,5,0,,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0432,ICAM,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0433,IDEAL,61,0,0,0,0,,,,,0.0,0.0,R056_N_operating,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0434,IIR,61,2,24,6,18,1.0,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0435,illegal,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0436,illness,61,2,36,8,28,1.0,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0437,illnesses,61,2,11,5,6,1.0,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0438,impact,61,48,257,132,125,0.28,0.3,0.486,0.214,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0439,impacting,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0440,impacts,61,4,8,4,4,1.0,0.75,0.25,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0441,incidence,61,29,254,191,63,1.0,1.0,0.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0442,incidences,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0443,incident,61,251,2740,1900,840,0.981,0.959,0.01,0.031,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0444,incident-based,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0445,incidents,61,108,957,456,501,0.882,0.843,0.077,0.079,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0446,inclusion,61,65,726,105,621,0.981,1.0,0.0,0.0,1.0,1.0,R030_S_dei,retained_strict,v1.1
+P0447,inclusion-related,61,0,0,0,0,,,,,1.0,1.0,R030_S_dei,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0448,inclusiveness,61,1,7,0,7,1.0,1.0,0.0,0.0,1.0,1.0,R030_S_dei,retained_strict,v1.1
+P0449,inclusivity,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0450,Indigenous,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0451,infractions,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0452,inhalable,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0453,injuries,61,69,446,344,102,1.0,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0454,injury,61,108,838,429,409,0.988,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0455,Innu,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0456,inpatient,61,11,71,49,22,0.0,0.0,1.0,0.0,0.0,0.0,R055_N_financial,excluded_generic_or_false_positive,v1.1
+P0457,inspires,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0458,integrity,61,60,398,304,94,0.574,0.513,0.065,0.422,,,R049_A_social_bare,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0459,intensity,61,24,200,58,142,0.958,0.95,0.05,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0460,interpersonal,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0461,Inuit,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0462,involvement,61,12,117,112,5,0.0,0.863,0.094,0.043,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0463,IOSA,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0464,ISNetworld,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0465,ISO-compliance,61,0,0,0,0,,,,,0.0,0.0,R051_J_compliance_risk,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0466,ISP,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0467,ISS ESG,61,0,0,0,0,,,,,1.0,1.0,R022_GEN_esg,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0468,ISS ESG rating,61,0,0,0,0,,,,,1.0,1.0,R022_GEN_esg,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0469,ISS-oekom,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0470,JCI,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0471,job-safety,61,0,0,0,0,,,,,1.0,1.0,R031_S_ohs,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0472,jobs,61,2,6,5,1,0.0,0.833,0.167,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0473,JSEA,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0474,justice,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0475,kCO2,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0476,kgCO2,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0477,kgCO2e,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0478,kids,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0479,kWh,61,1,7,7,0,,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0480,KYC,61,0,0,0,0,,,,,0.0,0.0,R051_J_compliance_risk,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0481,L6,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0482,landfill,61,0,0,0,0,,,,,1.0,1.0,R027_E_waste,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0483,landscape,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0484,Latinx,61,0,0,0,0,,,,,1.0,1.0,R030_S_dei,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0485,laundering,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0486,lawfully,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0487,LDAR,61,1,7,0,7,1.0,1.0,0.0,0.0,1.0,1.0,R023_E_ghg_air,retained_strict,v1.1
+P0488,leader,61,27,208,123,85,0.259,0.596,0.226,0.178,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0489,leaders,61,8,42,14,28,0.893,0.476,0.19,0.333,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0490,leadership,61,412,2698,1978,720,0.272,0.146,0.232,0.621,,,R054_U_nonspecific,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0491,leakage,61,1,5,5,0,,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0492,leaks,61,6,27,17,10,1.0,1.0,0.0,0.0,1.0,1.0,R020_S_public_safety,retained_strict,v1.1
+P0493,LEED,61,1,10,0,10,0.0,1.0,0.0,0.0,1.0,1.0,R025_E_energy_transition,retained_strict,v1.1
+P0494,legislation,61,2,7,2,5,0.0,0.0,0.286,0.714,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0495,LFTR,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0496,LGBTQ,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0497,life-changing,61,1,1,0,1,1.0,1.0,0.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0498,life-enhancing,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0499,LifeSkills,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0500,literacy,61,1,12,12,0,,0.0,0.0,1.0,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0501,litigations,61,0,0,0,0,,,,,0.0,0.0,R051_J_compliance_risk,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0502,livelihood,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0503,lives,61,2,9,4,5,1.0,0.556,0.0,0.444,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0504,LMICs,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0505,LOCIs,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0506,LOPC,61,0,0,0,0,,,,,1.0,1.0,R031_S_ohs,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0507,lost,61,91,843,567,276,0.859,0.871,0.089,0.04,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0508,Lost-Time,61,6,35,35,0,,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0509,low-carbon,61,2,15,0,15,1.0,1.0,0.0,0.0,1.0,1.0,R023_E_ghg_air,retained_strict,v1.1
+P0510,low-emission,61,0,0,0,0,,,,,1.0,1.0,R023_E_ghg_air,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0511,LTAFR,61,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0512,LTAR,62,1,5,0,5,1.0,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0513,LTAs,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0514,LTDIF,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0515,LTFIR,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0516,LTIF,62,2,2,2,0,,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0517,LTIFR,62,1,11,11,0,,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0518,LTIIR,62,0,0,0,0,,,,,1.0,1.0,R031_S_ohs,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0519,LTIR,62,2,11,11,0,,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0520,LTIs,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0521,LTIS,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0522,LTISR,62,0,0,0,0,,,,,1.0,1.0,R031_S_ohs,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0523,LWCR,62,5,54,44,10,1.0,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0524,LWDIR,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0525,LWDR,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0526,MAIFI,62,1,1,1,0,,0.0,1.0,0.0,0.0,1.0,R043_X_service_reliability,reassigned_extended_only,v1.1
+P0527,malaria,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0528,males,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0529,managers,62,4,15,9,6,0.0,0.0,0.6,0.4,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0530,materiality,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0531,maternal,62,1,5,0,5,1.0,1.0,0.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0532,Mecheshoo,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0533,Medicaid,62,15,89,60,29,0.0,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0534,medically,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0535,men,62,6,16,16,0,,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0536,mental,62,2,31,5,26,1.0,0.839,0.161,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0537,mentality,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0538,mentor,62,1,7,0,7,1.0,1.0,0.0,0.0,1.0,1.0,R032_S_human_capital,retained_strict,v1.1
+P0539,mentoring,62,11,29,19,10,0.8,1.0,0.0,0.0,1.0,1.0,R032_S_human_capital,retained_strict,v1.1
+P0540,mentorship,62,1,1,0,1,0.0,1.0,0.0,0.0,1.0,1.0,R032_S_human_capital,retained_strict,v1.1
+P0541,methane,62,15,97,5,92,0.88,1.0,0.0,0.0,1.0,1.0,R023_E_ghg_air,retained_strict,v1.1
+P0542,microplastics,62,0,0,0,0,,,,,1.0,1.0,R027_E_waste,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0543,middle-income,62,0,0,0,0,,,,,0.0,0.0,R055_N_financial,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0544,migrant,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0545,minorities,62,13,109,98,11,0.455,1.0,0.0,0.0,1.0,1.0,R030_S_dei,retained_strict,v1.1
+P0546,minority,62,14,71,42,29,0.586,0.789,0.211,0.0,1.0,1.0,R030_S_dei,retained_strict_with_context_exclusions,v1.1
+P0547,mitigating,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0548,mitigation,62,22,99,77,22,0.227,0.222,0.768,0.01,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0549,MMTCO2e,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0550,monitor,62,11,31,29,2,0.0,0.0,0.968,0.032,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0551,morale,62,2,2,2,0,,1.0,0.0,0.0,1.0,1.0,R032_S_human_capital,retained_strict,v1.1
+P0552,morbidity,62,2,10,0,10,0.0,0.0,1.0,0.0,0.0,1.0,R041_X_quality_care,reassigned_extended_only,v1.1
+P0553,mortality,62,3,17,7,10,0.0,0.0,1.0,0.0,0.0,1.0,R041_X_quality_care,reassigned_extended_only,v1.1
+P0554,MOSWEC,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0555,motivated,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0556,motivating,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0557,MSHA,62,1,3,0,3,0.0,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0558,MTIFR,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0559,multiculural,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0560,multiracial,62,0,0,0,0,,,,,1.0,1.0,R030_S_dei,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0561,MVI,62,2,7,7,0,,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0562,NABERS,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0563,nationality,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0564,native,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0565,near-miss,62,0,0,0,0,,,,,1.0,1.0,R031_S_ohs,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0566,NECEC,62,2,19,0,19,0.0,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0567,neighborhoods,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0568,net-zero,62,1,5,0,5,1.0,1.0,0.0,0.0,1.0,1.0,R023_E_ghg_air,retained_strict,v1.1
+P0569,neutralize,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0570,newborn,62,1,6,0,6,0.0,0.0,0.0,1.0,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0571,NFDL,62,1,1,1,0,,0.0,0.0,1.0,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0572,noise,62,1,1,1,0,,0.0,0.0,1.0,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0573,noise-related,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0574,non-compliance,62,3,17,1,16,0.312,0.294,0.706,0.0,0.0,0.0,R051_J_compliance_risk,excluded_esg_adjacent_by_definition,v1.1
+P0575,non-compliances,62,0,0,0,0,,,,,0.0,0.0,R051_J_compliance_risk,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0576,non-compliant,62,0,0,0,0,,,,,0.0,0.0,R051_J_compliance_risk,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0577,non-discrimination,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0578,non-emitting,62,1,5,0,5,0.0,1.0,0.0,0.0,1.0,1.0,R023_E_ghg_air,retained_strict,v1.1
+P0579,non-fatal,62,6,20,20,0,,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0580,non-fresh,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0581,non-hazardous,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0582,non-injury,62,1,11,0,11,1.0,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0583,non-renewable,62,0,0,0,0,,,,,,,R048_A_environment_bare,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0584,non-reportable,62,3,9,9,0,,1.0,0.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0585,non-white,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0586,norms,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0587,NQS,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0588,nurture,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0589,nurturing,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0590,occupational,62,27,139,96,43,0.907,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0591,ODMs,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0592,odor,62,3,25,25,0,,1.0,0.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0593,Ofcom,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0594,offset,62,1,1,1,0,,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0595,offsets,62,3,23,0,23,1.0,1.0,0.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0596,offsetting,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0597,Ofwat,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0598,OHC,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0599,OHES,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0600,OHI,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0601,OHSAS,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0602,OHSE,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0603,OII,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0604,oil-to-gas,62,2,12,8,4,1.0,1.0,0.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0605,ombudsman,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0606,ORIR,62,2,24,24,0,,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0607,OSHA,62,186,1271,954,317,0.975,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0608,OSHA-recordable,62,6,45,45,0,,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0609,outpatient,62,7,90,89,1,0.0,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0610,OWL,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0611,P1,62,1,5,0,5,1.0,0.0,0.0,1.0,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0612,palm,62,1,1,1,0,,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0613,parental,62,1,1,1,0,,0.0,1.0,0.0,0.0,0.0,R056_N_operating,excluded_generic_or_false_positive,v1.1
+P0614,passion,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0615,patient,62,78,433,249,184,0.065,0.012,0.841,0.148,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0616,patient-centric,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0617,patient-focused,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0618,peatland,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0619,people,62,124,973,655,318,0.553,0.235,0.435,0.33,,,R054_U_nonspecific,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0620,people-based,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0621,peoples,62,4,32,2,30,1.0,0.625,0.062,0.312,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0622,personnel development,62,3,5,5,0,,1.0,0.0,0.0,1.0,1.0,R032_S_human_capital,retained_strict,v1.1
+P0623,PHC,62,4,9,0,9,0.0,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0624,PHEV,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0625,philanthropic,62,0,0,0,0,,,,,1.0,1.0,R033_S_community,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0626,philanthropy,62,0,0,0,0,,,,,1.0,1.0,R033_S_community,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0627,photovoltaic,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0628,physician,62,16,81,79,2,0.0,0.0,0.914,0.086,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0629,planet,62,1,5,5,0,,0.0,0.0,1.0,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0630,plant-based,62,1,7,0,7,1.0,0.0,1.0,0.0,0.0,0.0,R056_N_operating,excluded_generic_or_false_positive,v1.1
+P0631,planting,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0632,plastic,62,3,9,0,9,0.889,0.889,0.111,0.0,1.0,1.0,R027_E_waste,retained_strict_with_context_exclusions,v1.1
+P0633,plastics,62,0,0,0,0,,,,,1.0,1.0,R027_E_waste,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0634,PLMUS,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0635,PLWG,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0636,PM10,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0637,PMVA,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0638,PMVAR,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0639,policies,62,24,323,185,138,0.0,0.034,0.895,0.071,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0640,policy,62,37,141,91,50,0.3,0.277,0.489,0.234,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0641,policymaker,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0642,pollution,62,1,5,0,5,1.0,1.0,0.0,0.0,1.0,1.0,R029_E_env_general,retained_strict,v1.1
+P0643,pollutions,62,0,0,0,0,,,,,1.0,1.0,R029_E_env_general,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0644,population,62,7,50,50,0,,0.16,0.0,0.84,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0645,populations,62,3,15,5,10,0.5,0.667,0.0,0.333,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0646,positivity,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0647,potable,62,0,0,0,0,,,,,1.0,1.0,R026_E_water,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0648,poverty,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0649,POW,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0650,prejudice,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0651,preventable,62,30,339,183,156,1.0,1.0,0.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0652,preventative,62,2,6,1,5,1.0,0.0,0.833,0.167,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0653,prevention,62,22,145,98,47,0.702,0.834,0.131,0.034,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0654,preventive,62,1,14,14,0,,1.0,0.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0655,prosecution,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0656,prosper,62,1,4,4,0,,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0657,protected,62,2,6,6,0,,0.0,0.167,0.833,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0658,protecting,62,1,4,4,0,,0.0,0.0,1.0,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0659,PSER,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0660,PSEs,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0661,PSIR,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0662,PSIs,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0663,PSPS,62,2,25,0,25,1.0,1.0,0.0,0.0,1.0,1.0,R020_S_public_safety,retained_strict,v1.1
+P0664,psychologically,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0665,PUE,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0666,PV,62,4,22,22,0,,0.0,0.5,0.5,,,R015_fp_misc2,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0667,PVAR,62,1,5,0,5,1.0,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0668,PVIR,62,3,12,12,0,,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0669,QHSE,62,0,0,0,0,,,,,1.0,1.0,R031_S_ohs,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0670,QHSES,62,0,0,0,0,,,,,1.0,1.0,R031_S_ohs,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0671,QualityScore,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0672,race,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0673,racial,62,3,16,0,16,1.0,1.0,0.0,0.0,1.0,1.0,R030_S_dei,retained_strict,v1.1
+P0674,racialized,62,0,0,0,0,,,,,1.0,1.0,R030_S_dei,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0675,RCFR,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0676,RCR,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0677,recordable,62,265,2759,1888,871,0.993,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0678,recordables,62,33,376,267,109,0.917,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0679,recruit,62,1,1,1,0,,0.0,1.0,0.0,0.0,0.0,R052_J_workforce_generic,excluded_esg_adjacent_by_definition,v1.1
+P0680,recruiting,62,12,48,10,38,0.658,0.312,0.688,0.0,0.0,0.0,R052_J_workforce_generic,excluded_esg_adjacent_by_definition,v1.1
+P0681,recyclability,62,0,0,0,0,,,,,1.0,1.0,R027_E_waste,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0682,recyclable,62,0,0,0,0,,,,,1.0,1.0,R027_E_waste,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0683,recycle,62,2,16,11,5,0.0,0.312,0.688,0.0,1.0,1.0,R027_E_waste,retained_strict_with_context_exclusions,v1.1
+P0684,recycled,62,0,0,0,0,,,,,1.0,1.0,R027_E_waste,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0685,recycling,62,11,82,77,5,1.0,0.061,0.939,0.0,1.0,1.0,R027_E_waste,retained_strict_with_context_exclusions,v1.1
+P0686,reduce,62,114,532,351,181,0.365,0.289,0.65,0.06,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0687,reduction,62,381,2820,2271,549,0.464,0.257,0.698,0.046,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0688,reductions,62,46,369,262,107,0.215,0.201,0.745,0.054,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0689,refuel,62,1,5,5,0,,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0690,regeneratively,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0691,regime,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0692,regulation,62,4,4,3,1,0.0,0.5,0.5,0.0,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0693,regulations,62,3,3,3,0,,0.333,0.667,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0694,regulator,62,1,1,0,1,1.0,0.0,0.0,1.0,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0695,regulatory,62,249,1939,1456,483,0.089,0.056,0.742,0.202,,,R054_U_nonspecific,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0696,rehab,62,1,1,1,0,,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0697,rehabilitate,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0698,rehabilitated,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0699,rehabilitation,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0700,rehospitalization,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0701,reliance,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0702,remotely,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0703,removals,62,2,9,4,5,0.0,1.0,0.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0704,renewable,62,22,254,147,107,0.907,0.346,0.634,0.02,,,R048_A_environment_bare,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0705,replacements,62,1,1,1,0,,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0706,represented,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0707,resilience,62,2,21,0,21,0.19,0.19,0.0,0.81,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0708,resilience-based,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0709,resilient,62,2,11,0,11,0.0,0.0,0.0,1.0,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0710,reskilling,62,0,0,0,0,,,,,1.0,1.0,R032_S_human_capital,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0711,resource,62,71,362,191,171,0.129,0.064,0.765,0.171,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0712,resources,62,121,576,294,282,0.355,0.177,0.637,0.186,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0713,resources-related,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0714,respecting,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0715,respects,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0716,responsibilities,62,15,26,21,5,0.8,0.154,0.115,0.731,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0717,responsibility,62,30,127,56,71,0.521,0.512,0.339,0.15,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0718,responsible,62,15,82,45,37,1.0,0.817,0.0,0.183,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0719,responsibly,62,1,11,0,11,0.0,1.0,0.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0720,retention,62,138,1016,802,214,0.374,0.512,0.362,0.126,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0721,retirees,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0722,retraining,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0723,reusable,62,0,0,0,0,,,,,1.0,1.0,R027_E_waste,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0724,reusables,62,1,7,0,7,1.0,1.0,0.0,0.0,1.0,1.0,R027_E_waste,retained_strict,v1.1
+P0725,reuse,62,0,0,0,0,,,,,1.0,1.0,R027_E_waste,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0726,reused,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0727,RGMP,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0728,Ribbon,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0729,RICI,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0730,RIDDOR,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0731,RIDDORs,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0732,RIF,62,0,0,0,0,,,,,1.0,1.0,R031_S_ohs,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0733,RIFR,62,2,17,17,0,,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0734,rights,62,14,47,30,17,0.0,0.213,0.66,0.128,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0735,RightShip,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0736,RIR,62,5,20,20,0,,1.0,0.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0737,Robeco,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0738,RobecoSAM,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0739,rPET,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0740,RSE,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0741,RVIR,62,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0742,SACIFR,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0743,SAF,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0744,safe,63,23,218,102,116,0.241,0.394,0.307,0.298,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0745,safeguarding,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0746,safer,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0747,safety,63,1073,12083,8965,3118,0.887,0.988,0.012,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0748,safety-first,63,0,0,0,0,,,,,1.0,1.0,R031_S_ohs,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0749,safety-related,63,4,22,9,13,1.0,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0750,SAIDI,63,52,455,272,183,0.301,0.0,0.982,0.018,0.0,1.0,R043_X_service_reliability,reassigned_extended_only,v1.1
+P0751,salary,63,3,21,14,7,0.0,0.0,0.095,0.905,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0752,saltwater,63,1,5,0,5,0.0,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0753,SAM,63,9,27,19,8,0.0,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0754,sanitation,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0755,Sapin,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0756,Sarbanes-Oxley,63,16,40,38,2,0.0,0.0,1.0,0.0,0.0,0.0,R051_J_compliance_risk,excluded_esg_adjacent_by_definition,v1.1
+P0757,SASB,63,0,0,0,0,,,,,1.0,1.0,R022_GEN_esg,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0758,satisfactory,63,10,28,28,0,,0.25,0.393,0.357,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0759,satisfied,63,6,47,47,0,,0.0,1.0,0.0,0.0,1.0,R039_X_customer,reassigned_extended_only,v1.1
+P0760,SBTi,63,0,0,0,0,,,,,1.0,1.0,R023_E_ghg_air,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0761,SBTi-approval,63,0,0,0,0,,,,,1.0,1.0,R023_E_ghg_air|R056_N_operating,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0762,SCFR,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0763,science-based,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0764,scope,63,6,41,5,36,0.417,0.488,0.39,0.122,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0765,scopes,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0766,secrecy,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0767,SEEC,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0768,SEIFR,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0769,self-care,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0770,self-development,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0771,serious,63,39,289,107,182,0.945,0.869,0.003,0.128,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0772,severity,63,34,210,157,53,1.0,0.943,0.0,0.057,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0773,sexual,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0774,SF6,63,4,23,15,8,1.0,1.0,0.0,0.0,1.0,1.0,R023_E_ghg_air,retained_strict,v1.1
+P0775,shared-value,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0776,SHECR,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0777,SHECS,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0778,SHS,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0779,sick,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0780,sickness,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0781,SICR,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0782,SIF,63,10,59,18,41,1.0,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0783,SIFR,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0784,sinks,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0785,SIP,63,1,11,0,11,1.0,1.0,0.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0786,slates,63,2,16,0,16,1.0,1.0,0.0,0.0,1.0,1.0,R030_S_dei,retained_strict,v1.1
+P0787,slavery,63,0,0,0,0,,,,,1.0,1.0,R035_S_human_rights,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0788,SLO,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0789,smallholder,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0790,SMCR,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0791,SO2,63,0,0,0,0,,,,,1.0,1.0,R023_E_ghg_air,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0792,social,63,30,212,44,168,0.905,0.877,0.052,0.071,,,R049_A_social_bare,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0793,social health,63,0,0,0,0,,,,,,,R049_A_social_bare,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0794,social-economical,63,0,0,0,0,,,,,,,R049_A_social_bare|R055_N_financial,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0795,socially,63,1,1,0,1,1.0,1.0,0.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0796,societal,63,2,18,18,0,,1.0,0.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0797,societies,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0798,society,63,3,14,5,9,0.0,0.0,0.0,1.0,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0799,society’s,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0800,socioeconomic,63,0,0,0,0,,,,,0.0,0.0,R055_N_financial,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0801,soil,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0802,solidarity,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0803,SOX,63,14,52,46,6,0.0,0.019,0.981,0.0,0.0,0.0,R051_J_compliance_risk,excluded_esg_adjacent_by_definition,v1.1
+P0804,SOX deficiencies,63,0,0,0,0,,,,,0.0,0.0,R051_J_compliance_risk,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0805,SOX-compliant,63,0,0,0,0,,,,,0.0,0.0,R051_J_compliance_risk,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0806,species,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0807,spill,63,12,101,14,87,1.0,1.0,0.0,0.0,1.0,1.0,R028_E_releases,retained_strict,v1.1
+P0808,spilled,63,0,0,0,0,,,,,1.0,1.0,R028_E_releases,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0809,spills,63,24,184,87,97,0.835,1.0,0.0,0.0,1.0,1.0,R028_E_releases,retained_strict,v1.1
+P0810,SPMVI,63,2,36,36,0,,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0811,SSOFR,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0812,StakeholderWatch,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0813,STARR,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0814,statutorily,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0815,stewardship,63,28,198,149,49,0.837,0.662,0.0,0.338,,,R048_A_environment_bare,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0816,stress,63,4,19,19,0,,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0817,succession,63,153,660,490,170,0.247,0.071,0.909,0.02,0.0,0.0,R052_J_workforce_generic,excluded_esg_adjacent_by_definition,v1.1
+P0818,suicide,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0819,supervisors,63,1,6,6,0,,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0820,supplied,63,1,6,6,0,,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0821,support,63,243,862,567,295,0.064,0.064,0.639,0.297,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0822,supported,63,3,6,6,0,,0.0,0.667,0.333,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0823,supportive,63,1,5,5,0,,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0824,supports,63,1,2,2,0,,0.0,0.0,1.0,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0825,surveillance,63,1,5,5,0,,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0826,SustainAbilities,63,0,0,0,0,,,,,1.0,1.0,R038_GEN_sustainability,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0827,sustainability,63,58,469,141,328,0.521,0.979,0.009,0.013,1.0,1.0,R038_GEN_sustainability,retained_strict,v1.1
+P0828,sustainability-based,63,0,0,0,0,,,,,1.0,1.0,R038_GEN_sustainability,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0829,sustainability-labelled,63,0,0,0,0,,,,,1.0,1.0,R038_GEN_sustainability,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0830,sustainability-linked,63,0,0,0,0,,,,,1.0,1.0,R038_GEN_sustainability,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0831,sustainability-related,63,0,0,0,0,,,,,1.0,1.0,R038_GEN_sustainability,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0832,sustainable,63,22,81,51,30,0.3,0.383,0.617,0.0,1.0,1.0,R038_GEN_sustainability,retained_strict_with_context_exclusions,v1.1
+P0833,sustainable-development,63,0,0,0,0,,,,,1.0,1.0,R038_GEN_sustainability,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0834,sustainably,63,0,0,0,0,,,,,1.0,1.0,R038_GEN_sustainability,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0835,Sustainagility,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0836,Sustainalytics,63,1,1,0,1,1.0,1.0,0.0,0.0,1.0,1.0,R022_GEN_esg,retained_strict,v1.1
+P0837,SWD,63,1,5,0,5,0.0,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0838,tailings,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0839,tails,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0840,talent,63,196,996,655,341,0.557,0.239,0.733,0.028,0.0,0.0,R052_J_workforce_generic,excluded_esg_adjacent_by_definition,v1.1
+P0841,talents,63,0,0,0,0,,,,,0.0,0.0,R052_J_workforce_generic,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0842,TAR,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0843,taxonomy,63,0,0,0,0,,,,,0.0,0.0,R055_N_financial,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0844,TCEQ,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0845,TCF,63,2,12,0,12,0.0,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0846,TCFD,63,1,5,0,5,1.0,1.0,0.0,0.0,1.0,1.0,R024_E_climate,retained_strict,v1.1
+P0847,TCIR,63,7,39,15,24,1.0,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0848,tCO2,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0849,tCO2e,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0850,team,63,149,756,591,165,0.297,0.173,0.231,0.595,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0851,teambuilding,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0852,teammate,63,1,5,0,5,1.0,1.0,0.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0853,teams,63,9,64,17,47,0.0,0.0,0.219,0.781,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0854,teamwork,63,15,151,114,37,0.27,0.0,0.755,0.245,0.0,0.0,R052_J_workforce_generic,excluded_esg_adjacent_by_definition,v1.1
+P0855,teamworking,63,0,0,0,0,,,,,0.0,0.0,R052_J_workforce_generic,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0856,TFAF,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0857,TFIR,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0858,thriving,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0859,TICR,63,3,17,12,5,1.0,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0860,TIFR,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0861,TIR,63,2,13,7,6,1.0,0.462,0.0,0.538,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0862,traceability,63,1,5,0,5,0.0,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0863,traceable,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0864,TRAFR,63,1,13,13,0,,0.0,0.0,1.0,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0865,training,63,95,467,313,154,0.747,0.702,0.152,0.146,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0866,trainings,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0867,transparency,63,5,14,2,12,0.0,0.0,0.5,0.5,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0868,TRCF,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0869,TRCFR,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0870,TRCR,63,4,30,30,0,,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0871,treatable,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0872,treating,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0873,trees,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0874,TRER,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0875,TRFIR,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0876,TRI,63,1,5,0,5,0.0,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0877,TRIF,63,0,0,0,0,,,,,1.0,1.0,R031_S_ohs,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0878,TRIFR,63,0,0,0,0,,,,,1.0,1.0,R031_S_ohs,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0879,TRIR,63,47,531,371,160,1.0,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0880,TRR,63,5,54,44,10,1.0,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0881,trustworthiness,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0882,trustworthy,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0883,TSM,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0884,TTIFR,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0885,UN,63,4,13,7,6,0.0,0.0,0.846,0.154,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0886,underrepresented,63,3,11,0,11,1.0,1.0,0.0,0.0,1.0,1.0,R030_S_dei,retained_strict,v1.1
+P0887,underserved,63,3,10,10,0,,1.0,0.0,0.0,1.0,1.0,R034_S_access_inclusion,retained_strict,v1.1
+P0888,unionized,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0889,unions,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0890,unsafe,63,2,17,10,7,1.0,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0891,upcycling,63,0,0,0,0,,,,,1.0,1.0,R027_E_waste,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0892,upskilling,63,0,0,0,0,,,,,1.0,1.0,R032_S_human_capital,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0893,urgency,63,2,10,5,5,1.0,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0894,value-based,63,3,21,21,0,,0.286,0.714,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0895,values,63,31,266,125,141,0.348,0.218,0.173,0.609,,,R054_U_nonspecific,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0896,values-based,63,2,5,5,0,,0.0,1.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_non_esg_in_context,v1.1
+P0897,vegetation,63,3,36,0,36,0.139,0.694,0.0,0.306,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0898,veteran,63,0,0,0,0,,,,,1.0,1.0,R030_S_dei,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0899,veterans,63,1,1,0,1,1.0,1.0,0.0,0.0,1.0,1.0,R030_S_dei,retained_strict,v1.1
+P0900,Vigeo Eiris,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0901,violation,63,19,90,82,8,0.625,0.556,0.0,0.444,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0902,violations,63,32,532,417,115,0.565,0.605,0.327,0.068,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0903,VIR,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0904,VOCs,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0905,VoE,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0906,voluntary turnover,63,10,164,141,23,0.13,1.0,0.0,0.0,1.0,1.0,R032_S_human_capital,retained_strict,v1.1
+P0907,volunteered,63,0,0,0,0,,,,,1.0,1.0,R033_S_community,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0908,volunteering,63,0,0,0,0,,,,,1.0,1.0,R033_S_community,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0909,volunteerism,63,1,5,0,5,1.0,1.0,0.0,0.0,1.0,1.0,R033_S_community,retained_strict,v1.1
+P0910,vulnerable,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0911,WACI,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0912,warming,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0913,waste,63,5,46,37,9,1.0,0.522,0.239,0.239,,,R048_A_environment_bare,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0914,wastes,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0915,wastewater,63,4,38,17,21,1.0,1.0,0.0,0.0,1.0,1.0,R026_E_water,retained_strict,v1.1
+P0916,water,63,24,150,59,91,0.868,0.5,0.0,0.5,,,R048_A_environment_bare,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0917,water-intensive,63,0,0,0,0,,,,,,,R048_A_environment_bare,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0918,waters,63,4,18,18,0,,1.0,0.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0919,watershed,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0920,ways-of-working,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0921,welfare,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0922,wellbeing,63,0,0,0,0,,,,,1.0,1.0,R032_S_human_capital,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0923,wellness,63,6,51,46,5,1.0,1.0,0.0,0.0,1.0,1.0,R032_S_human_capital,retained_strict,v1.1
+P0924,whistleblowing,63,0,0,0,0,,,,,1.0,1.0,R036_G_ethics,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0925,WHS,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0926,wildfire,63,6,34,0,34,0.853,0.853,0.147,0.0,1.0,1.0,R020_S_public_safety,retained_strict_with_context_exclusions,v1.1
+P0927,wildflower,63,0,0,0,0,,,,,0.0,0.0,R055_N_financial,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0928,wildlife,63,0,0,0,0,,,,,1.0,1.0,R029_E_env_general,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0929,WLO,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0930,WLTP,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0931,woman,63,0,0,0,0,,,,,1.0,1.0,R030_S_dei,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0932,women,63,34,232,124,108,0.944,0.996,0.004,0.0,1.0,1.0,R030_S_dei,retained_strict,v1.1
+P0933,women-owned,63,0,0,0,0,,,,,1.0,1.0,R030_S_dei,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0934,women’s sponsorship,63,0,0,0,0,,,,,1.0,1.0,R030_S_dei,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0935,women‚Äôs,63,0,0,0,0,,,,,1.0,1.0,R030_S_dei,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0936,woodland,63,1,1,1,0,,0.0,0.0,1.0,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0937,work,63,100,656,449,207,0.232,0.41,0.346,0.244,,,,context_required_keyword_alone_insufficient; mixed_in_context,v1.1
+P0938,work-related,63,3,11,6,5,1.0,1.0,0.0,0.0,1.0,1.0,R031_S_ohs,retained_strict,v1.1
+P0939,workday,63,19,212,174,38,0.921,0.943,0.009,0.047,,,R015_fp_misc2,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0940,workdays,63,2,6,1,5,1.0,1.0,0.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0941,worked,63,11,108,98,10,0.0,1.0,0.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0942,worker,63,19,99,50,49,1.0,1.0,0.0,0.0,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0943,workforce,63,60,598,453,145,0.855,0.667,0.167,0.166,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0944,worklife,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0945,workload,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0946,workplace,63,16,107,77,30,0.533,0.841,0.075,0.084,,,,context_required_keyword_alone_insufficient; mostly_strict_in_context,v1.1
+P0947,workplaces,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0948,worksite,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0949,worst,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0950,young,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0951,youth,63,0,0,0,0,,,,,,,,no_occurrence_1998_2021; not_carried_forward_or_untested,v1.1
+P0952,zero-carbon,63,0,0,0,0,,,,,1.0,1.0,R023_E_ghg_air,no_occurrence_1998_2021; covered_by_v1_rule,v1.1
+P0953,zero-fatalities,63,0,0,0,0,,,,,1.0,1.0,R031_S_ohs,no_occurrence_1998_2021; covered_by_v1_rule,v1.1

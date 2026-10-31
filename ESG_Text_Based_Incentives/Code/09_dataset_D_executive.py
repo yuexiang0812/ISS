@@ -1,5 +1,8 @@
 """Step 09 — Dataset D: ESG_Executive_Firm_Year.dta (unit: CIK x fiscalyear x participantid).
 
+中文说明：高管-公司-年数据集。grant 自带 CIK、财年、财政月与 participantID，按 (CIK, FY, FM, pid) 与 ParticipantFY 精确匹配身份，
+不做姓名匹配或跨年匹配；同一财年跨两个财政月的情况保留并标记。
+
 Linkage: grants carry CIK, FiscalYear, FiscalMonth and participantID directly (no cross-year matching needed).
 Executive identity comes from ParticipantFY matched EXACTLY on (CIK, FiscalYear, FiscalMonth, participantID);
 no name-based or cross-year matching is attempted. If an executive's grants span two fiscal months in the
@@ -8,7 +11,7 @@ same fiscal year (fiscal-year-end change), the unit is still (CIK, FY, participa
 import numpy as np, pandas as pd
 from config import INTER, read_raw, get_logger, check_unique
 from dtautil import write_dta
-from aggregate import aggregate, check_aggregate
+from aggregate import aggregate, check_aggregate, fill_counts
 
 log = get_logger("09_dataset_D_executive")
 C = pd.read_parquet(INTER / "dataset_C.parquet")
@@ -33,7 +36,7 @@ C[C.participant_matched == 0][["grantid", "cik", "fiscalyear", "fiscalmonth", "p
 C.to_parquet(INTER / "dataset_C.parquet", index=False)
 
 by = ["cik", "fiscalyear", "participantid"]
-D = aggregate(C, K, by, "exec")
+D = fill_counts(aggregate(C, K, by, "exec"), "exec")
 fm = C.groupby(by).agg(fiscalmonth=("fiscalmonth", "max"), n_fiscalmonths=("fiscalmonth", "nunique"), _pm=("participant_matched", "mean")).reset_index()
 D = D.merge(fm, on=by, how="left")
 D["exec_identity_match_status"] = np.where(D._pm == 1, "matched_exact", np.where(D._pm == 0, "unmatched", "partially_matched"))

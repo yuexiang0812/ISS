@@ -61,17 +61,29 @@ def decide(hits):
     else:
         ext = 0
     # pillars (Strict only)
+    # 中文：维度判断——有该维度的具体证据记 1；有通用 ESG 词（ESG/CSR/可持续）或该维度的模糊词时记“未知”；否则记 0。
     pill = {}
     spec = {h[3] for h in esg if h[3] in ("E", "S", "G")}
+    amb_pillars = {h[3] for h in hits if h[1] == "AMB" and h[3] in ("E", "S", "G")}   # v1.1: e.g. 'safety and governance' -> G unknown
     gen_esg = any(h[2] == "GEN_esg" for h in esg)
     gen_sus = any(h[2] == "GEN_sustainability" for h in esg)
     unresolved_pillars = gen_esg or (gen_sus and not spec)
     for p in ("E", "S", "G"):
         if strict == 1:
-            pill[p] = 1 if p in spec else (None if unresolved_pillars else 0)
+            pill[p] = 1 if p in spec else (None if (unresolved_pillars or p in amb_pillars) else 0)
         else:
             pill[p] = 0 if strict == 0 else None
     return strict, ext, pill
+
+
+def extended_only(strict, ext):
+    """1 = Extended but not Strict; 0 = not Extended, or Strict; Unknown when it cannot be decided (v1.1 fix:
+    Strict Unknown + Extended 1 used to be coded 1)."""
+    if ext == 0 or strict == 1:
+        return 0
+    if ext == 1 and strict == 0:
+        return 1
+    return None
 
 
 def classify_unit(metric, other, metric_type=""):
@@ -116,7 +128,8 @@ def classify_unit(metric, other, metric_type=""):
     reason = "; ".join(f"{h[0]}[{h[1]}]:'{h[5]}'" for h in hits if h[1] not in ("MASK", "MASKN", "FILLER"))
     masked = "; ".join(f"{h[0]}:'{h[5]}'" for h in hits if h[1] in ("MASK", "MASKN"))
     topics = sorted({h[2] for h in hits if h[1] in ("ESG", "EXT")})
-    return dict(esg_strict=strict, esg_extended=ext, esg_e=pill["E"], esg_s=pill["S"], esg_g=pill["G"],
+    return dict(esg_strict=strict, esg_extended=ext, esg_extended_only=extended_only(strict, ext),
+                esg_e=pill["E"], esg_s=pill["S"], esg_g=pill["G"],
                 esg_general=int(any(h[2].startswith("GEN") for h in hits if h[1] == "ESG")),
                 esg_strict_textonly=t_strict, esg_extended_textonly=t_ext,
                 classification_method=method, classification_confidence=conf, context_used=ctx,

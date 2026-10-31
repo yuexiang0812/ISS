@@ -1,4 +1,4 @@
-"""Step 18 — Self-contained audit archive (local only; contains ISS-licensed data).
+"""Step 19 — Self-contained audit archive (local only; contains ISS-licensed data).
 
 Creates  ../Audit_Archive/ESG_Audit_Archive_<version>_<timestamp>.zip  and a matching  *_MANIFEST.csv  with:
   project/   the whole ESG_Text_Based_Incentives tree (code, dictionaries, logs, validation, annual, documentation +
@@ -13,7 +13,7 @@ its source URL and SHA-256 are recorded so the exact input can be verified.
 import hashlib, os, glob, subprocess, zipfile, datetime as dt, platform, csv, io, pathlib
 from config import PROJ, CLASSIFIER_VERSION, get_logger
 
-log = get_logger("18_build_audit_archive")
+log = get_logger("19_build_audit_archive")
 REPO = PROJ.parent
 OUTDIR = REPO / "Audit_Archive"; OUTDIR.mkdir(exist_ok=True)
 stamp = dt.datetime.now().strftime("%Y%m%d_%H%M")

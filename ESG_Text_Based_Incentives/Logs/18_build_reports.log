@@ -1,0 +1,20 @@
+2026-10-31 16:56:54,531 INFO narrative check OK : ISS ESG `metric` labels are (almost) absent before 2018 (part of the 2018 re-taxonomy)
+2026-10-31 16:56:54,531 INFO narrative check OK : the independent quality audit has no FAIL
+2026-10-31 16:56:54,531 INFO narrative check OK : 2018 jump: ISS categories jump > 5 pp in 2018 while uniform text adoption (lb) moves < 3 pp
+2026-10-31 16:56:54,531 INFO narrative check OK : the real increase is concentrated in 2020-2021
+2026-10-31 16:56:54,531 INFO narrative check OK : 2018-2021 increase driven by the extensive margin
+2026-10-31 16:56:54,531 INFO narrative check OK : Social conditions drive the level and the increase
+2026-10-31 16:56:54,531 INFO narrative check OK : no coverage discontinuity at 2018
+2026-10-31 16:56:54,531 INFO narrative check OK : continuing firms 2017->2018 change < 3 pp (composition is not the explanation)
+2026-10-31 16:56:54,531 INFO narrative check OK : text-Strict KPI counts do not jump in 2018
+2026-10-31 16:56:54,531 INFO narrative check OK : ESG conditions sit mainly in cash incentive plans
+2026-10-31 16:56:54,533 INFO rendered Documentation/Methodology_and_Validation_Report.md from template
+2026-10-31 16:56:55,301 INFO wrote 03_Methodology_and_Validation_Report.docx
+2026-10-31 16:56:55,384 INFO wrote 04_Coding_Guidelines.docx
+2026-10-31 16:56:55,451 INFO wrote 05_Project_README.docx
+2026-10-31 16:56:55,977 INFO wrote 01_Quality_Audit_Report.docx
+2026-10-31 16:56:56,292 INFO wrote 02_Process_Record.docx
+2026-10-31 16:56:56,538 INFO wrote 06_User_Guide_CN.docx
+2026-10-31 16:56:56,780 INFO wrote 07_Review_and_Changes_v1.1.docx
+2026-10-31 16:56:57,834 INFO wrote 08_Worked_Example_local.docx
+2026-10-31 16:56:58,200 INFO wrote Conversation_Archive_local.docx

@@ -10,7 +10,7 @@ STEPS = ["01_data_inventory.py", "02_extract_paper_dictionary.py", "03_goal_extr
          "05_dictionary_deliverables.py", "06_dataset_A_text_dictionary.py", "07_dataset_B_kpi.py", "08_dataset_C_grant.py",
          "09_dataset_D_executive.py", "10_dataset_E_ceo.py", "11_dataset_F_G_firm.py", "12_paper_vs_revised_comparison.py",
          "13_validation.py", "14_annual_trends.py", "15_variable_dictionary.py",
-         "16_quality_audit.py", "17_build_reports.py", "18_build_audit_archive.py"]
+         "16_quality_audit.py", "17_version_comparison.py", "18_build_reports.py", "19_build_audit_archive.py"]
 here = pathlib.Path(__file__).parent
 start = sys.argv[1] if len(sys.argv) > 1 else STEPS[0][:2]
 for s in STEPS:

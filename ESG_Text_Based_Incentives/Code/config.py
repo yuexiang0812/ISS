@@ -1,5 +1,7 @@
 """Shared paths, constants and helpers.
 
+中文说明：全局配置——路径、版本号、常量与通用检查函数。原始 ISS 文件只读；用环境变量 ISS_RAW_DIR 指向
+18 个 .dta 所在目录。CLASSIFIER_VERSION 每次规则或口径变化都要升级，并在 Dictionaries/c_change_log.csv 记录。
 Raw ISS files are read-only. Set ISS_RAW_DIR to the folder holding the 18 .dta files.
 """
 import os, pathlib, logging, sys
@@ -9,12 +11,15 @@ PROJ = pathlib.Path(__file__).resolve().parents[1]
 RAW = pathlib.Path(os.environ.get("ISS_RAW_DIR", "/tmp/incentive_lab/extracted/01. Incentive Lab"))
 PAPER_PDF = pathlib.Path(os.environ.get("PAPER_PDF", PROJ.parent / "ESG_Metrics_Paper.pdf"))
 CODE = PROJ / "Code"; DICT = PROJ / "Dictionaries"; INTER = PROJ / "Data" / "Intermediate"
-FINAL = PROJ / "Data" / "Final"; VALID = PROJ / "Validation"; LOGS = PROJ / "Logs"
+FINAL = PROJ / "Data" / "Final"; VALID = pathlib.Path(os.environ.get("ESG_VALID_DIR", PROJ / "Validation")); LOGS = PROJ / "Logs"
 DOCS = PROJ / "Documentation"; ANNUAL = PROJ / "Annual_Analysis"
 for d in (DICT, INTER, FINAL, VALID, LOGS, DOCS, ANNUAL):
     d.mkdir(parents=True, exist_ok=True)
 
-CLASSIFIER_VERSION = "v1.0"          # bump on any rule change; see Dictionaries/c_change_log.csv
+CLASSIFIER_VERSION = "v1.1"          # bump on any rule / definition change; see Dictionaries/c_change_log.csv
+PREVIOUS_VERSION = "v1.0"            # outputs of this version are kept in Data/Intermediate/snapshot_<version>/ for comparison
+SAMPLE_VERSION = "v1.0"              # the independent validation sample was frozen under v1.0 and is NEVER redrawn;
+                                     # any later classifier version is evaluated on the same probability sample
 YEARS = range(1998, 2022)
 
 FILES = {
@@ -91,3 +96,15 @@ def check_share(df, cols, log, name):
         bad = int(((s < 0) | (s > 1)).sum())
         log.info(f"[share check] {name}.{c}: n={len(s):,} out-of-[0,1]={bad}")
         assert bad == 0, f"{name}.{c} outside [0,1]"
+
+
+# ---- pipeline statistics registry (counts only, no ISS text): read by the auto-generated reports (Step 18)
+STATS_FILE = DOCS / "pipeline_stats.json"
+
+
+def record_stats(step, **values):
+    """Store counts computed inside a step (e.g. raw-data facts no later dataset keeps) for the reports."""
+    import json
+    d = json.loads(STATS_FILE.read_text()) if STATS_FILE.exists() else {}
+    d[step] = {k: (v.item() if hasattr(v, "item") else v) for k, v in values.items()}
+    STATS_FILE.write_text(json.dumps(d, indent=1, sort_keys=True))

@@ -1,45 +1,62 @@
-2026-10-31 13:32:35,135 INFO overlap (units) paper vs revised STRICT:
+2026-10-31 16:28:04,399 INFO overlap (units) paper vs revised STRICT:
 rev_strict  rev_strict=0  rev_strict=1  rev_strict=Unknown    All
 paper                                                            
-paper=0            24932            88                6686  31706
-paper=1             2734          2952                1198   6884
-All                27666          3040                7884  38590
+paper=0            25245           100                6361  31706
+paper=1             2777          2943                1164   6884
+All                28022          3043                7525  38590
 overlap (units) paper vs revised EXTENDED:
 rev_ext  rev_ext=0  rev_ext=1  rev_ext=Unknown    All
 paper                                                
-paper=0      23626       1045             7035  31706
-paper=1       2325       3333             1226   6884
-All          25951       4378             8261  38590
-2026-10-31 13:32:35,178 INFO overlap (goal_rows) paper vs revised STRICT:
+paper=0      23945       1050             6711  31706
+paper=1       2369       3325             1190   6884
+All          26314       4375             7901  38590
+2026-10-31 16:28:04,455 INFO overlap (goal_rows) paper vs revised STRICT:
 rev_strict  rev_strict=0  rev_strict=1  rev_strict=Unknown     All
 paper                                                             
-paper=0           648557           575              111836  760968
-paper=1            16617         29331                7175   53123
-All               665174         29906              119011  814091
+paper=0           651211           677              109080  760968
+paper=1            16773         29442                6908   53123
+All               667984         30119              115988  814091
 overlap (goal_rows) paper vs revised EXTENDED:
 rev_ext  rev_ext=0  rev_ext=1  rev_ext=Unknown     All
 paper                                                 
-paper=0     632625      12666           115677  760968
-paper=1      13355      32413             7355   53123
-All         645980      45079           123032  814091
-2026-10-31 13:32:35,849 INFO annual comparison (2014-2021):
+paper=0     635286      12757           112925  760968
+paper=1      13489      32554             7080   53123
+All         648775      45311           120005  814091
+2026-10-31 16:28:05,244 INFO annual comparison (2014-2021):
             paper_esg_row_share  rev_strict_row_share_lb  rev_unknown_row_share  exec_perf_paper_adopt  exec_perf_rev_strict_adopt_lb  exec_perf_rev_strict_adopt_ub  exec_perf_iss_adopt_diag  firm_perf_paper_adopt  firm_perf_rev_strict_adopt_lb  firm_perf_iss_adopt_diag
 fiscalyear                                                                                                                                                                                                                                                                    
-2014.0                    0.063                    0.037                  0.144                  0.214                          0.129                          0.638                     0.000                  0.245                          0.139                     0.000
-2015.0                    0.072                    0.042                  0.145                  0.223                          0.136                          0.678                     0.000                  0.249                          0.146                     0.000
-2016.0                    0.071                    0.042                  0.142                  0.214                          0.130                          0.658                     0.001                  0.234                          0.141                     0.001
-2017.0                    0.066                    0.038                  0.133                  0.216                          0.136                          0.608                     0.003                  0.237                          0.146                     0.003
-2018.0                    0.071                    0.042                  0.127                  0.223                          0.148                          0.608                     0.136                  0.247                          0.155                     0.137
-2019.0                    0.079                    0.044                  0.118                  0.242                          0.156                          0.598                     0.160                  0.274                          0.168                     0.168
-2020.0                    0.094                    0.056                  0.123                  0.284                          0.189                          0.630                     0.189                  0.306                          0.196                     0.193
-2021.0                    0.121                    0.083                  0.125                  0.379                          0.294                          0.699                     0.293                  0.404                          0.304                     0.301
-2026-10-31 13:32:35,890 INFO disagreement categories:
+2014.0                    0.063                    0.038                  0.140                  0.214                          0.129                          0.634                     0.000                  0.245                          0.139                     0.000
+2015.0                    0.072                    0.042                  0.143                  0.223                          0.138                          0.676                     0.000                  0.249                          0.148                     0.000
+2016.0                    0.071                    0.044                  0.138                  0.214                          0.132                          0.659                     0.001                  0.234                          0.141                     0.001
+2017.0                    0.066                    0.038                  0.129                  0.216                          0.137                          0.606                     0.003                  0.237                          0.146                     0.003
+2018.0                    0.071                    0.042                  0.123                  0.223                          0.148                          0.605                     0.136                  0.247                          0.154                     0.137
+2019.0                    0.079                    0.044                  0.113                  0.242                          0.156                          0.593                     0.160                  0.274                          0.168                     0.168
+2020.0                    0.094                    0.056                  0.120                  0.284                          0.187                          0.629                     0.189                  0.306                          0.194                     0.193
+2021.0                    0.121                    0.083                  0.121                  0.379                          0.294                          0.698                     0.293                  0.404                          0.304                     0.301
+2026-10-31 16:28:05,280 INFO disagreement categories:
                                  units  goal_rows
 cat                                              
-agree_esg                         2952      29331
-agree_non_esg_or_unknown         31618     760393
-paper_esg_rev_adjacent_excluded    907       5290
-paper_esg_rev_extended_only        381       3082
-paper_esg_rev_non_esg             1484       8428
-paper_esg_rev_unknown             1160       6992
-paper_non_esg_rev_strict            88        575
+agree_esg                         2943      29442
+agree_non_esg_or_unknown         31606     760291
+paper_esg_rev_adjacent_excluded    930       5306
+paper_esg_rev_extended_only        382       3112
+paper_esg_rev_non_esg             1512       8558
+paper_esg_rev_unknown             1117       6705
+paper_non_esg_rev_strict           100        677
+2026-10-31 16:28:11,468 INFO approximate replication of AGHJ (2025) Table 1 (% obs whose executive has an ESG metric):
+            n_obs  our_paper_dictionary_pct  our_v_strict_lb_pct  aghj_2025_table1_pct
+fiscalyear                                                                            
+2008.0       5450                      20.5                 11.7                  22.9
+2009.0       5263                      23.8                 17.0                  29.0
+2010.0       5960                      22.0                 13.9                  36.6
+2011.0       6674                      21.7                 14.4                  20.2
+2012.0       7332                      24.2                 14.9                  26.8
+2013.0       7918                      22.7                 12.9                  27.1
+2014.0       8517                      23.2                 14.0                  29.9
+2015.0       8721                      24.0                 14.3                  20.4
+2016.0       9318                      24.6                 15.6                  23.7
+2017.0      10056                      23.5                 15.5                  23.8
+2018.0      10206                      24.8                 16.1                  24.9
+2019.0      10475                      25.9                 16.5                  29.6
+2020.0      10564                      29.9                 20.6                  32.1
+2021.0       9951                      40.2                 32.3                  45.4

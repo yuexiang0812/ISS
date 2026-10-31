@@ -1,5 +1,9 @@
 """Step 07 — Dataset B: ESG_KPI_Master.dta.
 
+中文说明：KPI = 同一 grant 内、同一目标文件（绝对/相对/加速）、同一文本单元的目标；多个业绩期与同文本的重复目标合并为一个 KPI，
+并保留 kpi_source_count、kpi_duplicate_flag 以及全部原始 goal id / period id，便于追溯。同时输出原始目标记录层分类（另一种表示）。
+v1.1 起额外保留“仅文本”标签 kpi_esg_strict_textonly / kpi_esg_extended_textonly（不使用结构化上下文）。
+
 KPI definition (economically distinct KPI within an award):
   kpi = (grantid, goal_source, text_id)
   * collapses multiple measurement periods of the same objective (periodId = repeated measurement, ISS Guide p.6);
@@ -16,7 +20,7 @@ from dtautil import write_dta
 log = get_logger("07_dataset_B_kpi")
 g = pd.read_parquet(INTER / "goal_records.parquet")
 A = pd.read_parquet(INTER / "dataset_A.parquet")
-lab = ["esg_strict", "esg_extended", "esg_extended_only", "esg_e", "esg_s", "esg_g", "esg_general", "classification_status",
+lab = ["esg_strict", "esg_extended", "esg_extended_only", "esg_e", "esg_s", "esg_g", "esg_general", "esg_strict_textonly", "esg_extended_textonly", "classification_status",
        "classification_confidence", "classification_method", "human_reviewed", "text_key", "classification_reason"]
 g = g.drop(columns=["text_key"], errors="ignore").merge(A[["text_id"] + lab], on="text_id", how="left", validate="m:1")
 assert g.esg_strict.notna().sum() + g.esg_strict.isna().sum() == len(g)
@@ -50,7 +54,7 @@ agg = g.groupby("kpi_id").agg(
     percentvest_sum=("percentVest", lambda s: s.sum(min_count=1)), goal_grant_matched=("goal_grant_matched", "min"),
 ).reset_index()
 K = agg.merge(A[["text_id"] + lab], on="text_id", how="left", validate="m:1")
-K = K.rename(columns={c: "kpi_" + c for c in ["esg_strict", "esg_extended", "esg_extended_only", "esg_e", "esg_s", "esg_g", "esg_general",
+K = K.rename(columns={c: "kpi_" + c for c in ["esg_strict", "esg_extended", "esg_extended_only", "esg_e", "esg_s", "esg_g", "esg_general", "esg_strict_textonly", "esg_extended_textonly",
                                                  "classification_status", "classification_confidence", "classification_method", "human_reviewed",
                                                  "classification_reason"]})
 K["kpi_duplicate_flag"] = (K.n_goal_ids > 1).astype("int8")
@@ -75,6 +79,6 @@ L = dict(kpi_id="KPI id = goal_source_grantid_text_id", grantid="ISS grantID", g
          kpi_esg_extended_only="Extended-only KPI 1/0/.", kpi_esg_e="Environmental KPI 1/0/.", kpi_esg_s="Social KPI 1/0/.", kpi_esg_g="Governance KPI 1/0/.",
          kpi_esg_general="Multi-pillar ESG term present", kpi_classification_status="confirmed/provisional/unknown",
          kpi_classification_confidence="high/medium/low/human", kpi_classification_method="Classification method", kpi_human_reviewed="1 if human-adjudicated",
-         kpi_classification_reason="Rules fired and matched text", kpi_duplicate_flag="1 if identical text repeated across >1 objective in grant",
+         kpi_classification_reason="Rules fired and matched text", kpi_esg_strict_textonly="Strict ESG from text only (no structured context) 1/0/.", kpi_esg_extended_textonly="Extended ESG from text only 1/0/.", kpi_duplicate_flag="1 if identical text repeated across >1 objective in grant",
          kpi_key_complete="1 if grant, CIK, year, participant all present and grant matched", kpi_iss_esg_flag_diag="DIAGNOSTIC: any ISS ESG metricType/label")
 write_dta(K, "ESG_KPI_Master.dta", L, log, keys=["kpi_id"])

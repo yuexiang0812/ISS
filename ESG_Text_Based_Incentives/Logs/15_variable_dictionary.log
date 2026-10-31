@@ -1,11 +1,11 @@
-2026-10-31 13:33:00,358 INFO dataset summary:
+2026-10-31 16:28:35,411 INFO dataset summary:
                            dataset  observations  variables                  primary_key  key_unique  key_missing  year_min  year_max
            ESG_Text_Dictionary.dta         38590         43                      text_id        True            0    1998.0    2021.0
-                ESG_KPI_Master.dta        654123         36                       kpi_id        True            0    1998.0    2021.0
-              ESG_Grant_Master.dta        469429         69                      grantid        True            0    1998.0    2021.0
-       ESG_Executive_Firm_Year.dta        164832         73 cik+fiscalyear+participantid        True            0    1998.0    2021.0
-             ESG_CEO_Firm_Year.dta         33278         76 cik+fiscalyear+participantid        True            0    1998.0    2021.0
-          ESG_Firm_Year_Master.dta         33328         70               cik+fiscalyear        True            0    1998.0    2021.0
-          ESG_NonCEO_Firm_Year.dta         31944         63               cik+fiscalyear        True            0    1998.0    2021.0
+                ESG_KPI_Master.dta        654123         38                       kpi_id        True            0    1998.0    2021.0
+              ESG_Grant_Master.dta        469429         76                      grantid        True            0    1998.0    2021.0
+       ESG_Executive_Firm_Year.dta        164832         96 cik+fiscalyear+participantid        True            0    1998.0    2021.0
+             ESG_CEO_Firm_Year.dta         33278         99 cik+fiscalyear+participantid        True            0    1998.0    2021.0
+          ESG_Firm_Year_Master.dta         33328         94               cik+fiscalyear        True            0    1998.0    2021.0
+          ESG_NonCEO_Firm_Year.dta         31944         86               cik+fiscalyear        True            0    1998.0    2021.0
 ESG_Goal_Record_Classification.dta        814091         29               goal_record_id        True            0    1998.0    2021.0
-2026-10-31 13:33:00,359 INFO variable dictionary: 459 variables
+2026-10-31 16:28:35,411 INFO variable dictionary: 561 variables

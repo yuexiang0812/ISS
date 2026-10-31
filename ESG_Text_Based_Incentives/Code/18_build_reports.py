@@ -1,4 +1,4 @@
-"""Step 17 — Word (.docx) reports, regenerated from current outputs on every run.
+"""Step 18 — Word (.docx) reports, regenerated from current outputs on every run.
 
 Documentation/Reports/
   01_Quality_Audit_Report.docx             all audit checks (Step 16), data-integrity counts, audit tables, open issues
@@ -15,7 +15,7 @@ import json, os, re, subprocess, datetime as dt, platform, glob, pathlib
 import pandas as pd
 from config import PROJ, DOCS, LOGS, VALID, INTER, DICT, ANNUAL, CLASSIFIER_VERSION, get_logger
 
-log = get_logger("17_build_reports")
+log = get_logger("18_build_reports")
 OUT = DOCS / "Reports"; OUT.mkdir(exist_ok=True)
 GEN = PROJ / "Code" / "docgen" / "make_docx.js"
 NOW = dt.datetime.now().strftime("%Y-%m-%d %H:%M")

@@ -1,5 +1,9 @@
 """Step 11 — Dataset F (ESG_Firm_Year_Master.dta) and Dataset G (ESG_NonCEO_Firm_Year.dta).
 
+中文说明：公司-年主表（研究主数据集）与非 CEO 公司-年表。公司-年全集 = CompanyFY；无 grant 的公司-年计数为 0、指标缺失（=不适用）。
+非 CEO 仅包括 currentCEO 明确为 0、且所在公司-年已识别出 CEO 的高管；角色不明者排除并计数。v1.1 新增 firm_multi_fiscalmonth
+（grant 的财政月与 CompanyFY 不一致或同一财年出现多个财政月，例如财年截止日变更）。
+
 F universe: every (CIK, fiscalyear) in CompanyFY plus any firm-year that appears only in the grants table.
     Firm-years with no grants keep firm_has_grants = 0 and missing ESG measures ('not applicable', not 0).
 G: grants of executives who are reliably NON-CEO: the firm-year has an identified CEO (unique or multiple currentCEO flags),
@@ -9,7 +13,7 @@ G: grants of executives who are reliably NON-CEO: the firm-year has an identifie
 import numpy as np, pandas as pd
 from config import INTER, read_raw, clean_missing_dates, get_logger, check_unique
 from dtautil import write_dta
-from aggregate import aggregate, check_aggregate
+from aggregate import aggregate, check_aggregate, fill_counts
 
 log = get_logger("11_dataset_F_G_firm")
 C = pd.read_parquet(INTER / "dataset_C.parquet")
@@ -30,8 +34,10 @@ log.info(f"firm-year merge CompanyFY vs grants: {F._merge.value_counts().to_dict
 F["firm_in_companyfy"] = F._merge.isin(["both", "left_only"]).astype("int8"); F = F.drop(columns="_merge")
 F["firm_has_grants"] = F.firm_n_grants.fillna(0).gt(0).astype("int8")
 F["firm_has_perf_grants"] = F.firm_n_perf_grants.fillna(0).gt(0).astype("int8")
-for c in ["firm_n_grants", "firm_n_perf_grants", "firm_n_kpis"]:
-    F[c] = F[c].fillna(0)
+F = fill_counts(F, "firm")     # v1.1: every count variable 0 (not missing) for firm-years without grants
+fmg = C.groupby(fyk).fiscalmonth.agg(lambda x: set(x.dropna()))
+F["firm_multi_fiscalmonth"] = [int(len(fmg.get((c, y), set()) | ({m} if pd.notna(m) else set())) > 1) for c, y, m in zip(F.cik, F.fiscalyear, F.fiscalmonth)]
+log.info(f"firm-years whose grants' fiscal month differs from CompanyFY or spans >1 month: {int(F.firm_multi_fiscalmonth.sum())}")
 F = F.merge(fys[fyk + ["ceo_identification_status"]].rename(columns={"ceo_identification_status": "firm_ceo_identification_status"}), on=fyk, how="left")
 check_unique(F, fyk, "Firm-Year", log)
 check_aggregate(F[F.firm_has_grants == 1], "firm", log, "firm")
@@ -49,7 +55,8 @@ LF = dict(cik="Company CIK", fiscalyear="Fiscal year", fiscalmonth="Fiscal month
           firm_esg_perf_grant_share_strict="Perf grants with Strict ESG / perf grants (. if unresolved)",
           firm_esg_perf_share_lb="Perf-grant Strict ESG share lower bound", firm_esg_perf_share_ub="Perf-grant Strict ESG share upper bound",
           firm_esg_kpi_share_strict="Distinct Strict ESG KPIs / distinct KPIs (. if unresolved)",
-          firm_ceo_identification_status="CEO identification status of firm-year", firm_iss_esg_adopt_diag="DIAGNOSTIC: ISS ESG category in any grant")
+          firm_ceo_identification_status="CEO identification status of firm-year", firm_iss_esg_adopt_diag="DIAGNOSTIC: ISS ESG category in any grant",
+          firm_multi_fiscalmonth="1 if grants span >1 fiscal month or differ from CompanyFY month")
 write_dta(F, "ESG_Firm_Year_Master.dta", LF, log, keys=fyk)
 
 # ---------------- G
@@ -61,7 +68,7 @@ d["role_class"] = np.select([d._ceo == 1, (d._id == 1) & (d.exec_current_ceo_fla
 log.info("executive role classes:\n" + d.role_class.value_counts().to_string())
 non = d[d.role_class == "nonceo"][fyk + ["participantid"]]
 Cn = C.merge(non, on=fyk + ["participantid"], how="inner")
-G = aggregate(Cn, K, fyk, "nonceo")
+G = fill_counts(aggregate(Cn, K, fyk, "nonceo"), "nonceo")
 ne = non.groupby(fyk).size().rename("nonceo_n_executives")
 ru = d[d.role_class == "role_unknown"].groupby(fyk).size().rename("nonceo_n_role_unknown_execs")
 G = G.merge(ne, on=fyk, how="left").merge(ru, on=fyk, how="left").fillna({"nonceo_n_role_unknown_execs": 0})

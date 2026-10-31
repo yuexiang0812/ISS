@@ -1,0 +1,43 @@
+2026-10-31 16:37:03,579 INFO unit sets: {'both': 38590, 'left_only': 0, 'right_only': 0} (units are defined by data + normalisation, not by rules)
+2026-10-31 16:37:03,731 INFO Strict label transitions (goal rows):
+label_current         0        1         U
+label_prev                                
+0              664947.0    220.0       7.0
+1                  47.0  29722.0     137.0
+U                2990.0    177.0  115844.0
+2026-10-31 16:37:03,786 INFO units whose labels changed: 469 (3,678 goal rows)
+                                       units  goal_rows
+change                                                 
+strict U->0; ext U->0; E/S/G UUU->000    362       2903
+strict 0->1; ext 0->1; E/S/G 000->010     17        189
+strict U->1; ext U->1; E/S/G UUU->010     16        175
+strict 1->U; ext 1->U; E/S/G 001->UUU     25        124
+strict U->0; ext U->1; E/S/G UUU->000      9         82
+strict 0->0; ext 1->0; E/S/G 000->000     13         60
+strict 0->1; ext 1->1; E/S/G 000->010      5         31
+strict 1->1; ext 1->1; E/S/G 100->1U0      4         29
+strict 1->0; ext 1->1; E/S/G 010->000      2         25
+strict 1->0; ext 1->0; E/S/G UUU->000      3         14
+strict 1->U; ext 1->1; E/S/G 001->UUU      3         13
+strict 0->U; ext 1->U; E/S/G 000->UUU      2          7
+strict 1->1; ext 1->1; E/S/G 011->01U      1          6
+strict U->0; ext U->U; E/S/G UUU->000      1          5
+strict 1->0; ext 1->0; E/S/G 001->000      1          5
+strict U->U; ext 1->U; E/S/G UUU->UUU      1          4
+strict 1->0; ext 1->0; E/S/G 100->000      1          2
+strict U->1; ext U->1; E/S/G UUU->001      1          2
+strict 1->0; ext 1->1; E/S/G 100->000      1          1
+strict 1->1; ext 1->1; E/S/G 010->U10      1          1
+2026-10-31 16:37:04,183 INFO firm-year Strict adoption lb / ub by version (selected years):
+            adopt_lb_v1.0  adopt_lb_v1.1  adopt_ub_v1.0  adopt_ub_v1.1  g_lb_v1.0  g_lb_v1.1  value_share_v1.0  value_share_v1.1
+fiscalyear                                                                                                                      
+1998.0              0.032          0.035          0.498          0.495      0.000      0.000             0.000             0.006
+2008.0              0.107          0.107          0.600          0.595      0.005      0.005             0.012             0.047
+2015.0              0.146          0.148          0.717          0.717      0.011      0.010             0.008             0.059
+2016.0              0.141          0.141          0.701          0.703      0.008      0.007             0.010             0.049
+2017.0              0.146          0.146          0.646          0.644      0.008      0.007             0.014             0.054
+2018.0              0.155          0.154          0.651          0.649      0.007      0.006             0.016             0.061
+2019.0              0.168          0.168          0.644          0.640      0.010      0.007             0.014             0.063
+2020.0              0.196          0.194          0.670          0.670      0.013      0.007             0.025             0.081
+2021.0              0.304          0.304          0.728          0.728      0.014      0.012             0.041             0.117
+2026-10-31 16:37:04,209 INFO review findings register: 25 items

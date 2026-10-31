@@ -1,15 +1,16 @@
-2026-10-31 13:28:07,761 INFO (b1) 50 rules written
-2026-10-31 13:28:10,967 INFO (b2) decisions:
-decision_v1
+2026-10-31 16:20:15,958 INFO (b1) 57 rules written
+2026-10-31 16:20:19,228 INFO (b2) decisions:
+decision
 no_occurrence_1998_2021; not_carried_forward_or_untested                  439
-retained_strict                                                           128
+retained_strict                                                           126
 no_occurrence_1998_2021; covered_by_v1_rule                               112
 context_required_keyword_alone_insufficient; mostly_non_esg_in_context     84
-context_required_keyword_alone_insufficient; mostly_strict_in_context      74
-context_required_keyword_alone_insufficient; mixed_in_context              73
+context_required_keyword_alone_insufficient; mostly_strict_in_context      76
+context_required_keyword_alone_insufficient; mixed_in_context              72
 excluded_esg_adjacent_by_definition                                        18
+retained_strict_with_context_exclusions                                    11
 reassigned_extended_only                                                   11
-retained_strict_with_context_exclusions                                    10
 excluded_generic_or_false_positive                                          4
-2026-10-31 13:28:11,000 INFO (b3) 38 new expressions; 88 units / 575 goal rows ESG under v1 but unmatched by AGHJ
-2026-10-31 13:28:11,002 INFO (c) change log written
+2026-10-31 16:20:19,267 INFO (b3) 46 new expressions; 100 units / 677 goal rows ESG under v1.1 but unmatched by AGHJ
+2026-10-31 16:20:34,713 INFO (b4) rule match examples: 535 rows
+2026-10-31 16:20:34,715 INFO (c) change log written

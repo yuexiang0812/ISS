@@ -1,0 +1,303 @@
+=== 03_goal_extraction.py rc=0 51s
+                  0               0   2              0  12599                0       0         4177
+2013.0       1       30391                 0                      0    0          0                        0               0            0                                 0                                   0                           0               0  20              0  11943                0       0         4574
+2014.0      23       30802                 0                      0    0          0                        4               0            0                                 0                                   0                           0               0   3              4  13411                4       0         5211
+2015.0      17       30426                 0                      0    0          0                       26               0            0                                 0                                   0                           0               0  29              0  14445                5       0         5450
+2016.0      47       28921                 5                      0    0          1                       73              20            5                                 5                                  49                           5              29   3             30  12974               15      30         5577
+2017.0       5       28988                 5                      0    0         24                      297              12            0                                 5                                  86                           0              84   0             43  12634              147      28         5947
+2018.0       1        2309               437                    337  142       2524                    11253             300          278                               520                                2614                         864            5266   0           6060   6850             4626    1545          499
+2019.0       0         255               569                    399  173       2773                    12181             190          348                               541                                2673                        1078            5859   0           6382   6373             5173    1809           71
+2020.0       0           0               479                    386  208       2943                    11234             156          448                               574                                2558                        1400            6489   0           7544   5926             5208    2061            0
+2021.0       0           0               383                    364  467       2792                    10055             121          675                               601                                2295                        1322            5845   0           6798   5220             4560    2702            0
+2026-10-31 16:03:39,288 INFO saved 814,091 goal records
+
+=== 04_text_classification.py rc=0 47s
+2026-10-31 16:03:47,997 INFO classification units: 38,590 (blank-text context units: 10)
+2026-10-31 16:04:26,553 INFO esg_strict (units): {'0': 28033, 'Unknown': 7525, '1': 3032} | goal-row weighted: {'0': 668068, '1': 30104, 'Unknown': 115919}
+2026-10-31 16:04:26,563 INFO esg_extended (units): {'0': 26330, 'Unknown': 7900, '1': 4360} | goal-row weighted: {'0': 648902, '1': 45258, 'Unknown': 119931}
+2026-10-31 16:04:26,578 INFO method x strict (rows):
+esg_strict                  0      1  Unknown
+classification_method                        
+deterministic_rule     607082  30104        0
+structured_context      60986      0        0
+unresolved                  0      0   115919
+2026-10-31 16:04:26,578 INFO rules: 55; version v1.1
+
+=== 05_dictionary_deliverables.py rc=0 20s
+2026-10-31 16:04:27,182 INFO (b1) 55 rules written
+2026-10-31 16:04:30,537 INFO (b2) decisions:
+decision
+no_occurrence_1998_2021; not_carried_forward_or_untested                  439
+retained_strict                                                           126
+no_occurrence_1998_2021; covered_by_v1_rule                               112
+context_required_keyword_alone_insufficient; mostly_non_esg_in_context     83
+context_required_keyword_alone_insufficient; mostly_strict_in_context      76
+context_required_keyword_alone_insufficient; mixed_in_context              72
+excluded_esg_adjacent_by_definition                                        18
+retained_strict_with_context_exclusions                                    11
+reassigned_extended_only                                                   11
+excluded_generic_or_false_positive                                          5
+2026-10-31 16:04:30,587 INFO (b3) 44 new expressions; 98 units / 674 goal rows ESG under v1.1 but unmatched by AGHJ
+2026-10-31 16:04:46,493 INFO (b4) rule match examples: 520 rows
+2026-10-31 16:04:46,495 INFO (c) change log written
+
+=== 06_dataset_A_text_dictionary.py rc=0 2s
+2026-10-31 16:04:47,026 INFO no adjudicated human labels found -> all labels are model/rule-based (provisional)
+2026-10-31 16:04:47,027 INFO invariant check strict=1 => extended=1 violations: 0
+2026-10-31 16:04:48,590 INFO [dta] ESG_Text_Dictionary.dta: 38,590 obs x 43 vars; key=['text_id']; renamed(overlong)={}
+2026-10-31 16:04:48,608 INFO status x strict:
+esg_strict             -1.0    0.0   1.0
+classification_status                   
+provisional               0  28033  3032
+unknown                7525      0     0
+
+=== 07_dataset_B_kpi.py rc=0 198s
+2026-10-31 16:05:22,514 INFO [dta] ESG_Goal_Record_Classification.dta: 814,091 obs x 29 vars; key=['goal_record_id']; renamed(overlong)={}
+2026-10-31 16:07:36,241 INFO [key check] KPI master: 654,123 rows; key ['kpi_id'] duplicates = 0
+2026-10-31 16:07:36,303 INFO [key check] KPI master (components): 654,123 rows; key ['grantid', 'goal_source', 'text_id'] duplicates = 0
+2026-10-31 16:07:36,305 INFO reconciliation: sum(kpi_source_count) = 814,091 = goal records 814,091
+2026-10-31 16:07:36,307 INFO KPIs: 654,123; duplicate-objective KPIs: 4,849; multi-period KPIs: 84,463; incomplete keys: 9
+2026-10-31 16:07:36,403 INFO kpi strict by year:
+kpi_esg_strict  -1.0    0.0   1.0
+fiscalyear                       
+1998.0          2186   7575   132
+1999.0          2320   7863    92
+2000.0          2429   8114   122
+2001.0          2318   7827   149
+2002.0          2619   8337   167
+2003.0          2828   9075   163
+2004.0          2933  10830   295
+2005.0          2944  11385   370
+2006.0          4461  20883   669
+2007.0          4598  23593   778
+2008.0          4620  23219   894
+2009.0          4836  23625  1031
+2010.0          4888  25276  1246
+2011.0          5081  26394  1319
+2012.0          5437  28083  1401
+2013.0          5484  29116  1411
+2014.0          6386  31425  1532
+2015.0          6601  31571  1698
+2016.0          6187  31178  1685
+2017.0          5550  32398  1639
+2018.0          5130  31336  1665
+2019.0          4818  32200  1804
+2020.0          5330  32326  2298
+2021.0          5036  29509  3405
+2026-10-31 16:08:06,657 INFO [dta] ESG_KPI_Master.dta: 654,123 obs x 38 vars; key=['kpi_id']; renamed(overlong)={}
+
+=== 08_dataset_C_grant.py rc=0 36s
+,488 INFO performancetype resolved from goal data for 141 duplicated grantIDs: {'Abs/Time': 138, 'Abs/Rel/Time': 3}
+2026-10-31 16:08:17,579 INFO impossible values set to missing: negative grantDateFV=1, negative vestHighGrant=18
+2026-10-31 16:08:17,601 INFO grant dates outside [FY-3, FY+2]: 256 (flagged grant_date_suspect)
+2026-10-31 16:08:17,606 INFO expiration date before grant date: 49 (flagged grant_dates_inconsistent)
+2026-10-31 16:08:17,699 INFO grant value source:
+grant_value_source
+grant_date_fair_value      278382
+nonequity_target_payout    106524
+missing                     84523
+2026-10-31 16:08:17,959 INFO grants whose declared objectives exceed recorded objectives and rows: 335 (flagged grant_goal_data_incomplete)
+2026-10-31 16:08:19,965 INFO KPIs whose grant is absent from grants table: 3 grants (9 KPIs) -> excluded, listed in audit
+2026-10-31 16:08:20,087 INFO grant goal status:
+grant_goal_status
+perf_with_goals                      233384
+time_no_perf_condition               231168
+time_with_accel_goals                  4496
+time_accel_declared_goals_missing       171
+perf_goals_missing                      159
+type_missing                             51
+2026-10-31 16:08:20,346 INFO [key check] grant master: 469,429 rows; key ['grantid'] duplicates = 0
+2026-10-31 16:08:20,351 INFO [share check] grant.grant_esg_kpi_share_strict: n=161,324 out-of-[0,1]=0
+2026-10-31 16:08:20,355 INFO [share check] grant.grant_esg_kpi_share_extended: n=160,344 out-of-[0,1]=0
+2026-10-31 16:08:20,359 INFO [share check] grant.grant_e_kpi_share: n=161,324 out-of-[0,1]=0
+2026-10-31 16:08:20,363 INFO [share check] grant.grant_s_kpi_share: n=161,324 out-of-[0,1]=0
+2026-10-31 16:08:20,366 INFO [share check] grant.grant_g_kpi_share: n=161,324 out-of-[0,1]=0
+2026-10-31 16:08:20,370 INFO [share check] grant.grant_classification_coverage: n=469,049 out-of-[0,1]=0
+2026-10-31 16:08:20,373 INFO [share check] grant.grant_esg_share_lb: n=237,881 out-of-[0,1]=0
+2026-10-31 16:08:20,378 INFO [share check] grant.grant_esg_share_ub: n=237,881 out-of-[0,1]=0
+2026-10-31 16:08:20,382 INFO [share check] grant.grant_esg_share_ext_lb: n=237,881 out-of-[0,1]=0
+2026-10-31 16:08:20,387 INFO [share check] grant.grant_esg_share_ext_ub: n=237,881 out-of-[0,1]=0
+2026-10-31 16:08:20,436 INFO identity checks passed: esg+non+unknown = n_kpis; KPI totals reconcile to KPI master
+2026-10-31 16:08:20,479 INFO grant_esg_strict by status:
+grant_esg_strict                    -1.0     0.0    1.0
+grant_goal_status                                      
+perf_goals_missing                   159       0      0
+perf_with_goals                    66374  151925  15085
+time_accel_declared_goals_missing    171       0      0
+time_no_perf_condition                 0  231168      0
+time_with_accel_goals                523    3973      0
+type_missing                          51       0      0
+2026-10-31 16:08:40,401 INFO [dta] ESG_Grant_Master.dta: 469,429 obs x 76 vars; key=['grantid']; renamed(overlong)={}
+
+=== 09_dataset_D_executive.py rc=0 49s
+2026-10-31 16:09:16,984 INFO [key check] ParticipantFY: 474,170 rows; key ['cik', 'fiscalyear', 'fiscalmonth', 'participantid'] duplicates = 0
+2026-10-31 16:09:17,448 INFO grants matched to ParticipantFY on (CIK,FY,FM,pid): 99.9751%; unmatched 117
+2026-10-31 16:09:26,326 INFO [key check] Executive-Firm-Year: 164,832 rows; key ['cik', 'fiscalyear', 'participantid'] duplicates = 0
+2026-10-31 16:09:26,406 INFO [aggregate checks] executive: counts, cash+equity<=perf, lb<=ub (14 pairs), [0,1] ranges, exact=lb, adoption/share and pillar/strict consistency passed
+2026-10-31 16:09:26,406 INFO reconciliation: sum(exec_n_grants) = 469,429 = grants 469,429
+2026-10-31 16:09:26,410 INFO identity status:
+exec_identity_match_status
+matched_exact    164808
+unmatched            24
+2026-10-31 16:09:31,652 INFO [dta] ESG_Executive_Firm_Year.dta: 164,832 obs x 96 vars; key=['cik', 'fiscalyear', 'participantid']; renamed(overlong)={'exec_perf_equity_esg_adopt_strict': 'exec_perf_equity_esg_adopt_str', 'exec_perf_classification_coverage': 'exec_perf_class_coverage', 'exec_esg_perf_cash_grant_share_strict': 'exec_esg_perf_cash_gshr_str', 'exec_esg_perf_equity_grant_share_strict': 'exec_esg_perf_equity_gshr_str', 'exec_esg_all_grant_share_extended': 'exec_esg_all_grant_share_ext', 'exec_esg_perf_grant_share_extended': 'exec_esg_perf_grant_share_ext', 'exec_esg_compensation_value_share': 'exec_esg_comp_value_share', 'exec_perf_esg_compensation_value_share': 'exec_perf_esg_comp_value_share'}
+
+=== 10_dataset_E_ceo.py rc=0 2s
+2026-10-31 16:09:33,191 INFO firm-year CEO identification status:
+ceo_identification_status
+unique_current_ceo_flag       32231
+no_ceo_identified               515
+multiple_current_ceo_flags      505
+rolecode_fallback_unique         14
+rolecode_ambiguous                1
+2026-10-31 16:09:33,268 INFO exception table rows: 1,960 (firm-years: 1,035)
+2026-10-31 16:09:33,370 INFO [key check] CEO-Firm-Year: 33,278 rows; key ['cik', 'fiscalyear', 'participantid'] duplicates = 0
+2026-10-31 16:09:33,388 INFO CEO-firm-years: 33,278; strict sample 32,231; with grants 30,819
+2026-10-31 16:09:34,131 INFO [dta] ESG_CEO_Firm_Year.dta: 33,278 obs x 99 vars; key=['cik', 'fiscalyear', 'participantid']; renamed(overlong)={'ceo_esg_perf_cash_grant_share_strict': 'ceo_esg_perf_cash_gshr_str', 'ceo_esg_perf_equity_grant_share_strict': 'ceo_esg_perf_equity_gshr_str', 'ceo_esg_perf_grant_share_extended': 'ceo_esg_perf_grant_share_ext', 'ceo_perf_esg_compensation_value_share': 'ceo_perf_esg_comp_value_share'}
+
+=== 11_dataset_F_G_firm.py rc=0 10s
+35,306 INFO [key check] CompanyFY: 33,328 rows; key ['cik', 'fiscalyear'] duplicates = 0
+2026-10-31 16:09:37,669 INFO firm-year merge CompanyFY vs grants: {'both': 32552, 'left_only': 776, 'right_only': 0}
+2026-10-31 16:09:39,319 INFO firm-years whose grants' fiscal month differs from CompanyFY or spans >1 month: 18
+2026-10-31 16:09:39,333 INFO [key check] Firm-Year: 33,328 rows; key ['cik', 'fiscalyear'] duplicates = 0
+2026-10-31 16:09:39,386 INFO [aggregate checks] firm: counts, cash+equity<=perf, lb<=ub (14 pairs), [0,1] ranges, exact=lb, adoption/share and pillar/strict consistency passed
+2026-10-31 16:09:39,408 INFO reconciliation: firm grant/perf/ESG-grant counts = sums over executive-years; total grants = grant master
+2026-10-31 16:09:40,385 INFO [dta] ESG_Firm_Year_Master.dta: 33,328 obs x 94 vars; key=['cik', 'fiscalyear']; renamed(overlong)={'firm_perf_equity_esg_adopt_strict': 'firm_perf_equity_esg_adopt_str', 'firm_perf_classification_coverage': 'firm_perf_class_coverage', 'firm_esg_perf_cash_grant_share_strict': 'firm_esg_perf_cash_gshr_str', 'firm_esg_perf_equity_grant_share_strict': 'firm_esg_perf_equity_gshr_str', 'firm_esg_all_grant_share_extended': 'firm_esg_all_grant_share_ext', 'firm_esg_perf_grant_share_extended': 'firm_esg_perf_grant_share_ext', 'firm_esg_compensation_value_share': 'firm_esg_comp_value_share', 'firm_perf_esg_compensation_value_share': 'firm_perf_esg_comp_value_share'}
+2026-10-31 16:09:40,639 INFO executive role classes:
+role_class
+nonceo          130794
+ceo              30819
+role_unknown      3219
+2026-10-31 16:09:44,363 INFO [key check] NonCEO-Firm-Year: 31,944 rows; key ['cik', 'fiscalyear'] duplicates = 0
+2026-10-31 16:09:44,390 INFO [aggregate checks] non-CEO: counts, cash+equity<=perf, lb<=ub (14 pairs), [0,1] ranges, exact=lb, adoption/share and pillar/strict consistency passed
+2026-10-31 16:09:44,652 INFO [dta] ESG_NonCEO_Firm_Year.dta: 31,944 obs x 86 vars; key=['cik', 'fiscalyear']; renamed(overlong)={'nonceo_n_perf_esg_grants_extended': 'nonceo_n_perf_esg_grants_ext', 'nonceo_perf_cash_esg_adopt_strict': 'nonceo_perf_cash_esg_adopt_str', 'nonceo_perf_equity_esg_adopt_strict': 'nonceo_perf_equity_esg_adopt_str', 'nonceo_esg_all_grant_share_strict': 'nonceo_esg_all_grant_share_str', 'nonceo_all_classification_coverage': 'nonceo_all_class_coverage', 'nonceo_esg_perf_grant_share_strict': 'nonceo_esg_perf_grant_share_str', 'nonceo_perf_classification_coverage': 'nonceo_perf_class_coverage', 'nonceo_esg_perf_cash_grant_share_strict': 'nonceo_esg_perf_cash_gshr_str', 'nonceo_esg_perf_equity_grant_share_strict': 'nonceo_esg_perf_equity_gshr_str', 'nonceo_esg_all_grant_share_extended': 'nonceo_esg_all_grant_share_ext', 'nonceo_esg_perf_grant_share_extended': 'nonceo_esg_perf_grant_share_ext', 'nonceo_esg_compensation_value_share': 'nonceo_esg_comp_value_share', 'nonceo_perf_esg_compensation_value_share': 'nonceo_perf_esg_comp_value_share', 'nonceo_kpi_classification_coverage': 'nonceo_kpi_class_coverage'}
+
+=== 12_paper_vs_revised_comparison.py rc=0 8s
+223                          0.148                          0.605                     0.136                  0.247                          0.154                     0.137
+2019.0                    0.079                    0.044                  0.113                  0.242                          0.156                          0.593                     0.160                  0.274                          0.168                     0.168
+2020.0                    0.094                    0.056                  0.120                  0.284                          0.187                          0.629                     0.189                  0.306                          0.194                     0.193
+2021.0                    0.121                    0.083                  0.120                  0.379                          0.294                          0.698                     0.293                  0.404                          0.304                     0.301
+2026-10-31 16:09:46,520 INFO disagreement categories:
+                                 units  goal_rows
+cat                                              
+agree_esg                         2934      29430
+agree_non_esg_or_unknown         31608     760294
+paper_esg_rev_adjacent_excluded    931       5307
+paper_esg_rev_extended_only        379       3080
+paper_esg_rev_non_esg             1514       8568
+paper_esg_rev_unknown             1126       6738
+paper_non_esg_rev_strict            98        674
+2026-10-31 16:09:52,883 INFO approximate replication of AGHJ (2025) Table 1 (% obs whose executive has an ESG metric):
+            n_obs  our_paper_dictionary_pct  our_v_strict_lb_pct  aghj_2025_table1_pct
+fiscalyear                                                                            
+2008.0       5450                      20.5                 11.7                  22.9
+2009.0       5263                      23.8                 17.0                  29.0
+2010.0       5960                      22.0                 13.9                  36.6
+2011.0       6674                      21.7                 14.4                  20.2
+2012.0       7332                      24.2                 14.9                  26.8
+2013.0       7918                      22.7                 12.9                  27.1
+2014.0       8517                      23.2                 14.0                  29.9
+2015.0       8721                      24.0                 14.3                  20.4
+2016.0       9318                      24.6                 15.6                  23.7
+2017.0      10056                      23.5                 15.5                  23.8
+2018.0      10206                      24.8                 16.1                  24.9
+2019.0      10475                      25.9                 16.5                  29.6
+2020.0      10564                      29.9                 20.6                  32.1
+2021.0       9951                      40.2                 32.3                  45.4
+
+=== 13_validation.py rc=0 1s
+2026-10-31 16:09:53,388 INFO frozen v1.0 sample re-used: 601 units (never redrawn)
+2026-10-31 16:09:53,399 INFO sample by period x v1.0 predicted class:
+pred           ext_only  non_esg  strict  unknown
+period                                           
+both                 15       50      32       30
+post2018_only        42       75      75       45
+pre2018_only         42       75      75       45
+2026-10-31 16:09:53,416 INFO human review queue: 998 units (of 998 flagged)
+2026-10-31 16:09:53,417 INFO NO ADJUDICATED HUMAN LABELS: classification performance is NOT validated; all labels are provisional. Two coders code the blind sheets (601 units, Validation/validation_coding_sheet_v1.0_coder*_local.csv), save them as Validation/human_labels/coder1_labels.csv and coder2_labels.csv, adjudicate disagreements into Validation/human_labels/adjudicated_labels.csv (values 1/0/U), then run: python master_run.py 06
+
+=== 14_annual_trends.py rc=0 2s
+0         0.162     0.315     0.647    0.485
+2019.0         0.178     0.328     0.637    0.459
+2020.0         0.201     0.381     0.673    0.472
+2021.0         0.310     0.536     0.731    0.421
+2026-10-31 16:09:55,196 INFO extensive/intensive decomposition of mean perf-grant ESG share (lb):
+   period  d_mean_share  extensive  intensive
+2015-2017       -0.0032    -0.0004    -0.0028
+2017-2018        0.0075     0.0041     0.0034
+2018-2021        0.0673     0.0716    -0.0042
+2017-2021        0.0748     0.0739     0.0009
+2026-10-31 16:09:55,199 INFO text coverage by year:
+ fiscalYear  goal_rows  metricother_blank_share  unknown_share  strict_share  iss_esg_share_diag
+     1998.0      11768                    0.681          0.207         0.012               0.000
+     1999.0      12165                    0.676          0.209         0.008               0.000
+     2000.0      12620                    0.671          0.213         0.010               0.000
+     2001.0      12235                    0.641          0.217         0.013               0.000
+     2002.0      13077                    0.630          0.223         0.013               0.000
+     2003.0      14068                    0.622          0.220         0.012               0.000
+     2004.0      16759                    0.598          0.193         0.020               0.000
+     2005.0      17557                    0.603          0.184         0.024               0.000
+     2006.0      32649                    0.573          0.151         0.024               0.000
+     2007.0      38072                    0.543          0.136         0.024               0.000
+     2008.0      37493                    0.546          0.137         0.027               0.000
+     2009.0      38994                    0.519          0.143         0.030               0.000
+     2010.0      40562                    0.499          0.138         0.036               0.000
+     2011.0      42052                    0.448          0.134         0.036               0.000
+     2012.0      46051                    0.453          0.133         0.037               0.000
+     2013.0      46929                    0.491          0.128         0.035               0.000
+     2014.0      49462                    0.498          0.140         0.038               0.000
+     2015.0      50398                    0.444          0.142         0.042               0.000
+     2016.0      47789                    0.301          0.138         0.044               0.001
+     2017.0      48305                    0.337          0.128         0.038               0.001
+     2018.0      46425                    0.032          0.123         0.042               0.042
+     2019.0      46847                    0.002          0.113         0.044               0.050
+     2020.0      47614                    0.000          0.120         0.056               0.057
+     2021.0      44200                    0.000          0.120         0.083               0.087
+
+=== 15_variable_dictionary.py rc=0 27s
+2026-10-31 16:10:22,146 INFO dataset summary:
+                           dataset  observations  variables                  primary_key  key_unique  key_missing  year_min  year_max
+           ESG_Text_Dictionary.dta         38590         43                      text_id        True            0    1998.0    2021.0
+                ESG_KPI_Master.dta        654123         38                       kpi_id        True            0    1998.0    2021.0
+              ESG_Grant_Master.dta        469429         76                      grantid        True            0    1998.0    2021.0
+       ESG_Executive_Firm_Year.dta        164832         96 cik+fiscalyear+participantid        True            0    1998.0    2021.0
+             ESG_CEO_Firm_Year.dta         33278         99 cik+fiscalyear+participantid        True            0    1998.0    2021.0
+          ESG_Firm_Year_Master.dta         33328         94               cik+fiscalyear        True            0    1998.0    2021.0
+          ESG_NonCEO_Firm_Year.dta         31944         86               cik+fiscalyear        True            0    1998.0    2021.0
+ESG_Goal_Record_Classification.dta        814091         29               goal_record_id        True            0    1998.0    2021.0
+2026-10-31 16:10:22,146 INFO variable dictionary: 561 variables
+
+=== 16_quality_audit.py rc=1 51s
+717 INFO [PASS] D: adoption=1 iff >=1 ESG grant =  
+2026-10-31 16:11:10,749 INFO [PASS] D: all 47 share/coverage variables within [0,1] = 0 
+2026-10-31 16:11:10,759 INFO [PASS] D: lower bound <= upper bound (14 pairs) = 0 
+2026-10-31 16:11:10,762 INFO [INFO] D: identity match status = {'matched_exact': 164808, 'unmatched': 24} 
+2026-10-31 16:11:10,937 INFO [PASS] E: primary key unique = 33278 
+2026-10-31 16:11:10,959 INFO [PASS] E: strict CEO sample: exactly one CEO per firm-year = 32231 
+2026-10-31 16:11:10,994 INFO [PASS] E: every CEO row exists as an executive-year or has no grants =  
+2026-10-31 16:11:10,996 INFO [INFO] E: CEO identification status = {'unique_current_ceo_flag': 32231, 'multiple_current_ceo_flags': 1033, 'rolecode_fallback_unique': 14} 
+2026-10-31 16:11:10,998 INFO [PASS] E: CEOs without grants have count variables = 0 =  
+2026-10-31 16:11:11,008 INFO [PASS] E: all 47 share/coverage variables within [0,1] = 0 
+2026-10-31 16:11:11,012 INFO [PASS] E: lower bound <= upper bound (14 pairs) = 0 
+2026-10-31 16:11:11,159 INFO [PASS] F: primary key (cik, fiscalyear) unique = 33328 
+2026-10-31 16:11:11,159 INFO [PASS] F: sum firm_n_grants = grants =  
+2026-10-31 16:11:11,199 INFO [PASS] F: firm counts = sum over executive-years (grants, perf, ESG, unknown) =  
+2026-10-31 16:11:13,292 INFO [PASS] F: firm adoption = aggregation of executive adoption =  
+2026-10-31 16:11:13,293 INFO [PASS] F: firm-years without grants have missing (not 0) ESG measures = 776 
+2026-10-31 16:11:13,295 INFO [PASS] F: firm-years without grants have count variables = 0 (not missing) =  
+2026-10-31 16:11:13,296 INFO [PASS] F: pillar E adoption = 1 implies Strict perf adoption = 1 =  
+2026-10-31 16:11:13,296 INFO [PASS] F: pillar S adoption = 1 implies Strict perf adoption = 1 =  
+2026-10-31 16:11:13,296 INFO [PASS] F: pillar G adoption = 1 implies Strict perf adoption = 1 =  
+2026-10-31 16:11:13,472 INFO [PASS] F: firm E adoption re-derived from grants (pillar-specific zero rule) =  
+2026-10-31 16:11:13,483 INFO [PASS] F: all 47 share/coverage variables within [0,1] = 0 
+2026-10-31 16:11:13,486 INFO [PASS] F: lower bound <= upper bound (14 pairs) = 0 
+2026-10-31 16:11:13,582 INFO [PASS] G: primary key (cik, fiscalyear) unique = 31944 
+2026-10-31 16:11:13,598 INFO [PASS] G: non-CEO grants <= firm grants =  
+2026-10-31 16:11:13,615 INFO [PASS] G: all 47 share/coverage variables within [0,1] = 0 
+2026-10-31 16:11:13,620 INFO [PASS] G: lower bound <= upper bound (14 pairs) = 0 
+2026-10-31 16:11:13,620 INFO [INFO] audit: audit_goal_grants_missing_in_grant_table.csv = 3 
+2026-10-31 16:11:13,621 INFO [INFO] audit: audit_grants_unmatched_participant.csv = 117 
+2026-10-31 16:11:13,621 INFO [INFO] audit: audit_ceo_exceptions.csv = 1960 
+2026-10-31 16:11:13,622 INFO [WARN] validation: independent human validation = pending_human_labels labels are PROVISIONAL until human labels exist
+2026-10-31 16:11:13,627 INFO audit summary: {'PASS': 69, 'INFO': 14, 'FAIL': 3, 'WARN': 2}
+3 audit checks FAILED
+

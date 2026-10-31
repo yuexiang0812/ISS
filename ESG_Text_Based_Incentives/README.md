@@ -1,12 +1,15 @@
 # ESG_Text_Based_Incentives
 
-This project builds a time-consistent, text-based measure of ESG-linked executive incentives from ISS Incentive Lab data covering 1998–2021. The classifier is version v1.0 and its labels are **provisional until the human validation is completed**.
-
-Read first: [`Documentation/Methodology_and_Validation_Report.md`](Documentation/Methodology_and_Validation_Report.md).
+This project builds a time-consistent, text-based measure of ESG-linked executive incentives from ISS Incentive Lab data covering 1998–2021. The current classifier version is set in `Code/config.py` (`CLASSIFIER_VERSION`; v1.1 at the time of writing).
+- **Provisional labels.** All labels stay provisional until the human validation is completed (see `Validation/validation_status_<version>.json`).
+- **Read first:**
+  - 中文使用指南 `Documentation/Reports/06_User_Guide_CN.docx` — what the project does, how to read 1/0/. labels and lb/ub bounds, the datasets, FAQ;
+  - [`Documentation/Methodology_and_Validation_Report.md`](Documentation/Methodology_and_Validation_Report.md) — full methodology, regenerated from the current outputs on every run;
+  - `Documentation/Reports/07_Review_and_Changes_<version>.docx` — what the latest review found and what changed relative to the previous version.
 
 ## Reproduce
 ```bash
-pip install pandas numpy pyarrow        # plus poppler-utils for pdftotext
+pip install pandas numpy pyarrow        # plus poppler-utils (pdftotext), node + docx, pandoc for the reports
 ```
 ```bash
 export ISS_RAW_DIR="/path/to/01. Incentive Lab"
@@ -15,27 +18,49 @@ export ISS_RAW_DIR="/path/to/01. Incentive Lab"
 export PAPER_PDF="/path/to/ESG_Metrics_Paper.pdf"
 ```
 ```bash
-cd Code && python master_run.py         # or: python master_run.py 06   (restart from step 06)
+cd Code && python master_run.py         # or: python master_run.py 06   (restart from step 06, e.g. after adding human labels)
 ```
+Any failing step stops the run; no error is suppressed.
+
+## Pipeline
+| Step | What it does |
+|---|---|
+| 01 | Inventory of the 18 raw files (rows, keys, missing codes) |
+| 02 | The 953 AGHJ (2025) keywords, extracted verbatim with page numbers |
+| 03 | Stacks absolute / relative / accelerated goal records on their true key and attaches grant attributes |
+| 04 | Builds the classification units (metric + normalised metricOther) and classifies them (`esg_rules.py`, `classify.py`) |
+| 05 | Dictionary deliverables (a)–(c) |
+| 06–11 | Datasets A–G (`aggregate.py` holds the shared measure definitions) |
+| 12 | Paper-vs-revised comparison and a replication of AGHJ Table 1 |
+| 13 | Frozen validation sample, coding sheets, scoring (only when human labels exist) |
+| 14 | Annual trends and the 2018-break analysis |
+| 15 | Variable dictionary |
+| 16 | Independent quality audit (re-reads the final `.dta` files and re-derives the measures) |
+| 17 | Version comparison and review-findings register |
+| 18 | All reports, regenerated with numbers taken from the outputs. The methodology narrative is in `Code/docgen/methodology_template.md`, and its interpretive statements are checked against the data |
+| 19 | Local audit archive (zip with SHA-256 manifest) |
 
 ## Layout
 | Folder | Content |
 |---|---|
-| `Code/` | Pipeline steps `01`–`18`, `master_run.py`. Step 16 runs the independent quality audit, step 17 builds the Word reports and step 18 builds the audit archive. The rule dictionary is in `esg_rules.py` and the engine in `classify.py`; `aggregate.py` holds the shared measure definitions |
-| `Dictionaries/` | Deliverables (a)–(c): (a) the AGHJ (2025) 953 keywords; (b) the revised rules, the review of every paper keyword, and new expressions; (c) the change log |
-| `Data/Intermediate/` | Parquet intermediates and audit tables. Git-ignored because they contain ISS data |
+| `Code/` | Pipeline steps `01`–`19` and `master_run.py`. The rule dictionary is in `esg_rules.py`, the engine in `classify.py`, the measure definitions in `aggregate.py`, the human-label loader in `humanlabels.py` and the report numbers in `report_values.py` |
+| `Dictionaries/` | Deliverables (a)–(c): (a) the AGHJ (2025) 953 keywords; (b) the revised rules (with each rule's change in this version), the review of every paper keyword, new expressions and rule-match examples; (c) the change log. `local/` holds ISS text examples (git-ignored) |
+| `Data/Intermediate/` | Parquet intermediates, audit tables and `snapshot_<previous version>/`. Git-ignored because they contain ISS data |
 | `Data/Final/` | The 7 required `.dta` datasets plus `ESG_Goal_Record_Classification.dta`. Git-ignored |
-| `Validation/` | Deliverable (e), part 1: the paper-vs-revised comparison. Also the blind validation sample, coding guidelines, the review queue and the scoring code. Files ending in `_local.csv` contain ISS text and are git-ignored |
-| `Annual_Analysis/` | Annual trends for 1998–2021 and the 2018-break analysis |
-| `Documentation/` | The report, `variable_dictionary.csv` (459 variables), `dataset_summary.csv`, the data inventory and `quality_audit_results.csv`. `Reports/` holds the Word versions: quality audit report, process record, methodology report, coding guidelines and README. The conversation archive (`*_local.docx`) is git-ignored |
-| `../Audit_Archive/` (local only) | Zipped audit archive containing the whole project, data, inputs, session transcript, git bundle and environment, with a SHA-256 manifest. It is regenerated by step 18 |
+| `Validation/` | Deliverable (e): the paper-vs-revised comparison and replication benchmark. Also the blind validation sample (pushable id list), coding guidelines, review queue and validation status. Files ending in `_local.csv` and `human_labels/` contain ISS text and are git-ignored |
+| `Annual_Analysis/` | Annual trends for 1998–2021, cash vs equity plans, and the 2018-break analysis |
+| `Documentation/` | The methodology report, `variable_dictionary.csv`, `dataset_summary.csv`, data inventory, `quality_audit_results.csv`, `review_findings_<version>.csv`, version comparison tables and `pipeline_stats.json`. `Reports/` holds the Word versions; `*_local.docx` (worked example on real data, conversation archive) are git-ignored |
+| `../Audit_Archive/` (local only) | Zipped audit archive containing the whole project, data, inputs, session transcript, git bundle and environment, with a SHA-256 manifest. It is regenerated by step 19 |
 | `Logs/` | One log per step, plus `master_run.log` |
 
 ## Deliverables (a)–(e) of the dictionary task
 | Deliverable | Files |
 |---|---|
 | (a) original paper dictionary | `Dictionaries/a_paper_dictionary_AGHJ2025_953.csv`, `a_paper_removed_keywords_examples_A4.csv` |
-| (b) revised dictionary | `Dictionaries/b_revised_rules_v1.0.csv`, `b_paper_keyword_review_v1.0.csv`, `b_new_expressions_v1.0.csv` |
-| (c) change log | `Dictionaries/c_change_log.csv` |
+| (b) revised dictionary | `Dictionaries/b_revised_rules_<version>.csv`, `b_paper_keyword_review_<version>.csv`, `b_new_expressions_<version>.csv` |
+| (c) change log | `Dictionaries/c_change_log.csv` (with `Documentation/review_findings_<version>.csv` for the latest review) |
 | (d) KPI-level results and reasons | `Data/Final/ESG_KPI_Master.dta`, `ESG_Goal_Record_Classification.dta`, `ESG_Text_Dictionary.dta`. See the `classification_reason` and `rule_ids` columns |
-| (e) comparison and validation | `Validation/e_*.csv`, `Validation/validation_status_v1.0.json`, and report §12 |
+| (e) comparison and validation | `Validation/e_*.csv`, `Validation/validation_status_<version>.json`, and report §12 |
+
+## Licensing
+The ISS data and every file containing ISS text are git-ignored and must not be redistributed: `Data/`, `*_local.csv`, `*_local.docx`, `Dictionaries/local/`, `Validation/human_labels/`.

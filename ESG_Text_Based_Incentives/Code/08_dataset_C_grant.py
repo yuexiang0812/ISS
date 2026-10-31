@@ -1,5 +1,12 @@
 """Step 08 — Dataset C: ESG_Grant_Master.dta (one row per distinct grantID).
 
+中文说明：Grant 层数据集。业绩型 grant = performanceType 为 Abs/Rel/AbsRel；带加速条件的 Time grant 单独标记。
+区分“无业绩条件”（Time，可靠地非 ESG）与“业绩目标数据缺失”（未知）。v1.1 修正：
+  (1) 144 个重复 grantID 的 performanceType 不一致（Abs vs Time 等），按目标数据明确裁定并标记 grant_dup_resolved；
+  (2) 申报目标数多于记录目标数时标记 grant_goal_data_incomplete，且在无 ESG 正例时 ESG 记为未知（缺失的目标可能是 ESG）；
+  (3) 现金激励的价值在 ISS 中记于 nonEquityTarget（公允价值几乎全缺），新增 grant_value_combined 供价值占比使用；
+  (4) 到期日早于授予日的记录加标记；(5) grant_esg_text_ids 记录触发 ESG 的文本编号，便于追溯。
+
 Performance-based grant: performancetype in {Abs, Rel, AbsRel} (ISS GpbaGrant.performanceType; time-based = 'Time').
 Hybrid / acceleration: Time grants with accelerated objectives are flagged (grant_time_with_acceleration) and are
 NOT counted as performance grants in the primary measure; their ACC KPIs still count as performance conditions
@@ -18,7 +25,26 @@ from dtautil import write_dta, share_block
 log = get_logger("08_dataset_C_grant")
 G = read_raw("grant")
 log.info(f"raw grants rows {len(G):,}; distinct grantID {G.grantID.nunique():,}")
+gr = pd.read_parquet(INTER / "goal_records.parquet", columns=["grantId", "goal_source", "goal_id", "periodId"])
+src = gr.groupby("grantId").goal_source.agg(lambda x: set(x))
+# ---- v1.1: duplicated grantIDs carry conflicting performancetype (e.g. 'Abs' and 'Time'); resolve from goal data
+dup = G[G.grantID.duplicated(keep=False)]
+diffcols = [c for c in G.columns if (dup.groupby("grantID")[c].nunique(dropna=False) > 1).any()]
+log.info(f"duplicated grantIDs: {dup.grantID.nunique()} ids / {len(dup)} rows; columns differing within ids: {diffcols}")
+types = dup.groupby("grantID").performancetype.agg(lambda x: "/".join(sorted(set(x.fillna("")))))
+def resolve(gid):
+    s_ = src.get(gid, set())
+    if "ABS" in s_ and "REL" in s_: return "AbsRel"
+    if "ABS" in s_: return "Abs"
+    if "REL" in s_: return "Rel"
+    return None
+res = {gid: resolve(gid) for gid in types.index}
 G = G.drop_duplicates("grantID").copy()
+G["grant_dup_resolved"] = G.grantID.isin(types.index).astype("int8")
+G["grant_dup_performancetypes"] = G.grantID.map(types).fillna("")
+m = G.grantID.isin([k for k, v in res.items() if v])
+G.loc[m, "performancetype"] = G.loc[m, "grantID"].map(res)
+log.info(f"performancetype resolved from goal data for {int(m.sum())} duplicated grantIDs: {types.value_counts().to_dict()}")
 G["grant_date"] = clean_missing_dates(G.grantDate)
 G["expiration_date"] = clean_missing_dates(G.expirationDate)
 for c in ["grantDateFV", "nonEquityThreshold", "nonEquityTarget", "nonEquityMax", "equityThreshold", "equityTarget", "equityMax",
@@ -32,6 +58,24 @@ G.loc[G.grantDateFV < 0, "grantDateFV"] = np.nan; G.loc[G.vestHighGrant < 0, "ve
 bad_date = (G.grant_date.notna()) & ((G.grant_date.dt.year < G.FiscalYear - 3) | (G.grant_date.dt.year > G.FiscalYear + 2))
 log.info(f"grant dates outside [FY-3, FY+2]: {int(bad_date.sum())} (flagged grant_date_suspect)")
 G["grant_date_suspect"] = bad_date.astype("int8")
+G["grant_dates_inconsistent"] = (G.expiration_date.notna() & G.grant_date.notna() & (G.expiration_date < G.grant_date)).astype("int8")
+log.info(f"expiration date before grant date: {int(G.grant_dates_inconsistent.sum())} (flagged grant_dates_inconsistent)")
+# ---- v1.1: combined grant value. ISS records cash-incentive awards' value as target payout (nonEquityTarget);
+# grant-date fair value is reported for equity/option awards. Using fair value alone silently drops cash bonus plans.
+G["grant_value_combined"] = G.grantDateFV.where(G.grantDateFV.notna(), G.nonEquityTarget)
+G["grant_value_source"] = np.select([G.grantDateFV.notna(), G.nonEquityTarget.notna()], ["grant_date_fair_value", "nonequity_target_payout"], "missing")
+log.info("grant value source:\n" + G.grant_value_source.value_counts().to_string())
+# ---- v1.1: declared vs recorded objectives (partial goal data)
+rc = gr.groupby(["grantId", "goal_source"]).agg(rows=("goal_id", "size"), obj=("goal_id", "nunique")).unstack(fill_value=0)
+rc.columns = [f"{a}_{b}" for a, b in rc.columns]
+G = G.join(rc, on="grantID")
+inc = np.zeros(len(G), dtype=bool)
+for s_, num in [("ABS", "numAbsolute"), ("REL", "numRelative"), ("ACC", "numAccelerated")]:
+    d_, r_, o_ = G[num].fillna(0), G.get(f"rows_{s_}", 0).fillna(0), G.get(f"obj_{s_}", 0).fillna(0)
+    inc |= ((d_ > r_) & (d_ > o_)).values
+G["grant_goal_data_incomplete"] = inc.astype("int8")
+G = G.drop(columns=[c for c in G.columns if c.startswith(("rows_", "obj_"))])
+log.info(f"grants whose declared objectives exceed recorded objectives and rows: {int(inc.sum())} (flagged grant_goal_data_incomplete)")
 
 K = pd.read_parquet(INTER / "dataset_B.parquet")
 kc = K.assign(n=1, s1=(K.kpi_esg_strict == 1), s0=(K.kpi_esg_strict == 0), su=K.kpi_esg_strict.isna(),
@@ -45,6 +89,8 @@ agg = kc.groupby("grantid").agg(grant_n_kpis=("n", "sum"), grant_n_esg_kpis_stri
                                 _eu=("eu", "sum"), _su=("suu", "sum"), _gu=("gu", "sum"), grant_n_acc_kpis=("acc", "sum"),
                                 grant_n_iss_esg_kpis_diag=("iss", "sum"), grant_n_goal_records=("kpi_source_count", "sum"))
 G = G.merge(agg, left_on="grantID", right_index=True, how="left")
+tids = K[K.kpi_esg_strict == 1].groupby("grantid").text_id.agg(lambda x: "|".join(sorted(set(x))))
+G["grant_esg_text_ids"] = G.grantID.map(tids).fillna("")
 cnt = [c for c in agg.columns]
 G[cnt] = G[cnt].fillna(0).astype(int)
 orph = set(K.grantid) - set(G.grantID)
@@ -63,15 +109,18 @@ G["grant_goal_status"] = np.select(
 log.info("grant goal status:\n" + G.grant_goal_status.value_counts().to_string())
 
 
+INCOMPLETE = G.grant_goal_data_incomplete.values == 1
+
+
 def grant_tri(n_pos, n_unknown, n_k, status):
     out = np.where(n_pos > 0, 1.0, np.where((n_k > 0) & (n_unknown == 0), 0.0, np.nan))
+    out = np.where(INCOMPLETE & (n_pos == 0), np.nan, out)          # v1.1: missing objectives could be ESG -> unknown, not 0
     out = np.where(status == "time_no_perf_condition", 0.0, out)      # no performance condition => no ESG condition
     return out
 
 st = G.grant_goal_status.values
 G["grant_esg_strict"] = grant_tri(G.grant_n_esg_kpis_strict, G.grant_n_unknown_kpis, G.grant_n_kpis, st)
 G["grant_esg_extended"] = grant_tri(G.grant_n_esg_kpis_extended, G.grant_n_unknown_kpis_ext, G.grant_n_kpis, st)
-G["grant_esg_extended_only"] = np.where(G.grant_esg_extended.isna(), np.nan, ((G.grant_esg_extended == 1) & (G.grant_esg_strict != 1)).astype(float))
 G["grant_esg_extended_only"] = np.where((G.grant_esg_extended == 0) | ((G.grant_esg_extended == 1) & (G.grant_esg_strict == 1)), 0.0,
                                         np.where((G.grant_esg_extended == 1) & (G.grant_esg_strict == 0), 1.0, np.nan))
 for p, nk, nu in [("e", "grant_n_e_kpis", "_eu"), ("s", "grant_n_s_kpis", "_su"), ("g", "grant_n_g_kpis", "_gu")]:
@@ -84,7 +133,8 @@ ex2, lb2, ub2, _ = share_block(G.grant_n_esg_kpis_extended, G.grant_n_unknown_kp
 G["grant_esg_kpi_share_extended"], G["grant_esg_share_ext_lb"], G["grant_esg_share_ext_ub"] = ex2, lb2, ub2
 for p in "esg":
     G[f"grant_{p}_kpi_share"] = np.where((G.grant_n_kpis > 0) & (G.grant_n_unknown_kpis == 0), G[f"grant_n_{p}_kpis"] / G.grant_n_kpis.where(G.grant_n_kpis > 0), np.nan)
-G["grant_classification_complete"] = np.where(st == "time_no_perf_condition", 1, np.where(G.grant_n_kpis > 0, (G.grant_n_unknown_kpis == 0).astype(int), 0)).astype("int8")
+G["grant_classification_complete"] = np.where(st == "time_no_perf_condition", 1,
+                                              np.where((G.grant_n_kpis > 0) & ~INCOMPLETE, (G.grant_n_unknown_kpis == 0).astype(int), 0)).astype("int8")
 G.loc[st == "time_no_perf_condition", "grant_classification_coverage"] = 1.0
 
 C = G.rename(columns={"grantID": "grantid", "CIK": "cik", "FiscalYear": "fiscalyear", "FiscalMonth": "fiscalmonth", "AwardType": "award_type",
@@ -100,7 +150,8 @@ C["grant_type"] = np.where(C.award_type.isin(["cashShort", "cashLong", "unitCash
                   np.where(C.award_type.isin(["Option", "reloadOption", "phantomOption", "sarCash", "sarEquity"]), "option_like",
                   np.where(C.award_type.isin(["rsu", "stock", "phantomStock", "Performance Unit"]), "stock_like", "other_or_missing")))
 keep = ["grantid", "participantid", "cik", "fiscalyear", "fiscalmonth", "award_type", "grant_type", "performancetype", "paid_in_cash",
-        "grant_date", "grant_date_suspect", "expiration_date", "grant_value", "grant_value_missing_code", "grant_value_inferred",
+        "grant_date", "grant_date_suspect", "expiration_date", "grant_dates_inconsistent", "grant_value", "grant_value_missing_code", "grant_value_inferred",
+        "grant_value_combined", "grant_value_source", "grant_dup_resolved", "grant_dup_performancetypes", "grant_goal_data_incomplete",
         "nonequity_threshold", "nonequity_target", "nonequity_max", "equity_threshold", "equity_target", "equity_max", "stock_award", "option_award",
         "exercise_price", "vesting_schedule", "vest_after_contingency", "vest_low_grant", "vest_high_grant", "num_absolute", "num_relative",
         "num_accelerated", "performance_grouping", "is_exchange",
@@ -110,7 +161,7 @@ keep = ["grantid", "participantid", "cik", "fiscalyear", "fiscalmonth", "award_t
         "grant_n_g_kpis", "grant_n_general_esg_kpis", "grant_n_non_esg_kpis", "grant_n_unknown_kpis", "grant_n_unknown_kpis_ext", "grant_n_acc_kpis",
         "grant_n_goal_records", "grant_esg_kpi_share_strict", "grant_esg_kpi_share_extended", "grant_e_kpi_share", "grant_s_kpi_share", "grant_g_kpi_share",
         "grant_classification_complete", "grant_classification_coverage", "grant_esg_share_lb", "grant_esg_share_ub",
-        "grant_esg_share_ext_lb", "grant_esg_share_ext_ub", "grant_iss_esg_diag", "grant_n_iss_esg_kpis_diag"]
+        "grant_esg_share_ext_lb", "grant_esg_share_ext_ub", "grant_iss_esg_diag", "grant_n_iss_esg_kpis_diag", "grant_esg_text_ids"]
 C = C[keep]
 check_unique(C, ["grantid"], "grant master", log)
 check_share(C, [c for c in keep if "share" in c or "coverage" in c], log, "grant")
@@ -130,5 +181,9 @@ L.update(dict(grantid="ISS grantID", participantid="ISS participantID", cik="Com
               grant_esg_g="Grant has G condition 1/0/.", grant_n_kpis="Distinct KPIs in grant", grant_n_general_esg_kpis="Strict KPIs with multi-pillar ESG term",
               grant_esg_kpi_share_strict="Strict ESG KPI share (. if any KPI unknown)", grant_esg_share_lb="Strict ESG KPI share lower bound",
               grant_esg_share_ub="Strict ESG KPI share upper bound", grant_classification_coverage="Share of KPIs with known Strict label",
-              grant_classification_complete="1 if all KPIs classified (or no perf condition)", grant_iss_esg_diag="DIAGNOSTIC: ISS ESG category present"))
+              grant_classification_complete="1 if all KPIs classified (or no perf condition)", grant_iss_esg_diag="DIAGNOSTIC: ISS ESG category present",
+              grant_value_combined="Fair value; if missing, non-equity target payout (cash awards)", grant_value_source="Source of grant_value_combined",
+              grant_dup_resolved="1 if grantID duplicated in raw file (type resolved from goals)", grant_dup_performancetypes="Raw performancetype values of duplicate",
+              grant_goal_data_incomplete="1 if declared objectives exceed recorded objectives", grant_dates_inconsistent="1 if expiration date before grant date",
+              grant_esg_text_ids="text_ids of Strict ESG KPIs (trace to Dataset A)"))
 write_dta(C, "ESG_Grant_Master.dta", L, log, keys=["grantid"])

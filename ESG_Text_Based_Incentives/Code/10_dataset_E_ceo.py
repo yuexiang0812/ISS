@@ -1,5 +1,8 @@
 """Step 10 — Dataset E: ESG_CEO_Firm_Year.dta + CEO exception table.
 
+中文说明：CEO 识别以 ParticipantFY 的 currentCEO 标记为准；唯一标记进入严格样本；多个标记（联席 CEO / 交接）全部保留但不进严格样本，
+并列入例外表；无标记时仅当角色代码唯一为 CEO 才作为备选；UC（分部 CEO）不算公司 CEO。没有 grant 的 CEO 计数记 0、指标缺失。
+
 CEO identification (ParticipantFY, per CIK x fiscalyear, all fiscal months of that FY):
   unique_current_ceo_flag     exactly one participant with currentCEO = 1             -> strict CEO sample (ceo_strict_sample = 1)
   multiple_current_ceo_flags  2+ participants with currentCEO = 1 (co-CEOs / succession) -> all candidates kept, ceo_strict_sample = 0,
@@ -12,6 +15,7 @@ Role code 'UC' (segment CEO) is never treated as company CEO.
 import numpy as np, pandas as pd
 from config import INTER, get_logger, check_unique
 from dtautil import write_dta
+from aggregate import fill_counts
 
 log = get_logger("10_dataset_E_ceo")
 P = pd.read_parquet(INTER / "participant_fy.parquet")
@@ -52,7 +56,7 @@ dcols = [c for c in D.columns if c.startswith("exec_") and c not in ("exec_name"
 E = E.merge(D[fyk + ["participantid"] + dcols], on=fyk + ["participantid"], how="left")
 E = E.rename(columns={c: "ceo_" + c[5:] for c in dcols})
 E["ceo_has_grants"] = E.ceo_n_grants.fillna(0).gt(0).astype("int8")
-E["ceo_n_grants"] = E.ceo_n_grants.fillna(0)
+E = fill_counts(E, "ceo")      # v1.1: all count variables 0 (not missing) for CEOs without grants
 check_unique(E, fyk + ["participantid"], "CEO-Firm-Year", log)
 assert (E[E.ceo_strict_sample == 1].groupby(fyk).size() == 1).all(), "strict CEO sample must be unique per firm-year"
 log.info(f"CEO-firm-years: {len(E):,}; strict sample {int(E.ceo_strict_sample.sum()):,}; with grants {int(E.ceo_has_grants.sum()):,}")

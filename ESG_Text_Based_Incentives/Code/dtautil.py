@@ -3,7 +3,9 @@ import json
 import numpy as np, pandas as pd
 from config import FINAL, INTER
 
-ABBREV = [("_extended", "_ext"), ("compensation", "comp"), ("classification", "class"), ("_strict", "_str")]
+# 中文：Stata 变量名上限 32 字符；超长的首选名按下列固定顺序缩写，映射写入变量字典（preferred_name 列）。
+ABBREV = [("_extended", "_ext"), ("compensation", "comp"), ("classification", "class"), ("_strict", "_str"),
+          ("_grant_share", "_gshr"), ("_equity", "_eq"), ("_perf_", "_pf_"), ("nonceo_", "nc_")]
 
 
 def stata_name(name: str) -> str:
@@ -51,6 +53,7 @@ def write_dta(df: pd.DataFrame, filename: str, labels: dict, log, keys=None):
     """Write labelled .dta (Stata 118). Strings sanitised; tri-state vars stay float with '.' = Unknown/NA."""
     out = df.copy()
     ren = {c: stata_name(c) for c in out.columns}
+    assert len(set(ren.values())) == len(ren), f"{filename}: abbreviated Stata names collide"
     out = out.rename(columns=ren)
     for pref, st in ren.items():
         NAME_MAP[(filename, st)] = pref
@@ -64,14 +67,15 @@ def write_dta(df: pd.DataFrame, filename: str, labels: dict, log, keys=None):
         elif pd.api.types.is_datetime64_any_dtype(s):
             pass
         elif s.dtype == object or pd.api.types.is_string_dtype(s):
-            out[c] = s.fillna("").astype(str).str.encode("latin-1", "replace").str.decode("latin-1")
+            # v1.1 fix: Stata 118 stores UTF-8; v1.0 forced latin-1 and replaced characters such as ’ — with '?'
+            out[c] = s.fillna("").astype(str)
     if keys:
         k = [ren[x] for x in keys]
         assert not out.duplicated(k).any(), f"{filename}: duplicate primary key {keys}"
         assert out[k].notna().all().all(), f"{filename}: missing primary key values"
     path = FINAL / filename
-    out.to_stata(path, write_index=False, version=118, variable_labels=vl,
-                 convert_strl=[c for c in out.columns if out[c].dtype == object and out[c].str.len().max() > 2000])
+    strl = [c for c in out.columns if (out[c].dtype == object or pd.api.types.is_string_dtype(out[c])) and out[c].str.encode("utf-8").str.len().max() > 2000]
+    out.to_stata(path, write_index=False, version=118, variable_labels=vl, convert_strl=strl)
     log.info(f"[dta] {filename}: {len(out):,} obs x {out.shape[1]} vars; key={keys}; renamed(overlong)="
              f"{ {k: v for k, v in ren.items() if k != v} }")
     pd.DataFrame([(filename, st, p, vl[st]) for (f, st), p in NAME_MAP.items() if f == filename],

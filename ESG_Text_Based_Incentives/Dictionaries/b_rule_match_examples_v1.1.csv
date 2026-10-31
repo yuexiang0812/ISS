@@ -1,0 +1,536 @@
+rule_id,matched_phrase,n_goal_rows
+R002_S_human_capital,work environment,2
+R003_fp_banking,safety and soundness,52
+R005_fp_clinical,clinical safety,14
+R005_fp_clinical,safety data,12
+R006_fp_segment,same community,49
+R006_fp_segment,clean energy businesses,31
+R006_fp_segment,cutwater,21
+R006_fp_segment,satisfaction of,17
+R006_fp_segment,waterfront,12
+R006_fp_segment,waste and metals,11
+R006_fp_segment,water heat saturation,8
+R006_fp_segment,mercury marine,7
+R006_fp_segment,waterworks,7
+R006_fp_segment,core sustainability products,6
+R006_fp_segment,watertown,5
+R006_fp_segment,advanced safety and user experience,4
+R006_fp_segment,residential communities,4
+R006_fp_segment,social monk,4
+R006_fp_segment,system-wide community bank,4
+R007_fp_realestate,community count,58
+R007_fp_realestate,newly-constructed communities,30
+R007_fp_realestate,communities stabilizing,20
+R007_fp_realestate,new communities,14
+R007_fp_realestate,development yield performance for communities,12
+R007_fp_realestate,gatherings communities,12
+R007_fp_realestate,new home communities,10
+R007_fp_realestate,communities stabilized,8
+R007_fp_realestate,underperforming communities,6
+R007_fp_realestate,stabilized communities,4
+R008_fp_finance,classified assets,490
+R008_fp_finance,discretionary cash flow,194
+R008_fp_finance,capital recycling,150
+R008_fp_finance,tenant quality,122
+R008_fp_finance,accident year,86
+R008_fp_finance,cte95,58
+R008_fp_finance,internal pay equity,54
+R008_fp_finance,classified items,42
+R008_fp_finance,life and disability,40
+R008_fp_finance,individual markets,38
+R008_fp_finance,nva,36
+R008_fp_finance,minority investment,26
+R008_fp_finance,environmental capex,22
+R008_fp_finance,recycle ratio,22
+R008_fp_finance,conservation of assets,20
+R009_fp_environment,economic environment,72
+R009_fp_environment,business environment,54
+R009_fp_environment,competitive environment,46
+R009_fp_environment,risk and control environment,44
+R009_fp_environment,regulatory environment,30
+R009_fp_environment,collaborative environment,28
+R009_fp_environment,risk & control environment,22
+R009_fp_environment,rate environment,20
+R009_fp_environment,marketplace or environment,18
+R009_fp_environment,control environment,16
+R009_fp_environment,market environment,14
+R009_fp_environment,commodity price environment,12
+R009_fp_environment,external environment,12
+R009_fp_environment,remote work environment,12
+R009_fp_environment,controls environment,10
+R010_fp_sustain,sustainable providers,18
+R010_fp_sustain,build a sustainable,10
+R010_fp_sustain,lean management sustainability,10
+R010_fp_sustain,profitable & sustainable,10
+R010_fp_sustain,sustainability of our business,10
+R010_fp_sustain,sustainable efficiency,10
+R010_fp_sustain,sustainable endo culture,10
+R010_fp_sustain,sustainable free,10
+R010_fp_sustain,sustainable free cash flow,10
+R010_fp_sustain,sustainable oil and gas portfolio,10
+R010_fp_sustain,sustainability strategy,8
+R010_fp_sustain,sustainable reduction,8
+R010_fp_sustain,sustainable global research,2
+R010_fp_sustain,sustainable investor relations,2
+R010_fp_sustain,sustainable long-term business,2
+R011_fp_quality,credit quality,606
+R011_fp_quality,asset quality,320
+R011_fp_quality,quality of earnings,204
+R011_fp_quality,data quality,48
+R011_fp_quality,loan quality,34
+R011_fp_quality,portfolio quality,32
+R011_fp_quality,underwriting quality,32
+R011_fp_quality,earnings quality,10
+R012_fp_integrity,operations & integrity,36
+R012_fp_integrity,pipeline integrity,30
+R012_fp_integrity,system integrity,21
+R012_fp_integrity,tier 1 operational integrity,21
+R012_fp_integrity,asset integrity,20
+R012_fp_integrity,operations integrity,20
+R012_fp_integrity,subsurface integrity,6
+R012_fp_integrity,operational integrity,5
+R013_fp_governance,portfolio governance,5
+R014_fp_misc3,audience,38
+R014_fp_misc3,inclusive of,20
+R014_fp_misc3,(gas transportation-employee engagement & compliance),15
+R014_fp_misc3,cost severity,11
+R014_fp_misc3,diverse business,10
+R014_fp_misc3,scrubber securitization,6
+R014_fp_misc3,(gas transportation- employee engagement & compliance),5
+R014_fp_misc3,hses and ircs,5
+R014_fp_misc3,hses earned,5
+R014_fp_misc3,non-wildfire,5
+R014_fp_misc3,viewers,2
+R014_fp_misc3,climate solutions,1
+R014_fp_misc3,partly offset,1
+R014_fp_misc3,women's health,1
+R015_fp_misc2,wind down,45
+R015_fp_misc2,teams monthly,36
+R015_fp_misc2,free people,31
+R015_fp_misc2,peoples gas,30
+R015_fp_misc2,sam's club,23
+R015_fp_misc2,pv,22
+R015_fp_misc2,greenhill,21
+R015_fp_misc2,men business unit,16
+R015_fp_misc2,hess,14
+R015_fp_misc2,workday,13
+R015_fp_misc2,allo aml,5
+R015_fp_misc2,aml trial,5
+R015_fp_misc2,green blend,5
+R015_fp_misc2,winding down,4
+R015_fp_misc2,wind-down,2
+R016_X_product_safety,product quality,187
+R016_X_product_safety,food safety,52
+R016_X_product_safety,safe park environment,41
+R016_X_product_safety,guest safety,28
+R016_X_product_safety,patient safety,15
+R016_X_product_safety,product safety,12
+R016_X_product_safety,recall,6
+R016_X_product_safety,pharmacovigilance,5
+R017_X_patient_safety,hospital acquired,95
+R017_X_patient_safety,healthcare-associated infections,60
+R017_X_patient_safety,cauti,35
+R017_X_patient_safety,clabsi,35
+R017_X_patient_safety,healthcare associated infections,30
+R017_X_patient_safety,c. diff,25
+R017_X_patient_safety,mrsa,25
+R017_X_patient_safety,staphylococcus,6
+R017_X_patient_safety,surgical site infections,6
+R018_X_customer,customer engagement,83
+R018_X_customer,customer/partner engagement,18
+R018_X_customer,client engagement,10
+R018_X_customer,customer engagements,10
+R018_X_customer,patient engagement,6
+R018_X_customer,hcp engagements,5
+R018_X_customer,consumer engagement,4
+R019_S_human_capital,engagement survey,80
+R019_S_human_capital,engagement scores,46
+R019_S_human_capital,engagement score,37
+R019_S_human_capital,engagement index,36
+R019_S_human_capital,sustainable engagement,16
+R019_S_human_capital,climate improvement,7
+R019_S_human_capital,associate climate,6
+R019_S_human_capital,climate scores,5
+R019_S_human_capital,climate survey,5
+R019_S_human_capital,organization climate,2
+R020_S_public_safety,emergency response,258
+R020_S_public_safety,public safety,173
+R020_S_public_safety,damage prevention,86
+R020_S_public_safety,leak,58
+R020_S_public_safety,dig-ins,54
+R020_S_public_safety,gas leak,49
+R020_S_public_safety,power shutoff,30
+R020_S_public_safety,wildfire,29
+R020_S_public_safety,nuclear operations safety,27
+R020_S_public_safety,system safety,26
+R020_S_public_safety,psps,25
+R020_S_public_safety,odor complaints,21
+R020_S_public_safety,pipeline safety,20
+R020_S_public_safety,vegetation management effectiveness,20
+R020_S_public_safety,safe dam,18
+R021_J_esg_business_line,esg segments,8
+R021_J_esg_business_line,esg-dedicated aum,5
+R021_J_esg_business_line,build esg business,1
+R022_GEN_esg,esg,433
+R022_GEN_esg,environmental social and governance,89
+R022_GEN_esg,corporate citizenship,45
+R022_GEN_esg,corporate responsibility,28
+R022_GEN_esg,environmental social & governance,24
+R022_GEN_esg,social responsibility,20
+R022_GEN_esg,environmental social governance,16
+R022_GEN_esg,corporate social responsibility,13
+R022_GEN_esg,djsi,10
+R022_GEN_esg,gresb,10
+R022_GEN_esg,csr,5
+R022_GEN_esg,gri,5
+R022_GEN_esg,socially responsible,1
+R022_GEN_esg,sustainalytics,1
+R023_E_ghg_air,emissions,421
+R023_E_ghg_air,carbon,231
+R023_E_ghg_air,emission,217
+R023_E_ghg_air,greenhouse,104
+R023_E_ghg_air,methane,97
+R023_E_ghg_air,co2,89
+R023_E_ghg_air,ghg,78
+R023_E_ghg_air,nitrogen oxide,48
+R023_E_ghg_air,scrubber,46
+R023_E_ghg_air,sulfur dioxide,44
+R023_E_ghg_air,sf6,23
+R023_E_ghg_air,scope 1,20
+R023_E_ghg_air,air reportable,18
+R023_E_ghg_air,flaring,17
+R023_E_ghg_air,air emissions,12
+R024_E_climate,climate change,14
+R024_E_climate,healthy climates,5
+R024_E_climate,tcfd,5
+R024_E_climate,climate response,2
+R024_E_climate,climate action,1
+R025_E_energy_transition,renewable energy,78
+R025_E_energy_transition,electrification,37
+R025_E_energy_transition,energy intensity,24
+R025_E_energy_transition,energy transition,19
+R025_E_energy_transition,energy star,15
+R025_E_energy_transition,energy usage,10
+R025_E_energy_transition,increasing production from direct and purchased renewable,10
+R025_E_energy_transition,leed,10
+R025_E_energy_transition,reduce energy,5
+R025_E_energy_transition,transportation electrification,5
+R025_E_energy_transition,green energy,4
+R026_E_water,drinking water,41
+R026_E_water,wastewater,38
+R026_E_water,spills to waters,18
+R026_E_water,water compliance,10
+R026_E_water,reduce water,9
+R026_E_water,non fresh water,5
+R026_E_water,water recycling,5
+R026_E_water,water spill,5
+R027_E_waste,reducing waste,15
+R027_E_waste,reduce waste,9
+R027_E_waste,plastic,8
+R027_E_waste,reusables,7
+R027_E_waste,recycle,5
+R028_E_releases,spills,166
+R028_E_releases,spill,96
+R028_E_releases,human error releases,50
+R028_E_releases,dielectric fluid,12
+R028_E_releases,released to the environment,12
+R028_E_releases,non-reportable releases,9
+R028_E_releases,reportable releases,9
+R028_E_releases,off-property releases,7
+R028_E_releases,significant releases,7
+R028_E_releases,federal reportable releases,6
+R028_E_releases,pcb,4
+R028_E_releases,significant release,3
+R028_E_releases,releases with off-site,2
+R028_E_releases,mainline releases,1
+R028_E_releases,on-property releases,1
+R029_E_env_general,environmental,3801
+R029_E_env_general,environment,547
+R029_E_env_general,reclamation,43
+R029_E_env_general,fitwel,5
+R029_E_env_general,pollution,5
+R029_E_env_general,sustainable forestry,3
+R029_E_env_general,environmentally,2
+R030_S_dei,diversity,2604
+R030_S_dei,inclusion,727
+R030_S_dei,diverse,239
+R030_S_dei,women,217
+R030_S_dei,minorities,109
+R030_S_dei,female,62
+R030_S_dei,dei,58
+R030_S_dei,minority,56
+R030_S_dei,d&i,54
+R030_S_dei,people of color,40
+R030_S_dei,de&i,24
+R030_S_dei,ethnic,18
+R030_S_dei,candidate slates,16
+R030_S_dei,racial,16
+R030_S_dei,gender,15
+R031_S_ohs,safety,11132
+R031_S_ohs,recordable,2759
+R031_S_ohs,incident rate,2235
+R031_S_ohs,osha,1271
+R031_S_ohs,injury,849
+R031_S_ohs,process safety,738
+R031_S_ohs,trir,531
+R031_S_ohs,dart,498
+R031_S_ohs,days away,476
+R031_S_ohs,injuries,451
+R031_S_ohs,lost time,441
+R031_S_ohs,recordables,376
+R031_S_ohs,incidence rate,247
+R031_S_ohs,preventable vehicle,216
+R031_S_ohs,lost workday,199
+R032_S_human_capital,employee engagement,1060
+R032_S_human_capital,employee satisfaction,262
+R032_S_human_capital,employee retention,193
+R032_S_human_capital,associate engagement,186
+R032_S_human_capital,human capital,177
+R032_S_human_capital,voluntary turnover,164
+R032_S_human_capital,leader retention,98
+R032_S_human_capital,employee development,92
+R032_S_human_capital,people development,79
+R032_S_human_capital,employer of choice,76
+R032_S_human_capital,employee turnover,70
+R032_S_human_capital,team member engagement,68
+R032_S_human_capital,employee survey,62
+R032_S_human_capital,retain the operational and professional talent,41
+R032_S_human_capital,voluntary attrition,41
+R033_S_community,community involvement,101
+R033_S_community,volunteer,68
+R033_S_community,charitable,19
+R033_S_community,societal alignment,18
+R033_S_community,charity,12
+R033_S_community,community development,10
+R033_S_community,community service,8
+R033_S_community,stem education,7
+R033_S_community,stem efforts,7
+R033_S_community,education initiatives for,6
+R033_S_community,volunteerism,5
+R033_S_community,education program for,1
+R034_S_access_inclusion,housing goals,23
+R034_S_access_inclusion,foreclosure prevention,20
+R034_S_access_inclusion,making home affordable,20
+R034_S_access_inclusion,community reinvestment act,14
+R034_S_access_inclusion,affordable housing,12
+R034_S_access_inclusion,neighborhood stabilization,11
+R034_S_access_inclusion,access to vivitrol,10
+R034_S_access_inclusion,affordable goals,10
+R034_S_access_inclusion,duty to serve,10
+R034_S_access_inclusion,ged,10
+R034_S_access_inclusion,underserved,10
+R034_S_access_inclusion,stay in their homes,5
+R035_S_human_rights,human rights,10
+R036_G_ethics,ethics,268
+R036_G_ethics,ethical,62
+R036_G_ethics,values and integrity,42
+R036_G_ethics,corporate integrity,30
+R036_G_ethics,anti-corruption,21
+R036_G_ethics,anticorruption,20
+R036_G_ethics,culture of high ethical,15
+R036_G_ethics,culture of integrity,15
+R036_G_ethics,code of conduct,14
+R036_G_ethics,compliant behavior,6
+R036_G_ethics,code of business conduct,1
+R037_G_governance,corporate governance,80
+R037_G_governance,board evaluation,4
+R037_G_governance,board succession,3
+R037_G_governance,governance index,3
+R037_G_governance,board activities,2
+R037_G_governance,governance and board,2
+R037_G_governance,leadership pertaining to our board,2
+R037_G_governance,board and executive governance,1
+R037_G_governance,board operations and governance,1
+R037_G_governance,executive compensation shareholder concerns,1
+R037_G_governance,governance and leadership for our board,1
+R037_G_governance,governance of and leadership for our board,1
+R037_G_governance,orporate governance,1
+R038_GEN_sustainability,sustainability,445
+R038_GEN_sustainability,sustainabilty,14
+R038_GEN_sustainability,sustainable,7
+R038_GEN_sustainability,stakeholder & sustainability,5
+R039_X_customer,customer satisfaction,1647
+R039_X_customer,customer service,1119
+R039_X_customer,net promoter,904
+R039_X_customer,customer experience,674
+R039_X_customer,service quality,310
+R039_X_customer,satisfaction,306
+R039_X_customer,churn,302
+R039_X_customer,client satisfaction,249
+R039_X_customer,customer loyalty,213
+R039_X_customer,complaints,203
+R039_X_customer,nps,203
+R039_X_customer,guest satisfaction,198
+R039_X_customer,customer retention,148
+R039_X_customer,customer focus,107
+R039_X_customer,j.d. power,94
+R040_X_customer,student retention,32
+R040_X_customer,student outcomes,9
+R040_X_customer,student placement,9
+R040_X_customer,student placement rate,6
+R041_X_quality_care,core measures,107
+R041_X_quality_care,quality measures,57
+R041_X_quality_care,hedis,46
+R041_X_quality_care,care quality,38
+R041_X_quality_care,medicare stars,33
+R041_X_quality_care,evidence-based medicine,26
+R041_X_quality_care,quality of care,26
+R041_X_quality_care,clinical quality,25
+R041_X_quality_care,mortality,22
+R041_X_quality_care,high quality healthcare,20
+R041_X_quality_care,star rating,16
+R041_X_quality_care,quality metrics,13
+R041_X_quality_care,closing care gaps,12
+R041_X_quality_care,quality score,12
+R041_X_quality_care,quality results,11
+R042_X_product_resp,quality compliance,103
+R042_X_product_resp,quality index,32
+R042_X_product_resp,greater affordability,31
+R042_X_product_resp,quality incidents,19
+R042_X_product_resp,affordability,7
+R042_X_product_resp,defect rate,6
+R042_X_product_resp,fair lending,5
+R042_X_product_resp,hmda,5
+R042_X_product_resp,product reliability,2
+R042_X_product_resp,data privacy,1
+R042_X_product_resp,data protection,1
+R043_X_service_reliability,system average,746
+R043_X_service_reliability,interruption duration,477
+R043_X_service_reliability,saidi,455
+R043_X_service_reliability,outage frequency,392
+R043_X_service_reliability,service reliability,373
+R043_X_service_reliability,interruption frequency,228
+R043_X_service_reliability,outage duration,208
+R043_X_service_reliability,saifi,165
+R043_X_service_reliability,caidi,55
+R043_X_service_reliability,reliability index,49
+R043_X_service_reliability,reliability performance,45
+R043_X_service_reliability,electric system reliability,44
+R043_X_service_reliability,electric reliability,40
+R043_X_service_reliability,outage incidents,36
+R043_X_service_reliability,customer minutes lost,14
+R044_X_community_engagement,community,288
+R044_X_community_engagement,reputation,211
+R044_X_community_engagement,communities,50
+R044_X_community_engagement,stakeholder engagement,21
+R044_X_community_engagement,public relations,11
+R044_X_community_engagement,stakeholder relations,11
+R044_X_community_engagement,stakeholder outreach,1
+R045_X_quality_generic,quality,3283
+R045_X_quality_generic,reliability,1727
+R046_J_renewable_business,wind,320
+R046_J_renewable_business,solar,272
+R046_J_renewable_business,renewable portfolio,145
+R046_J_renewable_business,renewables availability,30
+R046_J_renewable_business,regulated renewables,27
+R046_J_renewable_business,clean energy execution,16
+R046_J_renewable_business,renewable generation,12
+R046_J_renewable_business,contracted renewables,10
+R046_J_renewable_business,renewables yield,5
+R046_J_renewable_business,renewable yield,4
+R046_J_renewable_business,renewables business,1
+R047_A_energy_efficiency,energy efficiency,151
+R047_A_energy_efficiency,conservation,83
+R047_A_energy_efficiency,dsm,33
+R047_A_energy_efficiency,demand side management,27
+R047_A_energy_efficiency,demand-side management,9
+R047_A_energy_efficiency,energy efficient,1
+R048_A_environment_bare,stewardship,198
+R048_A_environment_bare,clean,115
+R048_A_environment_bare,notices of violation,92
+R048_A_environment_bare,water,72
+R048_A_environment_bare,nov,62
+R048_A_environment_bare,green,34
+R048_A_environment_bare,novs,31
+R048_A_environment_bare,notice of violation,20
+R048_A_environment_bare,renewables,11
+R048_A_environment_bare,waste,11
+R048_A_environment_bare,renewable,5
+R049_A_social_bare,integrity,163
+R049_A_social_bare,social,39
+R049_A_social_bare,turnover,28
+R049_A_social_bare,workers compensation claim,17
+R049_A_social_bare,workers compensation claims,6
+R049_A_social_bare,total attrition,5
+R049_A_social_bare,attrition,1
+R050_A_governance_bare,governance,163
+R051_J_compliance_risk,compliance,2367
+R051_J_compliance_risk,risk management,616
+R051_J_compliance_risk,security,428
+R051_J_compliance_risk,controls,219
+R051_J_compliance_risk,audit,197
+R051_J_compliance_risk,cyber,157
+R051_J_compliance_risk,litigation,118
+R051_J_compliance_risk,audits,113
+R051_J_compliance_risk,internal controls,84
+R051_J_compliance_risk,cybersecurity,64
+R051_J_compliance_risk,sarbanes,59
+R051_J_compliance_risk,sox,52
+R051_J_compliance_risk,enterprise risk,47
+R051_J_compliance_risk,legal and regulatory,44
+R051_J_compliance_risk,regulatory rating,42
+R052_J_workforce_generic,culture,927
+R052_J_workforce_generic,talent,860
+R052_J_workforce_generic,succession,658
+R052_J_workforce_generic,organizational development,349
+R052_J_workforce_generic,collaboration,318
+R052_J_workforce_generic,leadership development,236
+R052_J_workforce_generic,hiring,220
+R052_J_workforce_generic,organizational capabilities,161
+R052_J_workforce_generic,teamwork,151
+R052_J_workforce_generic,human resources,133
+R052_J_workforce_generic,people and culture,126
+R052_J_workforce_generic,headcount,121
+R052_J_workforce_generic,collaborations,83
+R052_J_workforce_generic,staffing,83
+R052_J_workforce_generic,recruitment,71
+R053_J_public_affairs,legislative,68
+R053_J_public_affairs,advocacy,63
+R053_J_public_affairs,government affairs,42
+R053_J_public_affairs,public policy,13
+R053_J_public_affairs,government relations,9
+R054_U_nonspecific,individual,9151
+R054_U_nonspecific,unknown,2873
+R054_U_nonspecific,company performance,2505
+R054_U_nonspecific,strategic objectives,2049
+R054_U_nonspecific,qualitative,1917
+R054_U_nonspecific,discretionary,1581
+R054_U_nonspecific,strategic initiatives,1443
+R054_U_nonspecific,strategic goals,1380
+R054_U_nonspecific,non-financial,1361
+R054_U_nonspecific,corporate performance,1095
+R054_U_nonspecific,scorecard,700
+R054_U_nonspecific,strategic plan,619
+R054_U_nonspecific,leadership,494
+R054_U_nonspecific,corporate objectives,486
+R054_U_nonspecific,strategic performance,462
+R055_N_financial,income,23745
+R055_N_financial,revenue,22442
+R055_N_financial,ebitda,15461
+R055_N_financial,cash flow,14523
+R055_N_financial,capital,13786
+R055_N_financial,tsr,13651
+R055_N_financial,return on,13346
+R055_N_financial,per share,12880
+R055_N_financial,earnings,12691
+R055_N_financial,sales,12549
+R055_N_financial,margin,11903
+R055_N_financial,eps,10519
+R055_N_financial,tax,8551
+R055_N_financial,profit,7597
+R055_N_financial,cash,7389
+R056_N_operating,growth,32266
+R056_N_operating,production,4325
+R056_N_operating,organic,3617
+R056_N_operating,unit,2894
+R056_N_operating,market share,2749
+R056_N_operating,volume,2388
+R056_N_operating,bookings,2116
+R056_N_operating,investment,1973
+R056_N_operating,clinical,1951
+R056_N_operating,commercial,1818
+R056_N_operating,distribution,1801
+R056_N_operating,efficiency,1790
+R056_N_operating,pipeline,1522
+R056_N_operating,projects,1414
+R056_N_operating,availability,1357

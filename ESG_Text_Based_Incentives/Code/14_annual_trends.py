@@ -1,5 +1,9 @@
 """Step 14 — Annual statistics 1998-2021 and analysis of the 2018 ISS classification break.
 
+中文说明：1998–2021 年度统计与 2018 年断点分析。采用率给出三种口径（下界/完整样本/上界）。
+v1.1 修正：平衡面板改为“2015–2021 每年都有业绩型 grant 的公司”（v1.0 按“每年采用状态已知”筛选，存在向上选择偏差），
+并同时报告下界、完整样本与上界；新增 ISS 分类与文本 Extended 的对照；新增现金激励与股权业绩型 grant 的 ESG 分布。
+
 Adoption rates are reported three ways for every unit (firm / executive / CEO):
   _lb  = share with adoption = 1 among all units with performance grants (unknown counted as 0)
   _cc  = share with adoption = 1 among units whose adoption is known (complete case)
@@ -61,6 +65,16 @@ t = K[K.yr.between(2014, 2021)]
 iss_vs = pd.crosstab([t.yr, t.kpi_iss_esg_flag_diag.map({1: "ISS_ESG", 0: "ISS_nonESG"})],
                      t.kpi_esg_strict.map({1.0: "text_strict1", 0.0: "text_strict0"}).fillna("text_unknown"))
 iss_vs.to_csv(ANNUAL / "break_iss_vs_text_kpi_2014_2021.csv")
+iss_vx = pd.crosstab([t.yr, t.kpi_iss_esg_flag_diag.map({1: "ISS_ESG", 0: "ISS_nonESG"})],
+                     t.kpi_esg_extended.map({1.0: "text_ext1", 0.0: "text_ext0"}).fillna("text_ext_unknown"))
+iss_vx.to_csv(ANNUAL / "break_iss_vs_text_extended_kpi_2014_2021.csv")
+# where do ESG conditions sit? cash incentive vs equity performance grants (firm-year adoption, lower bound)
+cq = F[F.firm_n_perf_grants > 0].groupby("fiscalyear").agg(
+    firms=("cik", "size"), adopt_any_perf_lb=("firm_perf_esg_adopt_strict", lambda s: (s == 1).mean()),
+    adopt_cash_perf_lb=("firm_perf_cash_esg_adopt_strict", lambda s: (s == 1).mean()),
+    adopt_equity_perf_lb=("firm_perf_equity_esg_adopt_strict", lambda s: (s == 1).mean()))
+cq.to_csv(ANNUAL / "annual_cash_vs_equity_firm.csv")
+log.info("ESG conditions in cash vs equity performance grants (firm adoption lb):\n" + cq.round(3).to_string())
 log.info("ISS (diag) vs text Strict, KPI counts 2014-2021:\n" + iss_vs.to_string())
 
 # ---- (3)(4) sample composition and continuing firms
@@ -73,14 +87,16 @@ for grp, ids in [("continuing_2017_2018", s17 & s18), ("exits_after_2017", s17 -
         x = Fp[(Fp.fiscalyear == y) & Fp.cik.isin(ids)].firm_perf_esg_adopt_strict
         if len(x):
             comp[f"{grp}_{y}_adopt_lb"] = round((x == 1).mean(), 4); comp[f"{grp}_{y}_n"] = len(x)
-bal = Fp.pivot_table(index="cik", columns="fiscalyear", values="firm_perf_esg_adopt_strict", aggfunc="first")
-bal_ids = bal[[y for y in range(2015, 2022)]].dropna(how="any", subset=None).index if all(y in bal for y in range(2015, 2022)) else []
-panel = Fp[Fp.cik.isin(bal[[y for y in range(2015, 2022)]].notna().all(axis=1).loc[lambda s: s].index)]
-bp = panel.groupby("fiscalyear").firm_perf_esg_adopt_strict.apply(lambda s: (s == 1).mean()).loc[2015:2021]
-comp["balanced_panel_2015_2021_firms"] = int(panel.cik.nunique())
+# v1.1: balanced panel = firms with performance grants in EVERY year 2015-2021 (no selection on known adoption)
+pres = Fp[Fp.fiscalyear.between(2015, 2021)].groupby("cik").fiscalyear.nunique()
+bal_ids = pres[pres == 7].index
+panel = Fp[Fp.cik.isin(bal_ids) & Fp.fiscalyear.between(2015, 2021)]
+bp = panel.groupby("fiscalyear").firm_perf_esg_adopt_strict.apply(lambda s: pd.Series(dict(
+    adopt_lb=(s == 1).mean(), adopt_cc=(s == 1).sum() / max(s.notna().sum(), 1), adopt_ub=(s != 0).mean(), unknown=s.isna().mean()))).unstack()
+comp["balanced_panel_2015_2021_firms"] = int(len(bal_ids))
 pd.Series(comp).to_csv(ANNUAL / "break_sample_composition_2017_2018.csv")
-bp.rename("adopt_strict_lb_balanced_known_2015_2021").to_csv(ANNUAL / "break_balanced_panel_2015_2021.csv")
-log.info(f"composition: {comp}\nbalanced panel (firms with known adoption every year 2015-2021) adoption:\n{bp.round(3).to_string()}")
+bp.to_csv(ANNUAL / "break_balanced_panel_2015_2021.csv")
+log.info(f"composition: {comp}\nbalanced panel (firms with performance grants every year 2015-2021) adoption:\n{bp.round(3).to_string()}")
 
 # ---- (5) extensive vs intensive margin (firm perf-grant ESG share, lower bound)
 x = F[F.firm_n_perf_grants > 0].groupby("fiscalyear").apply(lambda d: pd.Series(dict(

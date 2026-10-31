@@ -73,3 +73,23 @@ cat = np.select([(A.paper_esg_as_used == 1) & (A.esg_strict == 1), (A.paper_esg_
                  "paper_esg_rev_non_esg", "paper_non_esg_rev_strict"], "agree_non_esg_or_unknown")
 s = A.assign(cat=cat).groupby("cat").agg(units=("text_id", "size"), goal_rows=("n_goal_rows", "sum"))
 s.to_csv(VALID / "e_disagreement_categories.csv"); log.info("disagreement categories:\n" + s.to_string())
+
+# ---- v1.1: approximate replication of AGHJ (2025) Table 1 "% ESG Metrics" (2008-2021) as an implementation check
+# 中文：用论文口径近似复现其表 1：观测 = 高管-年 x 业绩型股权/期权 grant 中的标准（会计/市场）指标；
+# 若该高管当年任一 grant 含论文词典匹配的 ESG 指标，则该观测记为 ESG。论文样本还要求可计算 dollar delta（735 家公司），
+# 因此只比较水平与趋势的大致一致性，不期望数值完全相同。
+AGHJ_T1 = {2008: 22.9, 2009: 29.0, 2010: 36.6, 2011: 20.2, 2012: 26.8, 2013: 27.1, 2014: 29.9, 2015: 20.4, 2016: 23.7,
+           2017: 23.8, 2018: 24.9, 2019: 29.6, 2020: 32.1, 2021: 45.4}
+Kr = K.merge(A[["text_id", "rule_ids", "esg_strict"]], on="text_id", how="left")
+std = Kr.rule_ids.fillna("").str.contains("N_financial|L01_fin_label|C01_fin_metrictype") & (Kr.esg_strict == 0)
+eq = C[(C.grant_is_perf == 1) & C.grant_type.isin(["stock_like", "option_like"])][["grantid", "cik", "fiscalyear", "participantid"]]
+obs = Kr[std].merge(eq, on="grantid", suffixes=("_k", "")).drop_duplicates(["cik", "fiscalyear", "participantid", "text_id"])
+ex_paper = Kr.merge(C[["grantid", "cik", "fiscalyear", "participantid"]], on="grantid", suffixes=("_k", "")).groupby(
+    ["cik", "fiscalyear", "participantid"]).agg(paper=("paper_esg_as_used", "max"), rev=("kpi_esg_strict", lambda s: float((s == 1).any())))
+obs = obs.merge(ex_paper, left_on=["cik", "fiscalyear", "participantid"], right_index=True, how="left")
+rep = obs[obs.fiscalyear.between(2008, 2021)].groupby("fiscalyear").agg(n_obs=("text_id", "size"), our_paper_dictionary_pct=("paper", "mean"),
+                                                                            our_v_strict_lb_pct=("rev", "mean"))
+rep[["our_paper_dictionary_pct", "our_v_strict_lb_pct"]] *= 100
+rep["aghj_2025_table1_pct"] = rep.index.map(AGHJ_T1)
+rep.round(1).to_csv(VALID / "e_paper_replication_benchmark.csv")
+log.info("approximate replication of AGHJ (2025) Table 1 (% obs whose executive has an ESG metric):\n" + rep.round(1).to_string())

@@ -1,0 +1,21 @@
+change,units,goal_rows
+strict U->0; ext U->0; E/S/G UUU->000,362,2903
+strict 0->1; ext 0->1; E/S/G 000->010,17,189
+strict U->1; ext U->1; E/S/G UUU->010,16,175
+strict 1->U; ext 1->U; E/S/G 001->UUU,25,124
+strict U->0; ext U->1; E/S/G UUU->000,9,82
+strict 0->0; ext 1->0; E/S/G 000->000,13,60
+strict 0->1; ext 1->1; E/S/G 000->010,5,31
+strict 1->1; ext 1->1; E/S/G 100->1U0,4,29
+strict 1->0; ext 1->1; E/S/G 010->000,2,25
+strict 1->0; ext 1->0; E/S/G UUU->000,3,14
+strict 1->U; ext 1->1; E/S/G 001->UUU,3,13
+strict 0->U; ext 1->U; E/S/G 000->UUU,2,7
+strict 1->1; ext 1->1; E/S/G 011->01U,1,6
+strict U->0; ext U->U; E/S/G UUU->000,1,5
+strict 1->0; ext 1->0; E/S/G 001->000,1,5
+strict U->U; ext 1->U; E/S/G UUU->UUU,1,4
+strict 1->0; ext 1->0; E/S/G 100->000,1,2
+strict U->1; ext U->1; E/S/G UUU->001,1,2
+strict 1->0; ext 1->1; E/S/G 100->000,1,1
+strict 1->1; ext 1->1; E/S/G 010->U10,1,1
