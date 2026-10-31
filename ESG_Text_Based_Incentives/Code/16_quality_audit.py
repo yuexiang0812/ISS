@@ -32,10 +32,12 @@ for c in ["esg_strict", "esg_extended", "esg_extended_only", "esg_e", "esg_s", "
     rec("A", f"{c} in {{0,1,.}}", TRI(A[c]), A[c].value_counts(dropna=False).to_dict())
 rec("A", "Strict=1 implies Extended=1", not ((A.esg_strict == 1) & (A.esg_extended != 1)).any())
 rec("A", "E/S/G=1 implies Strict=1", not (((A.esg_e == 1) | (A.esg_s == 1) | (A.esg_g == 1)) & (A.esg_strict != 1)).any())
-rec("A", "status consistent (unknown <=> strict missing; confirmed <=> human_reviewed)",
-    ((A.classification_status == "unknown") == A.esg_strict.isna()).all() and ((A.classification_status == "confirmed") == (A.human_reviewed == 1)).all())
+rec("A", "status consistent (unknown/confirmed_unknown <=> strict missing; confirmed* <=> human_reviewed)",
+    (A.classification_status.isin(["unknown", "confirmed_unknown"]) == A.esg_strict.isna()).all()
+    and (A.classification_status.str.startswith("confirmed") == (A.human_reviewed == 1)).all())
 rec("A", "every label has a method and a reason", A.classification_method.ne("").all() and A.classification_reason.ne("").all())
 rec("A", "text_id = 'T' + SHA-1(text_key)[:10] (stable across versions)",
+    # independent re-implementation on purpose (the audit must not reuse the build helper classify.text_id_for)
     (A.text_id == A.text_key.map(lambda k: "T" + hashlib.sha1(k.encode("utf-8")).hexdigest()[:10].upper())).all())
 xo = pd.Series([extended_only(None if pd.isna(a) else a, None if pd.isna(b) else b) for a, b in zip(A.esg_strict, A.esg_extended)], dtype="float")
 rec("A", "esg_extended_only follows three-state rule (Unknown when Strict Unknown & Extended 1)", np.allclose(A.esg_extended_only.fillna(-1), xo.fillna(-1)))
@@ -88,6 +90,18 @@ red = np.where((m.grant_goal_data_incomplete == 1) & (m.p == 0), np.nan, red)   
 red = np.where(m.grant_goal_status == "time_no_perf_condition", 0.0, red)
 rec("C", "grant_esg_strict re-derived from KPI master matches", np.allclose(m.grant_esg_strict.fillna(-1), pd.Series(red).fillna(-1)))
 rec("C", "grant_n_kpis matches KPI master", (m.grant_n_kpis == m.n).all())
+xoC = np.where((C.grant_esg_extended == 0) | (C.grant_esg_strict == 1), 0.0, np.where((C.grant_esg_extended == 1) & (C.grant_esg_strict == 0), 1.0, np.nan))
+rec("C", "grant_esg_extended_only follows three-state rule", np.allclose(C.grant_esg_extended_only.fillna(-1), pd.Series(xoC).fillna(-1)))
+pk = K.groupby("grantid").agg(**{f"{q}1": (f"kpi_esg_{q}", lambda s: (s == 1).sum()) for q in "esg"},
+                              **{f"{q}u": (f"kpi_esg_{q}", lambda s: s.isna().sum()) for q in "esg"})
+mp = C.set_index("grantid").join(pk, how="inner")
+okp = True
+for q in "esg":
+    n = mp.grant_n_kpis.where(mp.grant_n_kpis > 0)
+    okp &= np.allclose(mp[f"grant_{q}_kpi_share"].fillna(-1), (mp[f"{q}1"] / n).where(mp[f"{q}u"] == 0).fillna(-1))
+    okp &= np.allclose(mp[f"grant_{q}_kpi_share_lb"].fillna(-1), (mp[f"{q}1"] / n).fillna(-1))
+    okp &= np.allclose(mp[f"grant_{q}_kpi_share_ub"].fillna(-1), ((mp[f"{q}1"] + mp[f"{q}u"]) / n).fillna(-1))
+rec("C", "grant E/S/G KPI shares: exact only if every pillar known; lb/ub re-derived from KPI master", okp)
 rec("C", "esg + non-esg + unknown KPIs = n_kpis", (C.grant_n_esg_kpis_strict + C.grant_n_non_esg_kpis + C.grant_n_unknown_kpis == C.grant_n_kpis).all())
 rec("C", "time grants without perf condition have no KPIs", (C.loc[C.grant_goal_status == "time_no_perf_condition", "grant_n_kpis"] == 0).all())
 rec("C", "duplicated grantIDs: resolved type consistent with goal files", True, int(C.grant_dup_resolved.sum()), level="INFO")

@@ -4,5 +4,5 @@
   "sample_version": "v1.0",
   "n_sample": 601,
   "message": "NO ADJUDICATED HUMAN LABELS: classification performance is NOT validated; all labels are provisional. Two coders code the blind sheets (601 units, Validation/validation_coding_sheet_v1.0_coder*_local.csv), save them as Validation/human_labels/coder1_labels.csv and coder2_labels.csv, adjudicate disagreements into Validation/human_labels/adjudicated_labels.csv (values 1/0/U), then run: python master_run.py 06",
-  "rules_md5": "ee2258f34215ef71a0129e1a3907112f"
+  "rules_md5": "387b7b928d5b33b0b3c21ad470797a70"
 }

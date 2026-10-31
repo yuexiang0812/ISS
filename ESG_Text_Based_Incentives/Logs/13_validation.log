@@ -1,22 +1,9 @@
-2026-10-31 16:30:04,445 INFO frozen v1.0 sample re-used: 601 units (never redrawn)
-2026-10-31 16:30:04,457 INFO sample by period x v1.0 predicted class:
+2026-10-31 20:46:09,391 INFO frozen v1.0 sample rebuilt from id list: 601 units
+2026-10-31 20:46:09,403 INFO sample by period x v1.0 predicted class:
 pred           ext_only  non_esg  strict  unknown
 period                                           
 both                 15       50      32       30
 post2018_only        42       75      75       45
 pre2018_only         42       75      75       45
-2026-10-31 16:30:04,478 INFO human review queue: 1001 units (of 1001 flagged)
-2026-10-31 16:30:04,516 INFO inter-coder agreement: {'intercoder_esg_strict': {'agreement': np.float64(0.7504), 'cohen_kappa': np.float64(0.5737), 'n': 601}, 'intercoder_esg_extended': {'agreement': np.float64(0.6988), 'cohen_kappa': np.float64(0.4841), 'n': 601}, 'intercoder_esg_e': {'agreement': np.float64(0.7038), 'cohen_kappa': np.float64(0.3325), 'n': 601}, 'intercoder_esg_s': {'agreement': np.float64(0.7138), 'cohen_kappa': np.float64(0.5032), 'n': 601}, 'intercoder_esg_g': {'agreement': np.float64(0.7488), 'cohen_kappa': np.float64(0.3778), 'n': 601}}
-2026-10-31 16:36:29,724 INFO validation metrics (all units, unit weights):
-metric                              f1    fnr    fpr  model_unknown_rate  precision  recall
-classifier_version dimension                                                               
-v1.0               esg_e         0.182  0.899  0.002               0.117      0.916   0.101
-                   esg_extended  0.554  0.615  0.002               0.166      0.988   0.385
-                   esg_g         0.114  0.939  0.000               0.099      1.000   0.061
-                   esg_s         0.556  0.607  0.004               0.127      0.949   0.393
-                   esg_strict    0.616  0.541  0.007               0.127      0.939   0.459
-v1.1               esg_e         0.182  0.899  0.002               0.116      0.916   0.101
-                   esg_extended  0.549  0.620  0.002               0.165      0.988   0.380
-                   esg_g         0.101  0.947  0.000               0.098      1.000   0.053
-                   esg_s         0.544  0.618  0.004               0.127      0.948   0.382
-                   esg_strict    0.603  0.555  0.007               0.126      0.937   0.445
+2026-10-31 20:46:09,420 INFO human review queue: 1001 units (of 1001 flagged)
+2026-10-31 20:46:09,878 INFO inter-coder agreement: {'intercoder_esg_strict': {'agreement': np.float64(0.4309), 'cohen_kappa': np.float64(0.0272), 'n': 601}, 'intercoder_esg_extended': {'agreement': np.float64(0.411), 'cohen_kappa': np.float64(0.0252), 'n': 601}, 'intercoder_esg_e': {'agreement': np.float64(0.4309), 'cohen_kappa': np.float64(0.0272), 'n': 601}, 'intercoder_esg_s': {'agreement': np.float64(0.5324), 'cohen_kappa': np.float64(0.0573), 'n': 601}, 'intercoder_esg_g': {'agreement': np.float64(0.5324), 'cohen_kappa': np.float64(0.0573), 'n': 601}}

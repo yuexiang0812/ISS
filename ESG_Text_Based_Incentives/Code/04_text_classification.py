@@ -14,7 +14,7 @@ text_id 由 text_key 的 SHA-1 哈希生成（v1.1 起），因此与版本、�
 import hashlib
 import numpy as np, pandas as pd
 from config import INTER, DICT, FIN_METRICTYPES, ISS_2018_ESG_METRIC_LABELS, CLASSIFIER_VERSION, get_logger
-from classify import classify_unit, PLACEHOLDER_LABELS
+from classify import text_id_for, classify_unit, PLACEHOLDER_LABELS
 from textmatch import match_terms
 import esg_rules
 
@@ -42,7 +42,7 @@ u["text_original"] = u.text_key.map(rep)
 assert u.text_key.is_unique
 u = u.sort_values(["first_year", "text_key"]).reset_index(drop=True)
 # v1.1: stable identifier = hash of the standardized key (independent of version / ordering / data additions)
-u.insert(0, "text_id", ["T" + hashlib.sha1(k.encode("utf-8")).hexdigest()[:10].upper() for k in u.text_key])
+u.insert(0, "text_id", u.text_key.map(text_id_for))
 assert u.text_id.is_unique, "text_id hash collision"
 log.info(f"classification units: {len(u):,} (blank-text context units: {(u.ctx_key != '').sum()})")
 

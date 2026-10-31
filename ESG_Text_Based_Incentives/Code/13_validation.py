@@ -16,10 +16,11 @@ A. Sample design (drawn AFTER v1.0 rules were frozen; seed fixed; never redrawn)
    weights w = N_h / n_h (unit level) and w x n_goal_rows (goal-record level). Strata are defined by v1.0 labels, which is a
    fixed design variable, so the sample remains a valid probability sample for evaluating any later version.
 """
-import hashlib, json
+import hashlib, json, os
 import numpy as np, pandas as pd
 from config import INTER, VALID, CODE, CLASSIFIER_VERSION, SAMPLE_VERSION, get_logger
 from humanlabels import load_adjudicated, load_coders, DIMS
+from classify import text_id_for
 
 log = get_logger("13_validation")
 V = CLASSIFIER_VERSION
@@ -28,19 +29,25 @@ A = pd.read_parquet(INTER / "dataset_A.parquet")
 rules_hash = hashlib.md5((CODE / "esg_rules.py").read_bytes() + (CODE / "classify.py").read_bytes()).hexdigest()
 KEY = VALID / f"validation_sample_{SAMPLE_VERSION}_KEY_local.csv"
 IDS = VALID / f"validation_sample_{SAMPLE_VERSION}_ids.csv"
-hid = lambda k: "T" + hashlib.sha1(k.encode("utf-8")).hexdigest()[:10].upper()
 
 # ---------------- A. load (or, only for a brand-new project, draw) the frozen sample
 if KEY.exists():
     S = pd.read_csv(KEY)
     if "text_key" not in S.columns:
         raise SystemExit("frozen KEY file lacks text_key; cannot link to current units")
-    S["text_id_stable"] = S.text_key.map(hid)
+    S["text_id_stable"] = S.text_key.map(text_id_for)
     log.info(f"frozen {SAMPLE_VERSION} sample re-used: {len(S)} units (never redrawn)")
 elif IDS.exists():
     S = pd.read_csv(IDS).merge(A[["text_id", "text_key"]].rename(columns={"text_id": "text_id_stable"}), on="text_id_stable", how="left")
     assert S.text_key.notna().all(), "sample ids not found in current units (raw data changed?)"
+    # the id list stores the frozen v1.0 predictions as esg_*_v1.0; the KEY layout stores them as esg_*_model
+    S = S.rename(columns={f"{d}_{SAMPLE_VERSION}": f"{d}_model" for d in DIMS})
+    if f"text_id_{SAMPLE_VERSION}" in S.columns:
+        S["text_id"] = S[f"text_id_{SAMPLE_VERSION}"]
     log.info(f"frozen {SAMPLE_VERSION} sample rebuilt from id list: {len(S)} units")
+elif os.environ.get("ESG_DRAW_NEW_SAMPLE") != "1":
+    raise SystemExit(f"frozen validation sample not found ({KEY.name} / {IDS.name}). The sample is never redrawn; restore the id list "
+                     "from git. Only for a brand-new project set ESG_DRAW_NEW_SAMPLE=1.")
 else:
     pop = A[A.classification_method_model != "structured_context"].copy()
     pop["period"] = np.select([pop.last_year < 2018, pop.first_year >= 2018], ["pre2018_only", "post2018_only"], "both")
@@ -59,9 +66,10 @@ else:
     S.to_csv(KEY, index=False)
     log.info(f"NEW validation sample drawn: {len(S)} units")
 # pushable id list (no ISS text): reproduces the sample from raw data
-S[["sample_id", "text_id_stable", "stratum", "period", "pred", "freq", "N_h", "n_h", "w_unit", "n_goal_rows",
+S[["sample_id", "text_id_stable"] + (["text_id"] if "text_id" in S.columns else []) + ["stratum", "period", "pred", "freq", "N_h", "n_h", "w_unit", "n_goal_rows",
    "esg_strict_model", "esg_extended_model", "esg_e_model", "esg_s_model", "esg_g_model"]].rename(
-    columns={c: c.replace("_model", f"_{SAMPLE_VERSION}") for c in ["esg_strict_model", "esg_extended_model", "esg_e_model", "esg_s_model", "esg_g_model"]}
+    columns={**{c: c.replace("_model", f"_{SAMPLE_VERSION}") for c in ["esg_strict_model", "esg_extended_model", "esg_e_model", "esg_s_model", "esg_g_model"]},
+             "text_id": f"text_id_{SAMPLE_VERSION}"}
 ).to_csv(IDS, index=False)
 # blind coding sheets: created once, never overwritten (coders may already be working on them)
 for coder in ["coder1", "coder2"]:
@@ -114,7 +122,7 @@ def kappa(a, b):
     return po, (po - pe) / (1 - pe) if pe < 1 else np.nan
 
 
-coders = load_coders()
+coders = load_coders(A)
 H = load_adjudicated(A)
 status = {}
 if len(coders) >= 2:

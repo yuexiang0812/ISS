@@ -86,6 +86,18 @@ def extended_only(strict, ext):
     return None
 
 
+def extended_only_vec(strict, ext):
+    """Vectorised extended_only() for pandas Series (NaN = Unknown); identical rule."""
+    import numpy as np
+    return np.where((ext == 0) | (strict == 1), 0.0, np.where((ext == 1) & (strict == 0), 1.0, np.nan))
+
+
+def text_id_for(text_key):
+    """Stable unit id: 'T' + first 10 hex digits of SHA-1(text_key) (shared by Steps 04, 13, 16)."""
+    import hashlib
+    return "T" + hashlib.sha1(text_key.encode("utf-8")).hexdigest()[:10].upper()
+
+
 def classify_unit(metric, other, metric_type=""):
     """Return dict with primary label (may use structured context) and text-only label."""
     hits = scan(other) if other else []

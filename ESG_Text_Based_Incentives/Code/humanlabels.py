@@ -30,28 +30,69 @@ def parse_value(v):
 
 
 def sample_key():
+    """Local answer key (sample_id, v1.0 text_id, text_key) or None."""
     p = VALID / f"validation_sample_{SAMPLE_VERSION}_KEY_local.csv"
     return pd.read_csv(p) if p.exists() else None
 
 
-def resolve_text_key(df, A=None):
-    """Add a text_key column from sample_id / text_key / text_id."""
-    df = df.copy()
-    if "text_key" in df.columns and df.text_key.notna().all():
-        return df
+def sample_ids():
+    """Pushable id list (sample_id, text_id_stable[, text_id_v1.0]) or None."""
+    p = VALID / f"validation_sample_{SAMPLE_VERSION}_ids.csv"
+    return pd.read_csv(p) if p.exists() else None
+
+
+def _id_maps(A):
+    """sample_id -> text_key and text_id (current hash or v1.0 sequential) -> text_key."""
+    sid, tid = {}, {}
+    if A is not None:
+        tid.update(zip(A.text_id, A.text_key))
+    ids = sample_ids()
+    if ids is not None and A is not None:
+        h2k = dict(zip(A.text_id, A.text_key))
+        sid.update({s: h2k[t] for s, t in zip(ids.sample_id, ids.text_id_stable) if t in h2k})
+        if f"text_id_{SAMPLE_VERSION}" in ids.columns:
+            tid.update({o: h2k[t] for o, t in zip(ids[f"text_id_{SAMPLE_VERSION}"], ids.text_id_stable) if t in h2k and isinstance(o, str)})
     key = sample_key()
-    if "sample_id" in df.columns and key is not None:
-        df = df.drop(columns=["text_key"], errors="ignore").merge(key[["sample_id", "text_key"]], on="sample_id", how="left")
-    elif "text_id" in df.columns and A is not None:
-        df = df.merge(A[["text_id", "text_key"]], on="text_id", how="left")
-    if "text_key" not in df.columns or df.text_key.isna().any():
-        n = int(df.get("text_key", pd.Series([np.nan] * len(df))).isna().sum())
-        raise ValueError(f"{n} human-label rows could not be matched to a text unit (need sample_id, text_key or a current text_id)")
+    if key is not None:
+        sid.update(zip(key.sample_id, key.text_key))
+        tid.update(zip(key.text_id, key.text_key))      # v1.0 sequential ids printed on the coding sheets
+    return sid, tid
+
+
+def resolve_text_key(df, A=None):
+    """Add text_key, resolving each row from text_key, else sample_id, else text_id (current or v1.0 sheet id)."""
+    df = df.copy()
+    sid, tid = _id_maps(A)
+    col = lambda c: df[c] if c in df.columns else pd.Series([np.nan] * len(df), index=df.index, dtype=object)
+    tk, si, ti = col("text_key"), col("sample_id").map(sid), col("text_id").map(tid)
+    df["text_key"] = tk.where(tk.notna() & (tk.astype(str) != ""), si.where(si.notna(), ti))
+    if df.text_key.isna().any():
+        bad = df[df.text_key.isna()].head(5).to_dict("records")
+        raise ValueError(f"{int(df.text_key.isna().sum())} human-label rows could not be matched to a text unit "
+                         f"(need sample_id, text_key or a text_id); first rows: {bad}")
     return df
 
 
+def normalise(h, prefix):
+    """Apply the label consistency rules of CODING_GUIDELINES.md; returns (frame, n_auto_fixed). Contradictions raise."""
+    S, X = h[prefix + "esg_strict"], h[prefix + "esg_extended"]
+    P = [prefix + f"esg_{q}" for q in "esg"]
+    fix = ((S == 1) & (X != 1)) | ((X == 0) & (S != 0))
+    h.loc[(S == 1) & (X != 1), prefix + "esg_extended"] = 1.0         # Strict ESG is always Extended
+    h.loc[(h[prefix + "esg_extended"] == 0), prefix + "esg_strict"] = 0.0   # not Extended => not Strict
+    S = h[prefix + "esg_strict"]
+    contra = (h[P].eq(1).any(axis=1) & (S != 1)) | ((S == 1) & h[P].eq(0).all(axis=1))
+    if contra.any():
+        raise ValueError(f"{int(contra.sum())} human-label rows are contradictory (a pillar = 1 while Strict != 1, or Strict = 1 with "
+                         f"E = S = G = 0): {h.loc[contra].head(5).to_dict('records')}")
+    for c in P:
+        h.loc[S == 0, c] = 0.0           # not ESG => no pillar
+        h.loc[S.isna(), c] = np.nan      # Strict unknown => pillars unknown
+    return h, fix.astype(int)
+
+
 def load_adjudicated(A=None):
-    """Return DataFrame [text_key, human_<dim>...] or None if no adjudicated file exists."""
+    """Return DataFrame [text_key, human_<dim>..., human_invariant_fixed] or None if no adjudicated file exists."""
     p = VALID / "human_labels" / "adjudicated_labels.csv"
     if not p.exists():
         return None
@@ -60,13 +101,12 @@ def load_adjudicated(A=None):
         col = "human_" + d
         h[col] = h[col].map(parse_value) if col in h.columns else np.nan
     h = resolve_text_key(h, A)
-    fix = (h.human_esg_strict == 1) & (h.human_esg_extended != 1)
-    h.loc[fix, "human_esg_extended"] = 1.0           # definition: Strict ESG is always Extended
-    h["human_invariant_fixed"] = fix.astype(int)
+    h, nfix = normalise(h, "human_")
+    h["human_invariant_fixed"] = nfix.values
     return h.drop_duplicates("text_key", keep="last")
 
 
-def load_coders():
+def load_coders(A=None):
     """Return list of (name, DataFrame[text_key, h_esg_strict ...]) for completed coder sheets."""
     out = []
     for p in sorted((VALID / "human_labels").glob("coder*_labels.csv")):
@@ -74,5 +114,6 @@ def load_coders():
         for d in DIMS:
             col = "h_" + d
             c[col] = c[col].map(parse_value) if col in c.columns else np.nan
-        out.append((p.stem, resolve_text_key(c)))
+        c = resolve_text_key(c, A)
+        out.append((p.stem, normalise(c, "h_")[0]))
     return out

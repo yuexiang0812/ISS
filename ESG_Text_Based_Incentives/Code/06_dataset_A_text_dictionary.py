@@ -10,7 +10,7 @@ in *_model columns so validation can compare them against the human reference.
 import numpy as np, pandas as pd
 from config import INTER, VALID, CLASSIFIER_VERSION, get_logger
 from dtautil import write_dta
-from classify import extended_only
+from classify import extended_only_vec
 from humanlabels import load_adjudicated
 
 log = get_logger("06_dataset_A_text_dictionary")
@@ -37,9 +37,9 @@ else:
 # Extended must contain all Strict positives (invariant)
 bad = (u.esg_strict == 1) & (u.esg_extended != 1)
 log.info(f"invariant check strict=1 => extended=1 violations: {int(bad.sum())}"); assert not bad.any()
-u["esg_extended_only"] = [extended_only(None if pd.isna(a) else a, None if pd.isna(b) else b) for a, b in zip(u.esg_strict, u.esg_extended)]
-u["esg_extended_only"] = pd.to_numeric(u.esg_extended_only, errors="coerce")
-u["classification_status"] = np.where(u.human_reviewed == 1, "confirmed", np.where(u.esg_strict.isna(), "unknown", "provisional"))
+u["esg_extended_only"] = extended_only_vec(u.esg_strict, u.esg_extended)
+u["classification_status"] = np.select([(u.human_reviewed == 1) & u.esg_strict.notna(), u.human_reviewed == 1, u.esg_strict.isna()],
+                                        ["confirmed", "confirmed_unknown", "unknown"], "provisional")
 u["text_normalized"] = u.metricOther_norm.str.lower()
 u["review_priority"] = np.select(
     [u.esg_strict.isna() & (u.n_goal_rows >= 20), u.review_flags != "", u.classification_confidence.isin(["low", "medium"]) & (u.n_goal_rows >= 20)],
@@ -63,7 +63,7 @@ L = dict(text_id="Unique text-classification unit identifier", text_key="Standar
          esg_extended_only="Extended-only (stakeholder, not Strict): 1/0/.", esg_e="Environmental (Strict): 1/0/.",
          esg_s="Social (Strict): 1/0/.", esg_g="Governance (Strict): 1/0/.", esg_general="Multi-pillar ESG/CSR/sustainability term present",
          esg_strict_textonly="Strict ESG using text only (no structured context)", esg_extended_textonly="Extended ESG using text only",
-         classification_status="confirmed (human) / provisional (rule) / unknown", classification_method="deterministic_rule / structured_context / human_review / unresolved",
+         classification_status="confirmed (human) / confirmed_unknown (human: undecidable) / provisional (rule) / unknown", classification_method="deterministic_rule / structured_context / human_review / unresolved",
          classification_confidence="high / medium / low / human", classification_reason="Rules fired with matched text; masks; label notes",
          esg_topics="ESG / stakeholder topics matched", adjacent_flags="ESG-adjacent exclusions matched (J_*)", review_flags="Rule-conflict flags",
          review_priority="Priority for human review queue", rule_ids="Rule ids fired (Dictionaries/b_revised_rules)", human_reviewed="1 if adjudicated human label applied",
