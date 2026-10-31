@@ -1,0 +1,76 @@
+check_id,dataset,check,status,value,detail,audit_timestamp
+Q001,A,primary key text_id unique & non-missing,PASS,38590,,2026-10-31T14:45:53
+Q002,A,text_key unique (one label per text unit),PASS,38590,,2026-10-31T14:45:53
+Q003,A,"esg_strict in {0,1,.}",PASS,"{0.0: 27666, nan: 7884, 1.0: 3040}",,2026-10-31T14:45:53
+Q004,A,"esg_extended in {0,1,.}",PASS,"{0.0: 25951, nan: 8261, 1.0: 4378}",,2026-10-31T14:45:53
+Q005,A,"esg_extended_only in {0,1,.}",PASS,"{0.0: 28991, nan: 8261, 1.0: 1338}",,2026-10-31T14:45:53
+Q006,A,"esg_e in {0,1,.}",PASS,"{0.0: 29979, nan: 8013, 1.0: 598}",,2026-10-31T14:45:53
+Q007,A,"esg_s in {0,1,.}",PASS,"{0.0: 28192, nan: 8010, 1.0: 2388}",,2026-10-31T14:45:53
+Q008,A,"esg_g in {0,1,.}",PASS,"{0.0: 30443, nan: 8019, 1.0: 128}",,2026-10-31T14:45:53
+Q009,A,Strict=1 implies Extended=1,PASS,,,2026-10-31T14:45:53
+Q010,A,E/S/G=1 implies Strict=1,PASS,,,2026-10-31T14:45:53
+Q011,A,extended_only = Extended & not Strict,PASS,,,2026-10-31T14:45:53
+Q012,A,status consistent (unknown <=> strict missing; confirmed <=> human_reviewed),PASS,,,2026-10-31T14:45:53
+Q013,A,every label has a method and a reason,PASS,,,2026-10-31T14:45:53
+Q014,A,classifier_version recorded,PASS,v1.0,,2026-10-31T14:45:53
+Q015,A,year range within 1998-2021,PASS,1998.0-2021.0,,2026-10-31T14:45:53
+Q016,A,share of units Unknown (Strict),INFO,0.2043,,2026-10-31T14:45:53
+Q017,A,units using structured context (blank text),INFO,4,,2026-10-31T14:45:53
+Q018,A,human-reviewed units,WARN,0,,2026-10-31T14:45:53
+Q019,B-alt,goal_record_id unique,PASS,814091,,2026-10-31T14:45:53
+Q020,B-alt,goal-record labels equal dictionary labels (same text -> same label in every year),PASS,,,2026-10-31T14:45:53
+Q021,B-alt,no text unit has >1 Strict label across years,PASS,0,,2026-10-31T14:45:53
+Q022,B-alt,goal records not matched to a grant,INFO,10,,2026-10-31T14:45:53
+Q023,B,primary key kpi_id unique,PASS,654123,,2026-10-31T14:45:53
+Q024,B,"(grantid, goal_source, text_id) unique",PASS,,,2026-10-31T14:45:53
+Q025,B,sum kpi_source_count = goal records,PASS,"814,091 vs 814,091",,2026-10-31T14:45:53
+Q026,B,KPI labels equal dictionary labels,PASS,,,2026-10-31T14:45:53
+Q027,B,missing identifiers (cik/fiscalyear/participantid),INFO,18,,2026-10-31T14:45:53
+Q028,B,KPIs with incomplete keys,INFO,9,,2026-10-31T14:45:53
+Q029,B,fiscalyear within 1998-2021,PASS,,,2026-10-31T14:45:53
+Q030,C,primary key grantid unique & non-missing,PASS,469429,,2026-10-31T14:45:53
+Q031,C,no missing cik / fiscalyear / participantid,PASS,,,2026-10-31T14:45:53
+Q032,C,"grant_esg_strict in {0,1,.}",PASS,,,2026-10-31T14:45:53
+Q033,C,"grant_esg_extended in {0,1,.}",PASS,,,2026-10-31T14:45:53
+Q034,C,"grant_esg_e in {0,1,.}",PASS,,,2026-10-31T14:45:53
+Q035,C,"grant_esg_s in {0,1,.}",PASS,,,2026-10-31T14:45:53
+Q036,C,"grant_esg_g in {0,1,.}",PASS,,,2026-10-31T14:45:53
+Q037,C,no negative grant_value,PASS,0,,2026-10-31T14:45:53
+Q038,C,grant_date not before 1990 or after 2023,PASS,1995-07-26 00:00:00 - 2022-03-24 00:00:00,,2026-10-31T14:45:53
+Q039,C,expiration_date >= grant_date (where both present),INFO,49,,2026-10-31T14:45:53
+Q040,C,grant dates flagged suspect,INFO,256,,2026-10-31T14:45:53
+Q041,C,grant_esg_strict re-derived from KPI master matches,PASS,,,2026-10-31T14:45:53
+Q042,C,grant_n_kpis matches KPI master,PASS,,,2026-10-31T14:45:53
+Q043,C,esg + non-esg + unknown KPIs = n_kpis,PASS,,,2026-10-31T14:45:53
+Q044,C,time grants without perf condition have no KPIs,PASS,,,2026-10-31T14:45:53
+Q045,C,"perf grants with missing goal data (Unknown, not 0)",PASS,159,,2026-10-31T14:45:53
+Q046,C,"all 10 share/coverage variables within [0,1]",PASS,0,,2026-10-31T14:45:53
+Q047,C,lower bound <= upper bound (2 pairs),PASS,0,,2026-10-31T14:45:53
+Q048,D,"primary key (cik, fiscalyear, participantid) unique",PASS,164832,,2026-10-31T14:45:53
+Q049,D,sum exec_n_grants = grants,PASS,"469,429",,2026-10-31T14:45:53
+Q050,D,exec grant / ESG-grant counts re-derived from grant master,PASS,,,2026-10-31T14:45:53
+Q051,D,adoption=1 iff >=1 ESG grant,PASS,,,2026-10-31T14:45:53
+Q052,D,"all 31 share/coverage variables within [0,1]",PASS,0,,2026-10-31T14:45:53
+Q053,D,lower bound <= upper bound (6 pairs),PASS,0,,2026-10-31T14:45:53
+Q054,D,identity match status,INFO,"{'matched_exact': 164808, 'unmatched': 24}",,2026-10-31T14:45:53
+Q055,E,primary key unique,PASS,33278,,2026-10-31T14:45:53
+Q056,E,strict CEO sample: exactly one CEO per firm-year,PASS,32231,,2026-10-31T14:45:53
+Q057,E,every CEO row exists as an executive-year or has no grants,PASS,,,2026-10-31T14:45:53
+Q058,E,CEO identification status,INFO,"{'unique_current_ceo_flag': 32231, 'multiple_current_ceo_flags': 1033, 'rolecode_fallback_unique': 14}",,2026-10-31T14:45:53
+Q059,E,"all 31 share/coverage variables within [0,1]",PASS,0,,2026-10-31T14:45:53
+Q060,E,lower bound <= upper bound (6 pairs),PASS,0,,2026-10-31T14:45:53
+Q061,F,"primary key (cik, fiscalyear) unique",PASS,33328,,2026-10-31T14:45:53
+Q062,F,sum firm_n_grants = grants,PASS,,,2026-10-31T14:45:53
+Q063,F,"firm counts = sum over executive-years (grants, perf, ESG, unknown)",PASS,,,2026-10-31T14:45:53
+Q064,F,firm adoption = aggregation of executive adoption,PASS,,,2026-10-31T14:45:53
+Q065,F,firm-years without grants have missing (not 0) ESG measures,PASS,776,,2026-10-31T14:45:53
+Q066,F,"all 31 share/coverage variables within [0,1]",PASS,0,,2026-10-31T14:45:53
+Q067,F,lower bound <= upper bound (6 pairs),PASS,0,,2026-10-31T14:45:53
+Q068,G,"primary key (cik, fiscalyear) unique",PASS,31944,,2026-10-31T14:45:53
+Q069,G,non-CEO grants <= firm grants,PASS,,,2026-10-31T14:45:53
+Q070,G,"all 31 share/coverage variables within [0,1]",PASS,0,,2026-10-31T14:45:53
+Q071,G,lower bound <= upper bound (6 pairs),PASS,0,,2026-10-31T14:45:53
+Q072,audit,audit_goal_grants_missing_in_grant_table.csv,INFO,3,,2026-10-31T14:45:53
+Q073,audit,audit_grants_unmatched_participant.csv,INFO,117,,2026-10-31T14:45:53
+Q074,audit,audit_ceo_exceptions.csv,INFO,1960,,2026-10-31T14:45:53
+Q075,validation,independent human validation,WARN,pending_human_labels,labels are PROVISIONAL until human labels exist,2026-10-31T14:45:53
