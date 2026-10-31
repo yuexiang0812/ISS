@@ -1,7 +1,7 @@
 # Text-Based ESG Executive Incentives from ISS Incentive Lab (1998–2021)
 ## Measurement Methodology and Validation Report — classifier v1.1
 
-> **Generated file — do not edit by hand.** `Code/18_build_reports.py` rebuilds this report from the current pipeline outputs on every run. The narrative lives in `Code/docgen/methodology_template.md`; every number is read from the outputs named in each section. Generated 2026-10-31 16:56 (git dd6c450).
+> **Generated file — do not edit by hand.** `Code/18_build_reports.py` rebuilds this report from the current pipeline outputs on every run. The narrative lives in `Code/docgen/methodology_template.md`; every number is read from the outputs named in each section. Generated 2026-10-31 20:55 (git badbbbd).
 
 > **Status: PROVISIONAL.** Every label comes from the deterministic classifier v1.1. No adjudicated human reference labels exist yet, so **no accuracy statistic is reported**. The blind validation sample (601 units, frozen under v1.0), the coding guideline and the scoring code are ready (§12).
 
@@ -94,7 +94,7 @@ Field meanings follow the ISS User Guide; the fields are listed in `data_invento
   - 25,159 `grantDateFV` values;
   - 22,968 `nonEquityTarget` values.
 
-  Date missing values are coded `01/01/9999`; 117,906 grant dates are converted to missing. Impossible values are also set to missing (n/a negative `grantDateFV`, n/a negative `vestHighGrant`).
+  Date missing values are coded `01/01/9999`; 117,906 grant dates are converted to missing. Impossible values are also set to missing (1 negative `grantDateFV`, 18 negative `vestHighGrant`).
 - **Fiscal year.** Defined by ISS's 10-July rule. Goal-record `fiscalYear` equals the grant's `FiscalYear` in n/a of matched records.
 - **`metricType`.** Before 2018 it takes Accounting / Other / Stock Price. From 2018 it is granular and adds Social / Environment / CSR. "Market-related" is the old "Stock Price" (User Guide).
 - **`metric`.** The ESG labels (Staff Health And Safety, Diversity, Csr, Climate Change And Energy Use, …) belong to the 2018 re-taxonomy: only **58 of 10,603** rows carrying them are dated before 2018.
@@ -395,7 +395,7 @@ At unit level, adoption Unknown is large: one unresolved KPI in any performance 
 - adoption is reported as lower bound / complete-case / upper bound.
 
 ## 14. Exact numerator / denominator definitions
-Full details are in `Documentation/variable_dictionary.csv`. It gives the formula, numerator, denominator, values, missing interpretation and source for all 561 variables.
+Full details are in `Documentation/variable_dictionary.csv`. It gives the formula, numerator, denominator, values, missing interpretation and source for all 567 variables.
 
 **Grant ESG**
 - 1 = ≥1 KPI is ESG.
@@ -436,7 +436,7 @@ Also in `Documentation/dataset_summary.csv`. Every key was verified unique and n
 | A `ESG_Text_Dictionary.dta` | 38,590 | 43 | text_id | 1998–2021 |
 | B `ESG_KPI_Master.dta` | 654,123 | 38 | kpi_id | 1998–2021 |
 | (B-alt) `ESG_Goal_Record_Classification.dta` | 814,091 | 29 | goal_record_id | 1998–2021 |
-| C `ESG_Grant_Master.dta` | 469,429 | 76 | grantid | 1998–2021 |
+| C `ESG_Grant_Master.dta` | 469,429 | 82 | grantid | 1998–2021 |
 | D `ESG_Executive_Firm_Year.dta` | 164,832 | 96 | cik + fiscalyear + participantid | 1998–2021 |
 | E `ESG_CEO_Firm_Year.dta` | 33,278 | 99 | cik + fiscalyear + participantid | 1998–2021 |
 | F `ESG_Firm_Year_Master.dta` | 33,328 | 94 | cik + fiscalyear | 1998–2021 |
@@ -461,7 +461,7 @@ Also in `Documentation/dataset_summary.csv`. Every key was verified unique and n
 | Strict = 1 ⇒ Extended = 1 | asserted; 0 violations |
 
 All of these are asserted in code; any failure stops the pipeline. The independent quality audit (Step 16) re-derives grant ESG, unit counts, adoption, E/S/G adoption and lb shares from the lower-level data in the final `.dta` files.
-- Result: 93 checks: PASS 77, FAIL 0, WARN 2, INFO 14.
+- Result: 95 checks: PASS 79, FAIL 0, WARN 2, INFO 14.
 - Details: `Documentation/quality_audit_results.csv`.
 
 ## 18. Annual ESG trends
