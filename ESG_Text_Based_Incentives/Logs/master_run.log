@@ -561,3 +561,8 @@ fiscalyear
 2026-10-31 20:55:21,436 INFO wrote Conversation_Archive_local.docx
 === 18_build_reports.py done in 7s
 === 19_build_audit_archive.py
+2026-10-31 20:56:02,298 INFO archive ESG_Audit_Archive_v1.1_20261031_2055.zip: 181 files, 206 MB zipped, 2801 MB raw; zip integrity test: OK
+2026-10-31 20:56:02,471 INFO archive sha256: 79c0cb7c142c85f3d3bfcbe632fd818b173a135075bfacd36af128e07a8ab599
+=== 19_build_audit_archive.py done in 41s
+pipeline complete
+EXIT=0
