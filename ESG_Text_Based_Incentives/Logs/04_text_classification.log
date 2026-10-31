@@ -1,1 +1,10 @@
 2026-10-31 20:46:38,906 INFO classification units: 38,590 (blank-text context units: 10)
+2026-10-31 20:47:17,853 INFO esg_strict (units): {'0': 28022, 'Unknown': 7525, '1': 3043} | goal-row weighted: {'0': 667984, '1': 30119, 'Unknown': 115988}
+2026-10-31 20:47:17,864 INFO esg_extended (units): {'0': 26314, 'Unknown': 7901, '1': 4375} | goal-row weighted: {'0': 648775, '1': 45311, 'Unknown': 120005}
+2026-10-31 20:47:17,878 INFO method x strict (rows):
+esg_strict                  0      1  Unknown
+classification_method                        
+deterministic_rule     606998  30119        0
+structured_context      60986      0        0
+unresolved                  0      0   115988
+2026-10-31 20:47:17,879 INFO rules: 57; version v1.1
