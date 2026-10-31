@@ -1,0 +1,33 @@
+2026-10-31 20:48:11,177 INFO [dta] ESG_Goal_Record_Classification.dta: 814,091 obs x 29 vars; key=['goal_record_id']; renamed(overlong)={}
+2026-10-31 20:50:25,888 INFO [key check] KPI master: 654,123 rows; key ['kpi_id'] duplicates = 0
+2026-10-31 20:50:25,961 INFO [key check] KPI master (components): 654,123 rows; key ['grantid', 'goal_source', 'text_id'] duplicates = 0
+2026-10-31 20:50:25,963 INFO reconciliation: sum(kpi_source_count) = 814,091 = goal records 814,091
+2026-10-31 20:50:25,965 INFO KPIs: 654,123; duplicate-objective KPIs: 4,849; multi-period KPIs: 84,463; incomplete keys: 9
+2026-10-31 20:50:26,056 INFO kpi strict by year:
+kpi_esg_strict  -1.0    0.0   1.0
+fiscalyear                       
+1998.0          2186   7575   132
+1999.0          2320   7863    92
+2000.0          2429   8114   122
+2001.0          2318   7827   149
+2002.0          2619   8337   167
+2003.0          2828   9075   163
+2004.0          2933  10830   295
+2005.0          2944  11385   370
+2006.0          4461  20883   669
+2007.0          4595  23593   781
+2008.0          4628  23211   894
+2009.0          4841  23620  1031
+2010.0          4894  25270  1246
+2011.0          5089  26386  1319
+2012.0          5428  28090  1403
+2013.0          5485  29113  1413
+2014.0          6388  31420  1535
+2015.0          6611  31559  1700
+2016.0          6202  31162  1686
+2017.0          5554  32393  1640
+2018.0          5135  31331  1665
+2019.0          4829  32189  1804
+2020.0          5330  32326  2298
+2021.0          5046  29499  3405
+2026-10-31 20:50:53,370 INFO [dta] ESG_KPI_Master.dta: 654,123 obs x 38 vars; key=['kpi_id']; renamed(overlong)={}
