@@ -74,3 +74,54 @@ fiscalyear
 2026-10-31 20:50:53,370 INFO [dta] ESG_KPI_Master.dta: 654,123 obs x 38 vars; key=['kpi_id']; renamed(overlong)={}
 === 07_dataset_B_kpi.py done in 193s
 === 08_dataset_C_grant.py
+2026-10-31 20:51:27,978 INFO raw grants rows 469,573; distinct grantID 469,429
+2026-10-31 20:51:32,880 INFO duplicated grantIDs: 141 ids / 285 rows; columns differing within ids: ['performancetype']
+2026-10-31 20:51:33,486 INFO performancetype resolved from goal data for 141 duplicated grantIDs: {'Abs/Time': 138, 'Abs/Rel/Time': 3}
+2026-10-31 20:51:33,585 INFO impossible values set to missing: negative grantDateFV=1, negative vestHighGrant=18
+2026-10-31 20:51:33,608 INFO grant dates outside [FY-3, FY+2]: 256 (flagged grant_date_suspect)
+2026-10-31 20:51:33,614 INFO expiration date before grant date: 49 (flagged grant_dates_inconsistent)
+2026-10-31 20:51:33,705 INFO grant value source:
+grant_value_source
+grant_date_fair_value      278382
+nonequity_target_payout    106524
+missing                     84523
+2026-10-31 20:51:33,865 INFO grants whose declared objectives exceed recorded goal rows: 335 (flagged grant_goal_data_incomplete)
+2026-10-31 20:51:35,328 INFO KPIs whose grant is absent from grants table: 3 grants (9 KPIs) -> excluded, listed in audit
+2026-10-31 20:51:35,452 INFO grant goal status:
+grant_goal_status
+perf_with_goals                      233384
+time_no_perf_condition               231168
+time_with_accel_goals                  4496
+time_accel_declared_goals_missing       171
+perf_goals_missing                      159
+type_missing                             51
+2026-10-31 20:51:35,721 INFO [key check] grant master: 469,429 rows; key ['grantid'] duplicates = 0
+2026-10-31 20:51:35,725 INFO [share check] grant.grant_esg_kpi_share_strict: n=161,313 out-of-[0,1]=0
+2026-10-31 20:51:35,729 INFO [share check] grant.grant_esg_kpi_share_extended: n=160,333 out-of-[0,1]=0
+2026-10-31 20:51:35,733 INFO [share check] grant.grant_e_kpi_share: n=161,047 out-of-[0,1]=0
+2026-10-31 20:51:35,737 INFO [share check] grant.grant_s_kpi_share: n=161,036 out-of-[0,1]=0
+2026-10-31 20:51:35,741 INFO [share check] grant.grant_g_kpi_share: n=161,030 out-of-[0,1]=0
+2026-10-31 20:51:35,745 INFO [share check] grant.grant_e_kpi_share_lb: n=237,881 out-of-[0,1]=0
+2026-10-31 20:51:35,749 INFO [share check] grant.grant_e_kpi_share_ub: n=237,881 out-of-[0,1]=0
+2026-10-31 20:51:35,753 INFO [share check] grant.grant_s_kpi_share_lb: n=237,881 out-of-[0,1]=0
+2026-10-31 20:51:35,757 INFO [share check] grant.grant_s_kpi_share_ub: n=237,881 out-of-[0,1]=0
+2026-10-31 20:51:35,761 INFO [share check] grant.grant_g_kpi_share_lb: n=237,881 out-of-[0,1]=0
+2026-10-31 20:51:35,765 INFO [share check] grant.grant_g_kpi_share_ub: n=237,881 out-of-[0,1]=0
+2026-10-31 20:51:35,769 INFO [share check] grant.grant_classification_coverage: n=469,049 out-of-[0,1]=0
+2026-10-31 20:51:35,773 INFO [share check] grant.grant_esg_share_lb: n=237,881 out-of-[0,1]=0
+2026-10-31 20:51:35,777 INFO [share check] grant.grant_esg_share_ub: n=237,881 out-of-[0,1]=0
+2026-10-31 20:51:35,781 INFO [share check] grant.grant_esg_share_ext_lb: n=237,881 out-of-[0,1]=0
+2026-10-31 20:51:35,785 INFO [share check] grant.grant_esg_share_ext_ub: n=237,881 out-of-[0,1]=0
+2026-10-31 20:51:35,830 INFO identity checks passed: esg+non+unknown = n_kpis; KPI totals reconcile to KPI master
+2026-10-31 20:51:35,867 INFO grant_esg_strict by status:
+grant_esg_strict                    -1.0     0.0    1.0
+grant_goal_status                                      
+perf_goals_missing                   159       0      0
+perf_with_goals                    66380  151910  15094
+time_accel_declared_goals_missing    171       0      0
+time_no_perf_condition                 0  231168      0
+time_with_accel_goals                523    3973      0
+type_missing                          51       0      0
+2026-10-31 20:51:52,822 INFO [dta] ESG_Grant_Master.dta: 469,429 obs x 82 vars; key=['grantid']; renamed(overlong)={}
+=== 08_dataset_C_grant.py done in 60s
+=== 09_dataset_D_executive.py
