@@ -1,7 +1,7 @@
-2026-10-31 16:20:35,176 INFO no adjudicated human labels found -> all labels are model/rule-based (provisional)
-2026-10-31 16:20:35,177 INFO invariant check strict=1 => extended=1 violations: 0
-2026-10-31 16:20:36,466 INFO [dta] ESG_Text_Dictionary.dta: 38,590 obs x 43 vars; key=['text_id']; renamed(overlong)={}
-2026-10-31 16:20:36,484 INFO status x strict:
+2026-10-31 20:47:38,196 INFO no adjudicated human labels found -> all labels are model/rule-based (provisional)
+2026-10-31 20:47:38,197 INFO invariant check strict=1 => extended=1 violations: 0
+2026-10-31 20:47:39,823 INFO [dta] ESG_Text_Dictionary.dta: 38,590 obs x 43 vars; key=['text_id']; renamed(overlong)={}
+2026-10-31 20:47:39,931 INFO status x strict:
 esg_strict             -1.0    0.0   1.0
 classification_status                   
 provisional               0  28022  3043

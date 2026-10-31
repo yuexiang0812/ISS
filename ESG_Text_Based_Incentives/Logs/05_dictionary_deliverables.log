@@ -12,3 +12,5 @@ retained_strict_with_context_exclusions                                    11
 reassigned_extended_only                                                   11
 excluded_generic_or_false_positive                                          4
 2026-10-31 20:47:21,614 INFO (b3) 46 new expressions; 100 units / 677 goal rows ESG under v1.1 but unmatched by AGHJ
+2026-10-31 20:47:37,732 INFO (b4) rule match examples: 535 rows
+2026-10-31 20:47:37,734 INFO (c) change log written

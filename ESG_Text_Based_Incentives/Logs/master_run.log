@@ -25,3 +25,17 @@ retained_strict_with_context_exclusions                                    11
 reassigned_extended_only                                                   11
 excluded_generic_or_false_positive                                          4
 2026-10-31 20:47:21,614 INFO (b3) 46 new expressions; 100 units / 677 goal rows ESG under v1.1 but unmatched by AGHJ
+2026-10-31 20:47:37,732 INFO (b4) rule match examples: 535 rows
+2026-10-31 20:47:37,734 INFO (c) change log written
+=== 05_dictionary_deliverables.py done in 20s
+=== 06_dataset_A_text_dictionary.py
+2026-10-31 20:47:38,196 INFO no adjudicated human labels found -> all labels are model/rule-based (provisional)
+2026-10-31 20:47:38,197 INFO invariant check strict=1 => extended=1 violations: 0
+2026-10-31 20:47:39,823 INFO [dta] ESG_Text_Dictionary.dta: 38,590 obs x 43 vars; key=['text_id']; renamed(overlong)={}
+2026-10-31 20:47:39,931 INFO status x strict:
+esg_strict             -1.0    0.0   1.0
+classification_status                   
+provisional               0  28022  3043
+unknown                7525      0     0
+=== 06_dataset_A_text_dictionary.py done in 2s
+=== 07_dataset_B_kpi.py
