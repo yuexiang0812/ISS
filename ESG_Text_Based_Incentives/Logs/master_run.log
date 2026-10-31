@@ -263,3 +263,229 @@ type_missing                          51       0      0
 2026-10-31 13:31:47,969 INFO [dta] ESG_Grant_Master.dta: 469,429 obs x 69 vars; key=['grantid']; renamed(overlong)={}
 === 08_dataset_C_grant.py done in 18s
 === 09_dataset_D_executive.py
+2026-10-31 13:32:13,872 INFO [key check] ParticipantFY: 474,170 rows; key ['cik', 'fiscalyear', 'fiscalmonth', 'participantid'] duplicates = 0
+2026-10-31 13:32:14,415 INFO grants matched to ParticipantFY on (CIK,FY,FM,pid): 99.9751%; unmatched 117
+2026-10-31 13:32:22,328 INFO [key check] Executive-Firm-Year: 164,832 rows; key ['cik', 'fiscalyear', 'participantid'] duplicates = 0
+2026-10-31 13:32:22,386 INFO [aggregate checks] executive: counts, bounds, [0,1] ranges, adoption/share consistency passed
+2026-10-31 13:32:22,386 INFO reconciliation: sum(exec_n_grants) = 469,429 = grants 469,429
+2026-10-31 13:32:22,392 INFO identity status:
+exec_identity_match_status
+matched_exact    164808
+unmatched            24
+2026-10-31 13:32:24,823 INFO [dta] ESG_Executive_Firm_Year.dta: 164,832 obs x 73 vars; key=['cik', 'fiscalyear', 'participantid']; renamed(overlong)={'exec_perf_classification_coverage': 'exec_perf_class_coverage', 'exec_esg_all_grant_share_extended': 'exec_esg_all_grant_share_ext', 'exec_esg_perf_grant_share_extended': 'exec_esg_perf_grant_share_ext', 'exec_esg_compensation_value_share': 'exec_esg_comp_value_share', 'exec_perf_esg_compensation_value_share': 'exec_perf_esg_comp_value_share'}
+=== 09_dataset_D_executive.py done in 37s
+=== 10_dataset_E_ceo.py
+2026-10-31 13:32:26,350 INFO firm-year CEO identification status:
+ceo_identification_status
+unique_current_ceo_flag       32231
+no_ceo_identified               515
+multiple_current_ceo_flags      505
+rolecode_fallback_unique         14
+rolecode_ambiguous                1
+2026-10-31 13:32:26,417 INFO exception table rows: 1,960 (firm-years: 1,035)
+2026-10-31 13:32:26,492 INFO [key check] CEO-Firm-Year: 33,278 rows; key ['cik', 'fiscalyear', 'participantid'] duplicates = 0
+2026-10-31 13:32:26,507 INFO CEO-firm-years: 33,278; strict sample 32,231; with grants 30,819
+2026-10-31 13:32:26,937 INFO [dta] ESG_CEO_Firm_Year.dta: 33,278 obs x 76 vars; key=['cik', 'fiscalyear', 'participantid']; renamed(overlong)={'ceo_esg_perf_grant_share_extended': 'ceo_esg_perf_grant_share_ext', 'ceo_perf_esg_compensation_value_share': 'ceo_perf_esg_comp_value_share'}
+=== 10_dataset_E_ceo.py done in 2s
+=== 11_dataset_F_G_firm.py
+2026-10-31 13:32:28,184 INFO [key check] CompanyFY: 33,328 rows; key ['cik', 'fiscalyear'] duplicates = 0
+2026-10-31 13:32:30,731 INFO firm-year merge CompanyFY vs grants: {'both': 32552, 'left_only': 776, 'right_only': 0}
+2026-10-31 13:32:30,743 INFO [key check] Firm-Year: 33,328 rows; key ['cik', 'fiscalyear'] duplicates = 0
+2026-10-31 13:32:30,768 INFO [aggregate checks] firm: counts, bounds, [0,1] ranges, adoption/share consistency passed
+2026-10-31 13:32:30,785 INFO reconciliation: firm grant/perf/ESG-grant counts = sums over executive-years; total grants = grant master
+2026-10-31 13:32:31,180 INFO [dta] ESG_Firm_Year_Master.dta: 33,328 obs x 70 vars; key=['cik', 'fiscalyear']; renamed(overlong)={'firm_perf_classification_coverage': 'firm_perf_class_coverage', 'firm_esg_all_grant_share_extended': 'firm_esg_all_grant_share_ext', 'firm_esg_perf_grant_share_extended': 'firm_esg_perf_grant_share_ext', 'firm_esg_compensation_value_share': 'firm_esg_comp_value_share', 'firm_perf_esg_compensation_value_share': 'firm_perf_esg_comp_value_share'}
+2026-10-31 13:32:31,258 INFO executive role classes:
+role_class
+nonceo          130794
+ceo              30819
+role_unknown      3219
+2026-10-31 13:32:34,021 INFO [key check] NonCEO-Firm-Year: 31,944 rows; key ['cik', 'fiscalyear'] duplicates = 0
+2026-10-31 13:32:34,033 INFO [aggregate checks] non-CEO: counts, bounds, [0,1] ranges, adoption/share consistency passed
+2026-10-31 13:32:34,195 INFO [dta] ESG_NonCEO_Firm_Year.dta: 31,944 obs x 63 vars; key=['cik', 'fiscalyear']; renamed(overlong)={'nonceo_n_perf_esg_grants_extended': 'nonceo_n_perf_esg_grants_ext', 'nonceo_esg_all_grant_share_strict': 'nonceo_esg_all_grant_share_str', 'nonceo_all_classification_coverage': 'nonceo_all_class_coverage', 'nonceo_esg_perf_grant_share_strict': 'nonceo_esg_perf_grant_share_str', 'nonceo_perf_classification_coverage': 'nonceo_perf_class_coverage', 'nonceo_esg_all_grant_share_extended': 'nonceo_esg_all_grant_share_ext', 'nonceo_esg_perf_grant_share_extended': 'nonceo_esg_perf_grant_share_ext', 'nonceo_esg_compensation_value_share': 'nonceo_esg_comp_value_share', 'nonceo_perf_esg_compensation_value_share': 'nonceo_perf_esg_comp_value_share', 'nonceo_kpi_classification_coverage': 'nonceo_kpi_class_coverage'}
+=== 11_dataset_F_G_firm.py done in 7s
+=== 12_paper_vs_revised_comparison.py
+2026-10-31 13:32:35,135 INFO overlap (units) paper vs revised STRICT:
+rev_strict  rev_strict=0  rev_strict=1  rev_strict=Unknown    All
+paper                                                            
+paper=0            24932            88                6686  31706
+paper=1             2734          2952                1198   6884
+All                27666          3040                7884  38590
+overlap (units) paper vs revised EXTENDED:
+rev_ext  rev_ext=0  rev_ext=1  rev_ext=Unknown    All
+paper                                                
+paper=0      23626       1045             7035  31706
+paper=1       2325       3333             1226   6884
+All          25951       4378             8261  38590
+2026-10-31 13:32:35,178 INFO overlap (goal_rows) paper vs revised STRICT:
+rev_strict  rev_strict=0  rev_strict=1  rev_strict=Unknown     All
+paper                                                             
+paper=0           648557           575              111836  760968
+paper=1            16617         29331                7175   53123
+All               665174         29906              119011  814091
+overlap (goal_rows) paper vs revised EXTENDED:
+rev_ext  rev_ext=0  rev_ext=1  rev_ext=Unknown     All
+paper                                                 
+paper=0     632625      12666           115677  760968
+paper=1      13355      32413             7355   53123
+All         645980      45079           123032  814091
+2026-10-31 13:32:35,849 INFO annual comparison (2014-2021):
+            paper_esg_row_share  rev_strict_row_share_lb  rev_unknown_row_share  exec_perf_paper_adopt  exec_perf_rev_strict_adopt_lb  exec_perf_rev_strict_adopt_ub  exec_perf_iss_adopt_diag  firm_perf_paper_adopt  firm_perf_rev_strict_adopt_lb  firm_perf_iss_adopt_diag
+fiscalyear                                                                                                                                                                                                                                                                    
+2014.0                    0.063                    0.037                  0.144                  0.214                          0.129                          0.638                     0.000                  0.245                          0.139                     0.000
+2015.0                    0.072                    0.042                  0.145                  0.223                          0.136                          0.678                     0.000                  0.249                          0.146                     0.000
+2016.0                    0.071                    0.042                  0.142                  0.214                          0.130                          0.658                     0.001                  0.234                          0.141                     0.001
+2017.0                    0.066                    0.038                  0.133                  0.216                          0.136                          0.608                     0.003                  0.237                          0.146                     0.003
+2018.0                    0.071                    0.042                  0.127                  0.223                          0.148                          0.608                     0.136                  0.247                          0.155                     0.137
+2019.0                    0.079                    0.044                  0.118                  0.242                          0.156                          0.598                     0.160                  0.274                          0.168                     0.168
+2020.0                    0.094                    0.056                  0.123                  0.284                          0.189                          0.630                     0.189                  0.306                          0.196                     0.193
+2021.0                    0.121                    0.083                  0.125                  0.379                          0.294                          0.699                     0.293                  0.404                          0.304                     0.301
+2026-10-31 13:32:35,890 INFO disagreement categories:
+                                 units  goal_rows
+cat                                              
+agree_esg                         2952      29331
+agree_non_esg_or_unknown         31618     760393
+paper_esg_rev_adjacent_excluded    907       5290
+paper_esg_rev_extended_only        381       3082
+paper_esg_rev_non_esg             1484       8428
+paper_esg_rev_unknown             1160       6992
+paper_non_esg_rev_strict            88        575
+=== 12_paper_vs_revised_comparison.py done in 2s
+=== 13_validation.py
+2026-10-31 13:32:36,410 INFO existing frozen sample re-used (601 units) — never redrawn after coding starts
+2026-10-31 13:32:36,414 INFO sample by stratum:
+pred           ext_only  non_esg  strict  unknown
+period                                           
+both                 15       50      32       30
+post2018_only        42       75      75       45
+pre2018_only         42       75      75       45
+2026-10-31 13:32:36,430 INFO human review queue: 1039 units (of 1039 flagged)
+2026-10-31 13:32:36,431 INFO NO HUMAN LABELS AVAILABLE: classification performance is NOT validated. All labels are provisional. Code the blind sheets (601 units), place them in Validation/human_labels/ as coder1_labels.csv / coder2_labels.csv, adjudicate disagreements into adjudicated_labels.csv, then re-run this step.
+=== 13_validation.py done in 1s
+=== 14_annual_trends.py
+2026-10-31 13:32:37,534 INFO FIRM-YEAR annual:
+ fiscalyear  n_units_with_perf_grants  adopt_strict_lb  adopt_strict_cc  adopt_strict_ub  adopt_ext_lb  perf_grant_share_lb_mean  kpi_share_lb_mean  perf_classification_coverage_mean  iss_esg_adopt_diag
+       1998                       689            0.032            0.060            0.498         0.061                     0.018              0.007                              0.608               0.000
+       1999                       716            0.024            0.047            0.514         0.042                     0.015              0.005                              0.575               0.000
+       2000                       691            0.036            0.074            0.547         0.058                     0.020              0.007                              0.559               0.000
+       2001                       684            0.034            0.067            0.532         0.054                     0.023              0.008                              0.559               0.000
+       2002                       722            0.040            0.088            0.583         0.064                     0.028              0.009                              0.533               0.000
+       2003                       772            0.040            0.088            0.583         0.066                     0.029              0.009                              0.545               0.000
+       2004                       818            0.054            0.112            0.573         0.088                     0.036              0.013                              0.577               0.000
+       2005                       893            0.058            0.110            0.531         0.091                     0.037              0.014                              0.617               0.000
+       2006                      1208            0.089            0.177            0.588         0.127                     0.044              0.017                              0.646               0.000
+       2007                      1245            0.104            0.201            0.589         0.147                     0.051              0.019                              0.673               0.000
+       2008                      1236            0.107            0.211            0.600         0.150                     0.054              0.020                              0.672               0.000
+       2009                      1188            0.111            0.227            0.621         0.156                     0.055              0.021                              0.649               0.000
+       2010                      1225            0.120            0.233            0.605         0.172                     0.065              0.025                              0.675               0.000
+       2011                      1222            0.127            0.251            0.621         0.174                     0.066              0.025                              0.681               0.000
+       2012                      1262            0.127            0.250            0.620         0.167                     0.062              0.025                              0.690               0.000
+       2013                      1278            0.131            0.269            0.645         0.174                     0.065              0.026                              0.697               0.000
+       2014                      1303            0.139            0.307            0.687         0.187                     0.068              0.027                              0.678               0.000
+       2015                      1263            0.146            0.341            0.717         0.189                     0.071              0.028                              0.670               0.000
+       2016                      1200            0.141            0.320            0.701         0.183                     0.065              0.027                              0.692               0.001
+       2017                      1188            0.146            0.291            0.646         0.192                     0.067              0.027                              0.730               0.003
+       2018                      1160            0.155            0.308            0.651         0.203                     0.075              0.030                              0.736               0.137
+       2019                      1128            0.168            0.321            0.644         0.216                     0.079              0.032                              0.753               0.168
+       2020                      1090            0.196            0.373            0.670         0.247                     0.095              0.037                              0.749               0.193
+       2021                       956            0.304            0.528            0.728         0.349                     0.142              0.062                              0.774               0.301
+2026-10-31 13:32:37,539 INFO CEO (strict sample) annual:
+ fiscalyear  n_units_with_perf_grants  adopt_strict_lb  adopt_strict_cc  adopt_strict_ub  adopt_ext_lb  perf_grant_share_lb_mean  kpi_share_lb_mean  perf_classification_coverage_mean  iss_esg_adopt_diag
+       1998                       636            0.027            0.046            0.447         0.050                     0.019              0.006                              0.623               0.000
+       1999                       653            0.020            0.035            0.449         0.037                     0.016              0.005                              0.606               0.000
+       2000                       639            0.028            0.051            0.474         0.045                     0.022              0.006                              0.599               0.000
+       2001                       631            0.032            0.057            0.479         0.052                     0.026              0.008                              0.583               0.000
+       2002                       666            0.036            0.069            0.517         0.054                     0.029              0.008                              0.560               0.000
+       2003                       713            0.035            0.068            0.516         0.056                     0.029              0.008                              0.569               0.000
+       2004                       744            0.051            0.094            0.509         0.083                     0.039              0.013                              0.609               0.000
+       2005                       822            0.057            0.098            0.471         0.086                     0.043              0.015                              0.642               0.000
+       2006                      1121            0.070            0.122            0.500         0.102                     0.043              0.016                              0.658               0.000
+       2007                      1149            0.078            0.132            0.486         0.111                     0.053              0.017                              0.702               0.000
+       2008                      1139            0.087            0.148            0.500         0.121                     0.051              0.019                              0.701               0.000
+       2009                      1110            0.100            0.178            0.537         0.135                     0.056              0.021                              0.675               0.000
+       2010                      1156            0.103            0.177            0.520         0.141                     0.064              0.023                              0.697               0.000
+       2011                      1154            0.108            0.194            0.550         0.146                     0.065              0.024                              0.697               0.000
+       2012                      1181            0.109            0.195            0.550         0.143                     0.060              0.024                              0.711               0.000
+       2013                      1196            0.118            0.215            0.569         0.157                     0.064              0.025                              0.720               0.000
+       2014                      1215            0.125            0.243            0.611         0.170                     0.068              0.027                              0.699               0.000
+       2015                      1143            0.129            0.272            0.655         0.166                     0.069              0.026                              0.683               0.000
+       2016                      1093            0.131            0.270            0.647         0.165                     0.065              0.026                              0.700               0.001
+       2017                      1108            0.133            0.243            0.587         0.172                     0.064              0.026                              0.739               0.003
+       2018                      1073            0.147            0.264            0.590         0.189                     0.077              0.030                              0.754               0.135
+       2019                      1056            0.159            0.275            0.580         0.202                     0.082              0.032                              0.769               0.159
+       2020                      1026            0.187            0.320            0.602         0.237                     0.096              0.038                              0.770               0.185
+       2021                       908            0.297            0.482            0.681         0.339                     0.150              0.065                              0.793               0.293
+2026-10-31 13:32:37,995 INFO ISS (diag) vs text Strict, KPI counts 2014-2021:
+kpi_esg_strict                text_strict0  text_strict1  text_unknown
+yr     kpi_iss_esg_flag_diag                                          
+2014.0 ISS_nonESG                    31293          1528          6522
+2015.0 ISS_nonESG                    31448          1686          6736
+2016.0 ISS_ESG                           0            30             5
+       ISS_nonESG                    31045          1616          6354
+2017.0 ISS_ESG                           0            28             0
+       ISS_nonESG                    32235          1590          5734
+2018.0 ISS_ESG                         172          1355           160
+       ISS_nonESG                    30976           286          5182
+2019.0 ISS_ESG                         243          1567           193
+       ISS_nonESG                    31726           237          4856
+2020.0 ISS_ESG                         208          1969           166
+       ISS_nonESG                    31944           336          5331
+2021.0 ISS_ESG                         327          2969           275
+       ISS_nonESG                    29013           426          4940
+2026-10-31 13:32:38,052 INFO composition: {'firms_2017': 1188, 'firms_2018': 1160, 'continuing': 1134, 'exits_after_2017': 54, 'entrants_2018': 26, 'continuing_2017_2018_2017_adopt_lb': np.float64(0.1402), 'continuing_2017_2018_2017_n': 1134, 'continuing_2017_2018_2018_adopt_lb': np.float64(0.1534), 'continuing_2017_2018_2018_n': 1134, 'exits_after_2017_2017_adopt_lb': np.float64(0.2593), 'exits_after_2017_2017_n': 54, 'entrants_2018_2018_adopt_lb': np.float64(0.2308), 'entrants_2018_2018_n': 26, 'balanced_panel_2015_2021_firms': 205}
+balanced panel (firms with known adoption every year 2015-2021) adoption:
+fiscalyear
+2015.0    0.400
+2016.0    0.405
+2017.0    0.410
+2018.0    0.405
+2019.0    0.400
+2020.0    0.410
+2021.0    0.463
+2026-10-31 13:32:38,191 INFO extensive/intensive decomposition of mean perf-grant ESG share (lb):
+   period  d_mean_share  extensive  intensive
+2015-2017       -0.0033    -0.0004    -0.0029
+2017-2018        0.0079     0.0045     0.0033
+2018-2021        0.0671     0.0710    -0.0039
+2017-2021        0.0749     0.0738     0.0012
+2026-10-31 13:32:38,193 INFO text coverage by year:
+ fiscalYear  goal_rows  metricother_blank_share  unknown_share  strict_share  iss_esg_share_diag
+     1998.0      11768                    0.681          0.208         0.011               0.000
+     1999.0      12165                    0.676          0.212         0.008               0.000
+     2000.0      12620                    0.671          0.215         0.010               0.000
+     2001.0      12235                    0.641          0.217         0.013               0.000
+     2002.0      13077                    0.630          0.224         0.013               0.000
+     2003.0      14068                    0.622          0.223         0.012               0.000
+     2004.0      16759                    0.598          0.196         0.019               0.000
+     2005.0      17557                    0.603          0.187         0.023               0.000
+     2006.0      32649                    0.573          0.153         0.024               0.000
+     2007.0      38072                    0.543          0.140         0.024               0.000
+     2008.0      37493                    0.546          0.140         0.027               0.000
+     2009.0      38994                    0.519          0.148         0.030               0.000
+     2010.0      40562                    0.499          0.142         0.036               0.000
+     2011.0      42052                    0.448          0.140         0.037               0.000
+     2012.0      46051                    0.453          0.137         0.037               0.000
+     2013.0      46929                    0.491          0.132         0.035               0.000
+     2014.0      49462                    0.498          0.144         0.037               0.000
+     2015.0      50398                    0.444          0.145         0.042               0.000
+     2016.0      47789                    0.301          0.142         0.042               0.001
+     2017.0      48305                    0.337          0.133         0.038               0.001
+     2018.0      46425                    0.032          0.127         0.042               0.042
+     2019.0      46847                    0.002          0.118         0.044               0.050
+     2020.0      47614                    0.000          0.123         0.056               0.057
+     2021.0      44200                    0.000          0.125         0.083               0.087
+=== 14_annual_trends.py done in 2s
+=== 15_variable_dictionary.py
+2026-10-31 13:33:00,358 INFO dataset summary:
+                           dataset  observations  variables                  primary_key  key_unique  key_missing  year_min  year_max
+           ESG_Text_Dictionary.dta         38590         43                      text_id        True            0    1998.0    2021.0
+                ESG_KPI_Master.dta        654123         36                       kpi_id        True            0    1998.0    2021.0
+              ESG_Grant_Master.dta        469429         69                      grantid        True            0    1998.0    2021.0
+       ESG_Executive_Firm_Year.dta        164832         73 cik+fiscalyear+participantid        True            0    1998.0    2021.0
+             ESG_CEO_Firm_Year.dta         33278         76 cik+fiscalyear+participantid        True            0    1998.0    2021.0
+          ESG_Firm_Year_Master.dta         33328         70               cik+fiscalyear        True            0    1998.0    2021.0
+          ESG_NonCEO_Firm_Year.dta         31944         63               cik+fiscalyear        True            0    1998.0    2021.0
+ESG_Goal_Record_Classification.dta        814091         29               goal_record_id        True            0    1998.0    2021.0
+2026-10-31 13:33:00,359 INFO variable dictionary: 459 variables
+=== 15_variable_dictionary.py done in 22s
+pipeline complete
+EXIT=0

@@ -1,4 +1,4 @@
-2026-10-31 13:24:40,198 INFO FIRM-YEAR annual:
+2026-10-31 13:32:37,534 INFO FIRM-YEAR annual:
  fiscalyear  n_units_with_perf_grants  adopt_strict_lb  adopt_strict_cc  adopt_strict_ub  adopt_ext_lb  perf_grant_share_lb_mean  kpi_share_lb_mean  perf_classification_coverage_mean  iss_esg_adopt_diag
        1998                       689            0.032            0.060            0.498         0.061                     0.018              0.007                              0.608               0.000
        1999                       716            0.024            0.047            0.514         0.042                     0.015              0.005                              0.575               0.000
@@ -24,7 +24,7 @@
        2019                      1128            0.168            0.321            0.644         0.216                     0.079              0.032                              0.753               0.168
        2020                      1090            0.196            0.373            0.670         0.247                     0.095              0.037                              0.749               0.193
        2021                       956            0.304            0.528            0.728         0.349                     0.142              0.062                              0.774               0.301
-2026-10-31 13:24:40,203 INFO CEO (strict sample) annual:
+2026-10-31 13:32:37,539 INFO CEO (strict sample) annual:
  fiscalyear  n_units_with_perf_grants  adopt_strict_lb  adopt_strict_cc  adopt_strict_ub  adopt_ext_lb  perf_grant_share_lb_mean  kpi_share_lb_mean  perf_classification_coverage_mean  iss_esg_adopt_diag
        1998                       636            0.027            0.046            0.447         0.050                     0.019              0.006                              0.623               0.000
        1999                       653            0.020            0.035            0.449         0.037                     0.016              0.005                              0.606               0.000
@@ -50,7 +50,7 @@
        2019                      1056            0.159            0.275            0.580         0.202                     0.082              0.032                              0.769               0.159
        2020                      1026            0.187            0.320            0.602         0.237                     0.096              0.038                              0.770               0.185
        2021                       908            0.297            0.482            0.681         0.339                     0.150              0.065                              0.793               0.293
-2026-10-31 13:24:40,761 INFO ISS (diag) vs text Strict, KPI counts 2014-2021:
+2026-10-31 13:32:37,995 INFO ISS (diag) vs text Strict, KPI counts 2014-2021:
 kpi_esg_strict                text_strict0  text_strict1  text_unknown
 yr     kpi_iss_esg_flag_diag                                          
 2014.0 ISS_nonESG                    31293          1528          6522
@@ -67,7 +67,7 @@ yr     kpi_iss_esg_flag_diag
        ISS_nonESG                    31944           336          5331
 2021.0 ISS_ESG                         327          2969           275
        ISS_nonESG                    29013           426          4940
-2026-10-31 13:24:40,813 INFO composition: {'firms_2017': 1188, 'firms_2018': 1160, 'continuing': 1134, 'exits_after_2017': 54, 'entrants_2018': 26, 'continuing_2017_2018_2017_adopt_lb': np.float64(0.1402), 'continuing_2017_2018_2017_n': 1134, 'continuing_2017_2018_2018_adopt_lb': np.float64(0.1534), 'continuing_2017_2018_2018_n': 1134, 'exits_after_2017_2017_adopt_lb': np.float64(0.2593), 'exits_after_2017_2017_n': 54, 'entrants_2018_2018_adopt_lb': np.float64(0.2308), 'entrants_2018_2018_n': 26, 'balanced_panel_2015_2021_firms': 205}
+2026-10-31 13:32:38,052 INFO composition: {'firms_2017': 1188, 'firms_2018': 1160, 'continuing': 1134, 'exits_after_2017': 54, 'entrants_2018': 26, 'continuing_2017_2018_2017_adopt_lb': np.float64(0.1402), 'continuing_2017_2018_2017_n': 1134, 'continuing_2017_2018_2018_adopt_lb': np.float64(0.1534), 'continuing_2017_2018_2018_n': 1134, 'exits_after_2017_2017_adopt_lb': np.float64(0.2593), 'exits_after_2017_2017_n': 54, 'entrants_2018_2018_adopt_lb': np.float64(0.2308), 'entrants_2018_2018_n': 26, 'balanced_panel_2015_2021_firms': 205}
 balanced panel (firms with known adoption every year 2015-2021) adoption:
 fiscalyear
 2015.0    0.400
@@ -77,13 +77,13 @@ fiscalyear
 2019.0    0.400
 2020.0    0.410
 2021.0    0.463
-2026-10-31 13:24:40,857 INFO extensive/intensive decomposition of mean perf-grant ESG share (lb):
+2026-10-31 13:32:38,191 INFO extensive/intensive decomposition of mean perf-grant ESG share (lb):
    period  d_mean_share  extensive  intensive
 2015-2017       -0.0033    -0.0004    -0.0029
 2017-2018        0.0079     0.0045     0.0033
 2018-2021        0.0671     0.0710    -0.0039
 2017-2021        0.0749     0.0738     0.0012
-2026-10-31 13:24:40,860 INFO text coverage by year:
+2026-10-31 13:32:38,193 INFO text coverage by year:
  fiscalYear  goal_rows  metricother_blank_share  unknown_share  strict_share  iss_esg_share_diag
      1998.0      11768                    0.681          0.208         0.011               0.000
      1999.0      12165                    0.676          0.212         0.008               0.000

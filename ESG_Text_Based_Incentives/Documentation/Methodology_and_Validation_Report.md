@@ -306,7 +306,7 @@ Firm-years with performance grants, Strict ESG adoption:
 | FY | Firms | Adopt lb | Complete-case | Adopt ub | Extended lb | Mean perf-grant share lb | Mean perf coverage | ISS ESG (diag) |
 |---|---|---|---|---|---|---|---|---|
 | 1998 | 689 | 3.2% | 6.0% | 49.8% | 6.1% | 1.8% | 0.61 | 0 |
-| 2008 | 1,245 | 10.4% | 20.1% | 58.9% | 14.7% | 5.1% | 0.67 | 0 |
+| 2008 | 1,236 | 10.7% | 21.1% | 60.0% | 15.0% | 5.4% | 0.67 | 0 |
 | 2015 | 1,263 | 14.6% | 34.1% | 71.7% | 18.9% | 7.1% | 0.67 | 0 |
 | 2016 | 1,200 | 14.1% | 32.0% | 70.1% | 18.3% | 6.5% | 0.69 | 0.1% |
 | 2017 | 1,188 | 14.6% | 29.1% | 64.6% | 19.2% | 6.7% | 0.73 | 0.3% |
@@ -327,7 +327,7 @@ Executive level, Strict adoption lb (CEO strict sample in parentheses):
 
 | Year | Executives (CEO) |
 |---|---|
-| 2017 | 13.6% (12.9%) |
+| 2017 | 13.6% (13.3%) |
 | 2018 | 14.8% (14.7%) |
 | 2021 | 29.4% (29.7%) |
 

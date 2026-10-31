@@ -1,4 +1,4 @@
-2026-10-31 13:23:11,079 INFO overlap (units) paper vs revised STRICT:
+2026-10-31 13:32:35,135 INFO overlap (units) paper vs revised STRICT:
 rev_strict  rev_strict=0  rev_strict=1  rev_strict=Unknown    All
 paper                                                            
 paper=0            24932            88                6686  31706
@@ -10,7 +10,7 @@ paper
 paper=0      23626       1045             7035  31706
 paper=1       2325       3333             1226   6884
 All          25951       4378             8261  38590
-2026-10-31 13:23:11,122 INFO overlap (goal_rows) paper vs revised STRICT:
+2026-10-31 13:32:35,178 INFO overlap (goal_rows) paper vs revised STRICT:
 rev_strict  rev_strict=0  rev_strict=1  rev_strict=Unknown     All
 paper                                                             
 paper=0           648557           575              111836  760968
@@ -22,7 +22,7 @@ paper
 paper=0     632625      12666           115677  760968
 paper=1      13355      32413             7355   53123
 All         645980      45079           123032  814091
-2026-10-31 13:23:11,990 INFO annual comparison (2014-2021):
+2026-10-31 13:32:35,849 INFO annual comparison (2014-2021):
             paper_esg_row_share  rev_strict_row_share_lb  rev_unknown_row_share  exec_perf_paper_adopt  exec_perf_rev_strict_adopt_lb  exec_perf_rev_strict_adopt_ub  exec_perf_iss_adopt_diag  firm_perf_paper_adopt  firm_perf_rev_strict_adopt_lb  firm_perf_iss_adopt_diag
 fiscalyear                                                                                                                                                                                                                                                                    
 2014.0                    0.063                    0.037                  0.144                  0.214                          0.129                          0.638                     0.000                  0.245                          0.139                     0.000
@@ -33,7 +33,7 @@ fiscalyear
 2019.0                    0.079                    0.044                  0.118                  0.242                          0.156                          0.598                     0.160                  0.274                          0.168                     0.168
 2020.0                    0.094                    0.056                  0.123                  0.284                          0.189                          0.630                     0.189                  0.306                          0.196                     0.193
 2021.0                    0.121                    0.083                  0.125                  0.379                          0.294                          0.699                     0.293                  0.404                          0.304                     0.301
-2026-10-31 13:23:12,026 INFO disagreement categories:
+2026-10-31 13:32:35,890 INFO disagreement categories:
                                  units  goal_rows
 cat                                              
 agree_esg                         2952      29331
